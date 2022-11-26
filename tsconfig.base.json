@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@spst-kniznica-project/backend-libs/books": [
+        "libs/backend-libs/books/src/index.ts"
+      ],
       "@spst-kniznica-project/backend-libs/database": [
         "libs/backend-libs/database/src/index.ts"
       ]

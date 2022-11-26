@@ -1,1 +1,1 @@
-export * from './lib/backend-libs-database.module';
+export * from "./lib/index"
