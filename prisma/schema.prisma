@@ -1,11 +1,30 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// sqlite3 for now later switch to postgresql
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
+}
+
+model Book {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
+  author      String
+  year        Int
+  available   Boolean
+  pages       Int
+}
+
+
+model Category {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
 }
