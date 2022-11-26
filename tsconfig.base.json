@@ -20,6 +20,9 @@
       ],
       "@spst-kniznica-project/backend-libs/database": [
         "libs/backend-libs/database/src/index.ts"
+      ],
+      "@spst-kniznica-project/frontend-libs/books": [
+        "libs/frontend-libs/books/src/index.ts"
       ]
     }
   },
