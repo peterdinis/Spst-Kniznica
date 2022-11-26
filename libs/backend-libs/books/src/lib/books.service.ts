@@ -5,5 +5,7 @@ import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
 export class BooksService {
     constructor(private readonly prismaService: PrismaService) {}
 
-    
+    async findAllBooks() {
+        return this.prismaService.book.findMany();
+    }
 }
