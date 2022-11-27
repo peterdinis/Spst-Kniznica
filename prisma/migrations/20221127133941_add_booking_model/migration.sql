@@ -1,0 +1,5 @@
+-- CreateTable
+CREATE TABLE "Booking" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "days" TEXT NOT NULL
+);

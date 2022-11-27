@@ -20,13 +20,23 @@ model Book {
   year        Int
   available   Boolean
   pages       Int
-  publisher String
-  image String
+  publisher   String
+  image       String
 }
 
-
 model Category {
-  id          Int     @id @default(autoincrement())
+  id          Int    @id @default(autoincrement())
   name        String
   description String
+}
+
+model Quote {
+  id     Int    @id @default(autoincrement())
+  author String
+  text   String
+}
+
+model Booking {
+  id   Int    @id @default(autoincrement())
+  days String
 }

@@ -27,6 +27,9 @@
       "@spst-kniznica-project/backend-libs/database": [
         "libs/backend-libs/database/src/index.ts"
       ],
+      "@spst-kniznica-project/backend-libs/quotes": [
+        "libs/backend-libs/quotes/src/index.ts"
+      ],
       "@spst-kniznica-project/backend-libs/shared": [
         "libs/backend-libs/shared/src/index.ts"
       ],
