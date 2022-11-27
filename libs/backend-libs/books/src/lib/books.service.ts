@@ -1,6 +1,7 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
 import { CreateBookDto } from "./dto/create-book-dto";
+import { UpdateBookDto } from "./dto/update-book-dto";
 
 @Injectable()
 export class BooksService {
@@ -42,7 +43,21 @@ export class BooksService {
         return oneBook;
     }
 
-    async updateBook() {}
+    async updateBook(id: number, updateData: UpdateBookDto) {
+        const updateBook = await this.prismaService.book.update({
+            where: {
+                id
+            },
+
+            data: updateData
+        })
+
+        if(!updateBook) {
+            throw new NotFoundException("Book not found")
+        }
+
+        return updateBook;
+    }
 
     async deleteBook(id: number) {
         const oneBook = await this.prismaService.book.delete({
