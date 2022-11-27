@@ -33,6 +33,9 @@
       "@spst-kniznica-project/backend-libs/shared": [
         "libs/backend-libs/shared/src/index.ts"
       ],
+      "@spst-kniznica-project/backend-libs/student": [
+        "libs/backend-libs/student/src/index.ts"
+      ],
       "@spst-kniznica-project/frontend-libs/about": [
         "libs/frontend-libs/about/src/index.ts"
       ],
