@@ -1,7 +1,9 @@
+import Navbar from "libs/frontend-libs/shared/src/lib/Navbar";
+
 export function App() {
   return (
     <>
-    <h1>Ping Pong</h1>
+      <Navbar />
     </>
   );
 }

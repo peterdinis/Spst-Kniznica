@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
     "@nestjs/axios": "^1.0.0",
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^2.2.0",
