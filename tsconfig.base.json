@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@spst-kniznica-project/backend-libs/booking": [
+        "libs/backend-libs/booking/src/index.ts"
+      ],
       "@spst-kniznica-project/backend-libs/books": [
         "libs/backend-libs/books/src/index.ts"
       ],
@@ -23,6 +26,9 @@
       ],
       "@spst-kniznica-project/frontend-libs/books": [
         "libs/frontend-libs/books/src/index.ts"
+      ],
+      "@spst-kniznica-project/frontend-libs/category": [
+        "libs/frontend-libs/category/src/index.ts"
       ]
     }
   },

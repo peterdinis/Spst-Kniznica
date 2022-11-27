@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
 import { CreateBookDto } from "./dto/create-book-dto";
 
@@ -26,5 +26,35 @@ export class BooksService {
         })
 
         return newBook;
+    }
+
+    async getOneBook(id: number) {
+        const oneBook = await this.prismaService.book.findUnique({
+            where: {
+                id
+            }
+        })
+
+        if(!oneBook) {
+            throw new NotFoundException("Book not found");
+        }
+
+        return oneBook;
+    }
+
+    async updateBook() {}
+
+    async deleteBook(id: number) {
+        const oneBook = await this.prismaService.book.delete({
+            where: {
+                id
+            }
+        })
+
+        if(!oneBook) {
+            throw new NotFoundException("Book not found");
+        }
+
+        return oneBook;
     }
 }
