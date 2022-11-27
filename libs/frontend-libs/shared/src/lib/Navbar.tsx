@@ -1,10 +1,6 @@
 import React from 'react';
 import './Shared.css';
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(' ');
-}
-
 export default function Navbar() {
   return (
     <nav className="nav flex flex-wrap items-center justify-between px-4">

@@ -1,1 +1,1 @@
-export * from "./frontend-libs-hero"
+export * from "./Hero"
