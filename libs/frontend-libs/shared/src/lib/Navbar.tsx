@@ -1,8 +1,5 @@
 import React from 'react';
-import './Navbar.scss';
-import { Menu, Transition } from '@headlessui/react';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import './Shared.css';
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ');
