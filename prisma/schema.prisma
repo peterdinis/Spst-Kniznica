@@ -21,6 +21,7 @@ model Book {
   available   Boolean
   pages       Int
   publisher String
+  image String
 }
 
 
