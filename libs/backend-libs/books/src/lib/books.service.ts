@@ -21,6 +21,7 @@ export class BooksService {
                 pages: bookData.pages,
                 publisher: bookData.publisher,
                 year: bookData.year,
+                image: bookData.image
             }
         })
 
