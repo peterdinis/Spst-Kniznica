@@ -36,3 +36,11 @@ model Quote {
   author String
   text   String
 }
+
+model Student {
+  id    String  @unique @default(uuid()) 
+  email String  @unique
+  hashedPassword String 
+  createdAt DateTime @default(now())
+  updateAt DateTime @updatedAt()
+}
