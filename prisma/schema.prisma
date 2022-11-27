@@ -18,7 +18,8 @@ model Book {
   description String
   author      String
   year        Int
-  available   Boolean
+  available   Boolean @default(false)
+
   pages       Int
   publisher   String
   image       String
@@ -34,9 +35,4 @@ model Quote {
   id     Int    @id @default(autoincrement())
   author String
   text   String
-}
-
-model Booking {
-  id   Int    @id @default(autoincrement())
-  days String
 }
