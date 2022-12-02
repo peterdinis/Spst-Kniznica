@@ -1,6 +1,5 @@
-import React from 'react';
 import Paper from '@mui/material/Paper';
-import "./AboutWrapper.scss";
+import "./AboutWrapper.css";
 import Header from 'libs/frontend-libs/shared/src/lib/Header';
 
 function AboutWrapper() {
