@@ -5,6 +5,7 @@ import { PrismaModule} from '@spst-kniznica-project/backend-libs/database';
 import { CategoryModule } from '@spst-kniznica-project/backend-libs/category';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { StudentModule } from '@spst-kniznica-project/backend-libs/student';
 
 @Module({
   imports: [
@@ -13,7 +14,9 @@ import { AppService } from './app.service';
     ConfigModule.forRoot({
       envFilePath: '.env',
     }),
-    PrismaModule
+    PrismaModule,
+    StudentModule,
+    CategoryModule
   ],
   controllers: [AppController],
   providers: [AppService],
