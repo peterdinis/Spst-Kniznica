@@ -42,7 +42,8 @@ model Student {
   id             String   @unique @default(uuid())
   name           String
   email          String   @unique
-  hashedPassword String
+  password       String
+  confirmedPassword String
   createdAt      DateTime @default(now())
   updateAt       DateTime @updatedAt()
 }
@@ -52,7 +53,8 @@ model Teacher {
   id             String   @unique @default(uuid())
   name           String
   email          String   @unique
-  hashedPassword String
+  password       String
+  confirmedPassword String
   createdAt      DateTime @default(now())
   updateAt       DateTime @updatedAt()
 }
