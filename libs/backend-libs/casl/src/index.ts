@@ -1,1 +1,1 @@
-export * from './lib/backend-libs-casl.module';
+export * from './lib/casl.module';
