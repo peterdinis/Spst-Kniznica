@@ -1,6 +1,6 @@
 import React from 'react';
-import DateTimePicker from "../shared/DateTimePicker";
 import RandomQuote from './RandomQuote';
+import DateTimePicker from "libs/frontend-libs/shared/src/lib/DateTimePicker";
 
 function Hero() {
   return (
@@ -24,10 +24,10 @@ function Hero() {
 
           <div className="ml-8">
             <button className="test bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              <a href="https://www.spsbj.sk/">{t("description.firstButton")}</a>
+              <a href="https://www.spsbj.sk/">Školská stránka</a>
             </button>
             <button className="newTest ml-10 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-              <a href="/books">{t("description.secondButton")}</a>
+              <a href="/books">Všetky knihy</a>
             </button>
           </div>
         </div>
