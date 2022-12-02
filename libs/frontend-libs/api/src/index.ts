@@ -1,1 +1,1 @@
-export * from './lib/frontend-libs-api';
+export * from './lib/queryClient';
