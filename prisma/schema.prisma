@@ -20,9 +20,9 @@ model Book {
   year        Int
   available   Boolean @default(false)
 
-  pages       Int
-  publisher   String
-  image       String
+  pages     Int
+  publisher String
+  image     String
 }
 
 model Category {
@@ -38,9 +38,9 @@ model Quote {
 }
 
 model Student {
-  id    String  @unique @default(uuid()) 
-  email String  @unique
-  hashedPassword String 
-  createdAt DateTime @default(now())
-  updateAt DateTime @updatedAt()
+  id             String   @unique @default(uuid())
+  email          String   @unique
+  hashedPassword String
+  createdAt      DateTime @default(now())
+  updateAt       DateTime @updatedAt()
 }
