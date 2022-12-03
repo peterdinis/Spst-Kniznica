@@ -14,7 +14,7 @@ import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
     CategoryModule,
     BooksModule,
     ConfigModule.forRoot({
-      envFilePath: '.env',
+      envFilePath: '.env.local',
     }),
     PrismaModule,
     StudentModule,
