@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { StudentModule } from '@spst-kniznica-project/backend-libs/student';
 import { BookingModule } from '@spst-kniznica-project/backend-libs/booking';
 import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
+import { ThrottlerModule } from '@nestjs/throttler';
 
 @Module({
   imports: [
@@ -15,6 +16,10 @@ import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
     BooksModule,
     ConfigModule.forRoot({
       envFilePath: '.env.local',
+    }),
+    ThrottlerModule.forRoot({
+      ttl: 60,
+      limit: 50,
     }),
     PrismaModule,
     StudentModule,
