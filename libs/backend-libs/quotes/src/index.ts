@@ -1,1 +1,1 @@
-export * from './lib/backend-libs-quotes.module';
+export * from './lib/qoutes.module';
