@@ -8,7 +8,8 @@
     "build": "nx build",
     "test": "nx test",
     "lint": "prettier --check .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "seed": "ts-node prisma/seed.ts"
   },
   "private": true,
   "dependencies": {
@@ -51,6 +52,7 @@
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
     "@nrwl/cli": "14.8.6",
@@ -66,6 +68,7 @@
     "@nrwl/workspace": "14.8.6",
     "@testing-library/react": "13.4.0",
     "@types/axios": "^0.14.0",
+    "@types/faker": "^6.6.9",
     "@types/jest": "28.1.1",
     "@types/node": "18.7.18",
     "@types/passport-jwt": "^3.0.7",
@@ -84,6 +87,7 @@
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-react": "7.31.8",
     "eslint-plugin-react-hooks": "4.6.0",
+    "faker": "^6.6.6",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "nx": "14.8.6",
