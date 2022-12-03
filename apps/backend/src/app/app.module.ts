@@ -20,7 +20,7 @@ import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
     StudentModule,
     CategoryModule,
     BookingModule,
-    QuotesModule
+    QuotesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
