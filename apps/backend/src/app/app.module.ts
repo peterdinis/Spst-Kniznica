@@ -6,6 +6,8 @@ import { CategoryModule } from '@spst-kniznica-project/backend-libs/category';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { StudentModule } from '@spst-kniznica-project/backend-libs/student';
+import { BookingModule } from '@spst-kniznica-project/backend-libs/booking';
+import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
 
 @Module({
   imports: [
@@ -16,7 +18,9 @@ import { StudentModule } from '@spst-kniznica-project/backend-libs/student';
     }),
     PrismaModule,
     StudentModule,
-    CategoryModule
+    CategoryModule,
+    BookingModule,
+    QuotesModule
   ],
   controllers: [AppController],
   providers: [AppService],
