@@ -62,6 +62,9 @@
       ],
       "@spst-kniznica-project/frontend-libs/shared": [
         "libs/frontend-libs/shared/src/index.ts"
+      ],
+      "@spst-kniznica-project/frontend-libs/student": [
+        "libs/frontend-libs/student/src/index.ts"
       ]
     }
   },
