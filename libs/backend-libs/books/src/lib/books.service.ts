@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
 import { CreateBookDto } from "./dto/create-book-dto";
 import { UpdateBookDto } from "./dto/update-book-dto";
+import {PageOptionsDto} from "@spst-kniznica-project/backend-libs/shared"
 
 @Injectable()
 export class BooksService {
@@ -10,6 +11,19 @@ export class BooksService {
     async findAllBooks() {
         const allBooks = await this.prismaService.book.findMany();
         return allBooks;
+    }
+
+    async paginateBooks(pageOptionsDto: PageOptionsDto) {
+        if(isNaN(pageOptionsDto.skip)) {
+            return this.prismaService.book.findMany({
+                take: pageOptionsDto.take
+            })
+        } else {
+            return this.prismaService.book.findMany({
+                skip: pageOptionsDto.skip,
+                take: pageOptionsDto.take
+            })
+        }
     }
 
     async createNewBook(bookData: CreateBookDto) {
