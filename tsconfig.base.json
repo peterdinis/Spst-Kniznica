@@ -45,6 +45,9 @@
       "@spst-kniznica-project/frontend-libs/about": [
         "libs/frontend-libs/about/src/index.ts"
       ],
+      "@spst-kniznica-project/frontend-libs/api": [
+        "libs/frontend-libs/api/src/index.ts"
+      ],
       "@spst-kniznica-project/frontend-libs/booking": [
         "libs/frontend-libs/booking/src/index.ts"
       ],
