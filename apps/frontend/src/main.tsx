@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
-import "./app/app.module.css";
+import './app/app.module.css';
 import App from './app/app';
 import { BrowserRouter } from 'react-router-dom';
 import { ToastContainer } from "react-toastify";

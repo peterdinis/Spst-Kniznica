@@ -1,1 +1,1 @@
-export * from './lib/backend-libs-booking.module';
+export * from './lib/booking.module';

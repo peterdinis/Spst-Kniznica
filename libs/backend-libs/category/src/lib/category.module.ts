@@ -1,11 +1,12 @@
 import { Module } from '@nestjs/common';
 import { CategoryController } from './category.controller';
 import { CategoryService } from './category.service';
-import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
+import { PrismaModule } from '@spst-kniznica-project/backend-libs/database';
 
 @Module({
+  imports: [PrismaModule],
   controllers: [CategoryController],
-  providers: [CategoryService, PrismaService],
+  providers: [CategoryService],
   exports: [],
 })
 

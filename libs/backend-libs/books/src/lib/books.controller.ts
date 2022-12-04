@@ -1,5 +1,6 @@
-import { Controller, Get, Post, Param, Body, Put, Delete } from "@nestjs/common";
+import { Controller, Get, Post, Param, Body, Put, Delete, Query } from "@nestjs/common";
 import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
+import { ApiPaginatedResponse, PageOptionsDto } from "@spst-kniznica-project/backend-libs/shared";
 import { BooksService } from "./books.service";
 import { CreateBookDto } from "./dto/create-book-dto";
 import { UpdateBookDto } from "./dto/update-book-dto";
@@ -19,6 +20,17 @@ export class BooksController {
     @Get("/")
     async allBooks() {
         return await this.booksService.findAllBooks();
+    }
+
+    @ApiOperation({
+        summary: "Get all paginated books"
+    })
+    @ApiPaginatedResponse(ViewBookDto)
+    @Get("/paginate")
+    async getPaginatedBooks(
+        @Query() pageOptionsDto: PageOptionsDto
+    ) {
+        return this.booksService.paginateBooks(pageOptionsDto)
     }
 
     @ApiOperation({

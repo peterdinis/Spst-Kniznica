@@ -5,17 +5,22 @@ import { PrismaModule} from '@spst-kniznica-project/backend-libs/database';
 import { CategoryModule } from '@spst-kniznica-project/backend-libs/category';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CaslModule } from '@spst-kniznica-project/backend-libs/casl';
+import { StudentModule } from '@spst-kniznica-project/backend-libs/student';
+import { BookingModule } from '@spst-kniznica-project/backend-libs/booking';
+import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
 
 @Module({
   imports: [
     CategoryModule,
     BooksModule,
     ConfigModule.forRoot({
-      envFilePath: '.env',
+      envFilePath: '.env.local',
     }),
     PrismaModule,
-    CaslModule
+    StudentModule,
+    CategoryModule,
+    BookingModule,
+    QuotesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -7,7 +7,7 @@ const StyledFrontendLibsBooks = styled.div`
   color: pink;
 `;
 
-export function FrontendLibsBooks(props: FrontendLibsBooksProps) {
+export function AllBooks(props: FrontendLibsBooksProps) {
   return (
     <StyledFrontendLibsBooks>
       <h1>Welcome to FrontendLibsBooks!</h1>
@@ -15,4 +15,4 @@ export function FrontendLibsBooks(props: FrontendLibsBooksProps) {
   );
 }
 
-export default FrontendLibsBooks;
+export default AllBooks;
