@@ -3,6 +3,6 @@ import Aboutpage from "./lib/aboutpage"
 
 
 export {
-    Aboutpage
+    Aboutpage,
+    Homepage
 }
-export default Homepage;
