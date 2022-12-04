@@ -42,20 +42,14 @@
       "@spst-kniznica-project/frontend-libs/about": [
         "libs/frontend-libs/about/src/index.ts"
       ],
-      "@spst-kniznica-project/frontend-libs/api": [
-        "libs/frontend-libs/api/src/index.ts"
-      ],
       "@spst-kniznica-project/frontend-libs/books": [
         "libs/frontend-libs/books/src/index.ts"
       ],
-      "@spst-kniznica-project/frontend-libs/category": [
-        "libs/frontend-libs/category/src/index.ts"
+      "@spst-kniznica-project/frontend-libs/categories": [
+        "libs/frontend-libs/categories/src/index.ts"
       ],
       "@spst-kniznica-project/frontend-libs/hero": [
         "libs/frontend-libs/hero/src/index.ts"
-      ],
-      "@spst-kniznica-project/frontend-libs/hooks": [
-        "libs/frontend-libs/hooks/src/index.ts"
       ],
       "@spst-kniznica-project/frontend-libs/pages": [
         "libs/frontend-libs/pages/src/index.ts"
