@@ -3,7 +3,7 @@ import styles from './frontend-libs-books.module.css';
 /* eslint-disable-next-line */
 export interface FrontendLibsBooksProps {}
 
-export function FrontendLibsBooks(props: FrontendLibsBooksProps) {
+export function AllBooks(props: FrontendLibsBooksProps) {
   return (
     <div className={styles['container']}>
       <h1>Welcome to FrontendLibsBooks!</h1>
@@ -11,4 +11,4 @@ export function FrontendLibsBooks(props: FrontendLibsBooksProps) {
   );
 }
 
-export default FrontendLibsBooks;
+export default AllBooks;
