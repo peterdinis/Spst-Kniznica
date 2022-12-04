@@ -1,5 +1,8 @@
 import Homepage from './lib/homepage';
+import Aboutpage from "./lib/aboutpage"
 
-export * from './lib/frontend-libs-pages';
 
+export {
+    Aboutpage
+}
 export default Homepage;
