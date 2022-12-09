@@ -38,21 +38,23 @@ model Quote {
 }
 
 model Student {
-  id                String                @unique @default(uuid())
-  name              String
-  email             String                @unique
-  password          String
-  confirmedPassword String
-  createdAt         DateTime              @default(now())
-  updateAt          DateTime              @updatedAt()
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  passwordHash String
+  firstName    String
+  lastName     String
+  createdAt    DateTime @default(now())
+  updateAt     DateTime @updatedAt()
 }
 
 model Teacher {
-  id                String   @unique @default(uuid())
-  name              String
-  email             String   @unique
-  password          String
-  confirmedPassword String
-  createdAt         DateTime @default(now())
-  updateAt          DateTime @updatedAt()
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  passwordHash String
+  firstName    String
+  lastName     String
+  createdAt    DateTime @default(now())
+  updateAt     DateTime @updatedAt()
 }
