@@ -1,6 +1,7 @@
 import {
   ConflictException,
   Injectable,
+  NotFoundException,
   UnauthorizedException,
 } from '@nestjs/common';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
@@ -9,6 +10,7 @@ import { JwtService } from '@nestjs/jwt';
 import { CreateNewStudentDto } from './dto/create-student-dto';
 import { Prisma } from '@prisma/client';
 import { JwtPayload } from './interfaces/jwt-payload';
+import { LoginStudentDto } from './dto/login-student-dto';
 
 @Injectable()
 export class StudentService {
@@ -43,7 +45,31 @@ export class StudentService {
     }
   }
 
-  async loginStudent() {}
+  async loginStudent(loginStudentDto: LoginStudentDto) {
+    const student = await this.prismaService.student.findFirst({
+       where: {
+          email: loginStudentDto.email
+       },
+
+       select: {
+        id: true,
+        email: true,
+        username: true
+       }
+    })
+
+    if(!student) {
+      throw new NotFoundException('Student not found')
+    }
+
+    const payload: JwtPayload = {
+      id: student.id,
+      email: student.email,
+      username: student.username,
+    };
+
+    return this.jwtService.signAsync(payload);
+  }
 
   async validateUser(payload: JwtPayload) {
     const user = (await this.prismaService.student.findUnique({
