@@ -68,7 +68,12 @@ export class StudentService {
       username: student.username,
     };
 
-    return this.jwtService.signAsync(payload);
+    const loginMessage = {
+      token: payload,
+      message: "Successfully login to app"
+    }
+
+    return this.jwtService.signAsync(loginMessage);
   }
 
   async validateUser(payload: JwtPayload) {

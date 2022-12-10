@@ -1,11 +1,12 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
-import { ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { StudentD } from "./decorators/student.decorator";
 import { CreateNewStudentDto } from "./dto/create-student-dto";
 import { LoginStudentDto } from "./dto/login-student-dto";
 import { StudentService } from "./student.service";
 import { AuthUser } from "./utils/auth-user";
 
+@ApiTags("Student")
 @Controller("student")
 export class StudentController {
     constructor(private readonly studentService: StudentService) {}
