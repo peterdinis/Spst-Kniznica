@@ -37,7 +37,7 @@ export class StudentController {
         return await this.studentService.loginStudent(loginStudent)
     }
 
-    @ApiBearerAuth()
+    @ApiBearerAuth() // TODO: Not Working !!!
     @ApiOperation({
         summary: "Student Profile" 
     })
