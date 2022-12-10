@@ -102,6 +102,10 @@ export class StudentService {
     return user === null;
   }
 
+  async myProfile() {
+    return;
+  }
+
   async logoutStudent() {
     return;
   }
