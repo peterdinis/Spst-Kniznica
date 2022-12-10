@@ -101,4 +101,8 @@ export class StudentService {
     });
     return user === null;
   }
+
+  async logoutStudent() {
+    return;
+  }
 }

@@ -47,4 +47,13 @@ export class StudentController {
     ) {
         return;
     } 
+
+    @ApiOperation({
+        summary: "Logout student"
+    })
+    @ApiOkResponse()
+    @Post("/logout")
+    async logout() {
+        return await this.studentService.logoutStudent();
+    }
 }
