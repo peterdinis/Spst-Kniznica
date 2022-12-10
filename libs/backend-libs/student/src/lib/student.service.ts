@@ -19,6 +19,20 @@ export class StudentService {
 
   async signupStudent(registerDto: CreateNewStudentDto) {
     try {
+      const hashedPassword = await bcrypt.hash(registerDto.password, 12) as any;
+
+     /*  const newUser =await this.prismaService.student.create({
+        data: {
+          username: registerDto.username,
+          email: registerDto.email,
+          firstName: registerDto.firstName,
+          lastName: registerDto.lastName
+          password: registerDto.password,
+
+        }
+      });
+
+      return newUser; */
     } catch (e) {
       if (e instanceof Prisma.PrismaClientKnownRequestError) {
         if (e.code === 'P2002') {
