@@ -1,1 +1,3 @@
-export * from './lib/frontend-libs-shared';
+import Navbar from "./lib/Navbar";
+
+export default Navbar
