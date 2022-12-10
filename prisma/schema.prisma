@@ -19,7 +19,6 @@ model Book {
   author      String
   year        Int
   available   Boolean @default(false)
-
   pages     Int
   publisher String
   image     String
