@@ -46,15 +46,6 @@ export class StudentController {
     async myProfile(
         @StudentD() student: AuthUser
     ) {
-        return;
-    } 
-
-    @ApiOperation({
-        summary: "Logout student"
-    })
-    @ApiOkResponse()
-    @Post("/logout")
-    async logout() {
-        return await this.studentService.logoutStudent();
+        return student;
     }
 }

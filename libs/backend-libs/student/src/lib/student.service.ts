@@ -110,8 +110,4 @@ export class StudentService {
   async myProfile() {
     return;
   }
-
-  async logoutStudent() {
-    return;
-  }
 }
