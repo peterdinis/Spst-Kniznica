@@ -2,10 +2,21 @@ import {IsNotEmpty, IsString, IsEmail} from "class-validator";
 import {ApiProperty} from "@nestjs/swagger"
 
 export class CreateNewStudentDto {
+
     @ApiProperty()
     @IsNotEmpty()
     @IsString()
-    name: string;
+    username: string;
+
+    @ApiProperty()
+    @IsNotEmpty()
+    @IsString()
+    firstName: string;
+
+    @ApiProperty()
+    @IsNotEmpty()
+    @IsString()
+    lastName: string;
 
     @ApiProperty()
     @IsEmail()

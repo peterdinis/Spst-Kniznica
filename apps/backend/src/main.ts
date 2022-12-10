@@ -14,6 +14,7 @@ async function bootstrap() {
     methods: '*',
     allowedHeaders: '*',
   });
+  
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
 
@@ -21,6 +22,7 @@ async function bootstrap() {
     .setTitle('SPŠT Knižnica')
     .setVersion('1.0')
     .build();
+    
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
 

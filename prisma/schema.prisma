@@ -19,7 +19,6 @@ model Book {
   author      String
   year        Int
   available   Boolean @default(false)
-
   pages     Int
   publisher String
   image     String
@@ -38,21 +37,23 @@ model Quote {
 }
 
 model Student {
-  id                String                @unique @default(uuid())
-  name              String
-  email             String                @unique
-  password          String
-  confirmedPassword String
-  createdAt         DateTime              @default(now())
-  updateAt          DateTime              @updatedAt()
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  password String
+  firstName    String
+  lastName     String
+  createdAt    DateTime @default(now())
+  updateAt     DateTime @updatedAt()
 }
 
 model Teacher {
-  id                String   @unique @default(uuid())
-  name              String
-  email             String   @unique
-  password          String
-  confirmedPassword String
-  createdAt         DateTime @default(now())
-  updateAt          DateTime @updatedAt()
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  password String
+  firstName    String
+  lastName     String
+  createdAt    DateTime @default(now())
+  updateAt     DateTime @updatedAt()
 }
