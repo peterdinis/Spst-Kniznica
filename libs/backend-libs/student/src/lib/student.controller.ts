@@ -1,8 +1,10 @@
-import { Body, Controller, Post } from "@nestjs/common";
-import { ApiCreatedResponse, ApiOperation } from "@nestjs/swagger";
+import { Body, Controller, Get, Post } from "@nestjs/common";
+import { ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation } from "@nestjs/swagger";
+import { StudentD } from "./decorators/student.decorator";
 import { CreateNewStudentDto } from "./dto/create-student-dto";
 import { LoginStudentDto } from "./dto/login-student-dto";
 import { StudentService } from "./student.service";
+import { AuthUser } from "./utils/auth-user";
 
 @Controller("student")
 export class StudentController {
@@ -33,4 +35,16 @@ export class StudentController {
     ) {
         return await this.studentService.loginStudent(loginStudent)
     }
+
+    @ApiBearerAuth()
+    @ApiOperation({
+        summary: "Student Profile" 
+    })
+    @ApiOkResponse()
+    @Get("/profile")
+    async myProfile(
+        @StudentD() student: AuthUser
+    ) {
+        return;
+    } 
 }
