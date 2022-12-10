@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
+import { CaslAbilityFactory } from './casl-ability-factory';
 
 @Module({
-  controllers: [],
-  providers: [],
-  exports: [],
+  providers: [CaslAbilityFactory],
+  exports: [CaslAbilityFactory],
 })
-export class BackendLibsCaslModule {}
+export class CaslModule {}
