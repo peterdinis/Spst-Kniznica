@@ -17,7 +17,7 @@ import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logge
     CategoryModule,
     BooksModule,
     ConfigModule.forRoot({
-      envFilePath: '.env.local',
+      envFilePath: '.env',
     }),
     ThrottlerModule.forRoot({
       ttl: 60,
