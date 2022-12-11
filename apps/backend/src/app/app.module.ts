@@ -9,9 +9,8 @@ import { StudentModule } from '@spst-kniznica-project/backend-libs/student';
 import { BookingModule } from '@spst-kniznica-project/backend-libs/booking';
 import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
 import { ThrottlerModule } from '@nestjs/throttler';
-/* TODO: Fix import */
-import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
 import { SeedersModule } from '@spst-kniznica-project/backend-libs/seeders';
+import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
 
 @Module({
   imports: [
