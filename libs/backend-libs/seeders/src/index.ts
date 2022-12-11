@@ -1,1 +1,1 @@
-export * from './lib/backend-libs-seeders.module';
+export * from './lib/seeders.module';

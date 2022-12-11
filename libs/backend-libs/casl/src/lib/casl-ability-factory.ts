@@ -1,8 +1,14 @@
 import { Injectable } from "@nestjs/common";
-import type {Student} from "@prisma/client";
-import {InferSubjects,AbilityClass} from "@casl/ability"
+import type {Student, Teacher} from "@prisma/client";
+import {Action} from "./permissions.enum"
+import {Ability, InferSubjects} from "@casl/ability"
 
+type  AbilityStudent = Student;
+type AbilityTeacher = Teacher;
 
+export type Subjects = InferSubjects<AbilityStudent | AbilityTeacher> | "all"; 
+
+export type AppAbility = Ability<[Action, Subjects]>;
 
 @Injectable()
 export class CaslAbilityFactory {

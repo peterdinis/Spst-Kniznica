@@ -11,6 +11,7 @@ import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
 import { ThrottlerModule } from '@nestjs/throttler';
 /* TODO: Fix import */
 import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
+import { SeedersModule } from '@spst-kniznica-project/backend-libs/seeders';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logge
     CategoryModule,
     BookingModule,
     QuotesModule,
+    SeedersModule
   ],
   controllers: [AppController],
   providers: [AppService],
