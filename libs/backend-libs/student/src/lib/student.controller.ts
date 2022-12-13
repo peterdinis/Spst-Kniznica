@@ -48,4 +48,22 @@ export class StudentController {
     ) {
         return student;
     }
+
+    @ApiOperation({
+        summary: "Check if email is avaiable"
+    })
+    @ApiCreatedResponse()
+    @Post("/email/avaiable")
+    async checkIfEmailIsAvailable() {
+        return;
+    }
+
+    @ApiOperation({
+        summary: "Check if name is avaiable"
+    })
+    @ApiCreatedResponse()
+    @Post("/name/avaiable")
+    async checkIfNameIsAvaiable() {
+        return
+    }
 }
