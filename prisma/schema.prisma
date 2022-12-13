@@ -57,3 +57,15 @@ model Teacher {
   createdAt    DateTime @default(now())
   updateAt     DateTime @updatedAt()
 }
+
+
+model Admin {
+  id           Int      @id @default(autoincrement())
+  username     String   @unique
+  email        String   @unique
+  password     String
+  firstName    String
+  lastName     String
+  createdAt    DateTime @default(now())
+  updateAt     DateTime @updatedAt()
+}
