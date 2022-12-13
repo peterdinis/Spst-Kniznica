@@ -11,6 +11,7 @@ import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { SeedersModule } from '@spst-kniznica-project/backend-libs/seeders';
 import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
+import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
 
 @Module({
   imports: [
@@ -28,7 +29,8 @@ import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logge
     CategoryModule,
     BookingModule,
     QuotesModule,
-    SeedersModule
+    SeedersModule,
+    ChatModule,
   ],
   controllers: [AppController],
   providers: [AppService],
