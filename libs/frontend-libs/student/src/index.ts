@@ -1,1 +1,9 @@
-export * from './lib/frontend-libs-student';
+import StudentLoginForm from "./lib/StudentLoginForm";
+import StudentRegisterForm from "./lib/StudentRegisterForm";
+import StudentProfileInfo from "./lib/StudentProfileInfo";
+
+export {
+    StudentLoginForm,
+    StudentRegisterForm,
+    StudentProfileInfo
+}
