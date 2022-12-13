@@ -1,8 +1,10 @@
-import React from 'react'
+import {ChatWrapper} from "@spst-kniznica-project/frontend-libs/chat"
 
 function ChatPage() {
   return (
-    <div>ChatPage</div>
+    <>
+        <ChatWrapper />
+    </>
   )
 }
 
