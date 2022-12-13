@@ -1,1 +1,5 @@
-export * from './lib/frontend-libs-api';
+import {queryClient} from "./lib/queryClient"
+
+export {
+    queryClient
+}

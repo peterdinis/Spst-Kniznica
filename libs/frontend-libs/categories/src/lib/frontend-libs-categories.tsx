@@ -1,17 +1,8 @@
-import styled from 'styled-components';
-
-/* eslint-disable-next-line */
-export interface FrontendLibsCategoriesProps {}
-
-const StyledFrontendLibsCategories = styled.div`
-  color: pink;
-`;
-
-export function FrontendLibsCategories(props: FrontendLibsCategoriesProps) {
+export function FrontendLibsCategories() {
   return (
-    <StyledFrontendLibsCategories>
+    <div>
       <h1>Welcome to FrontendLibsCategories!</h1>
-    </StyledFrontendLibsCategories>
+    </div>
   );
 }
 
