@@ -4,7 +4,6 @@ import { SeedersService } from './seeders.service';
 
 @Module({
   controllers: [SeedersController],
-  providers: [SeedersService],
-  exports: [],
+  providers: [SeedersService]
 })
 export class SeedersModule {}
