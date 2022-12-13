@@ -4,6 +4,8 @@ import DisplayAllBooks from './lib/books/DisplayAllBooks';
 import GetOneBook from './lib/books/GetOneBook';
 import DisplayAllCategories from './lib/categories/DisplayAllCategories';
 import GetOneCategory from './lib/categories/GetOneCategory';
+import CreateNewBook from './lib/books/CreateNewBook';
+import CreateNewCategory from './lib/categories/CreateNewCategory';
 
 
 export {
@@ -12,5 +14,7 @@ export {
     DisplayAllBooks,
     GetOneBook,
     DisplayAllCategories,
-    GetOneCategory
+    GetOneCategory,
+    CreateNewCategory,
+    CreateNewBook
 }

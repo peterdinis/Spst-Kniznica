@@ -1,17 +1,10 @@
-import styled from 'styled-components';
+import { Header } from '@spst-kniznica-project/frontend-libs/shared';
 
-/* eslint-disable-next-line */
-export interface FrontendLibsBooksProps {}
-
-const StyledFrontendLibsBooks = styled.div`
-  color: pink;
-`;
-
-export function AllBooks(props: FrontendLibsBooksProps) {
+export function AllBooks() {
   return (
-    <StyledFrontendLibsBooks>
-      <h1>Welcome to FrontendLibsBooks!</h1>
-    </StyledFrontendLibsBooks>
+    <>
+      <Header name="Všetky Knihy" />
+    </>
   );
 }
 
