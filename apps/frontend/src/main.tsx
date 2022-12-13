@@ -1,4 +1,3 @@
-import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import './app/app.module.css';
 import App from './app/app';
@@ -15,13 +14,11 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <App />
-        <ReactQueryDevtools initialIsOpen={false} />
-        <ToastContainer />
-      </BrowserRouter>
-    </QueryClientProvider>
-  </StrictMode>
+  <QueryClientProvider client={queryClient}>
+    <BrowserRouter>
+      <App />
+      <ReactQueryDevtools initialIsOpen={false} />
+      <ToastContainer />
+    </BrowserRouter>
+  </QueryClientProvider>
 );
