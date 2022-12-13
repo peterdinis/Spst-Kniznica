@@ -1,15 +1,10 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app/app.module';
 import helmet from "helmet";
-import { WsAdapter } from '@nestjs/platform-ws';
 import {NestExpressApplication} from "@nestjs/platform-express";
+import { SocketAdapter } from './socket';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -21,7 +16,7 @@ async function bootstrap() {
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   app.use(helmet());
-  app.useWebSocketAdapter(new WsAdapter(app));
+  app.useWebSocketAdapter(new SocketAdapter(app));
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
