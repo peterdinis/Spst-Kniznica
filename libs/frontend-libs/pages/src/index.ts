@@ -6,7 +6,7 @@ import DisplayAllCategories from './lib/categories/DisplayAllCategories';
 import GetOneCategory from './lib/categories/GetOneCategory';
 import CreateNewBook from './lib/books/CreateNewBook';
 import CreateNewCategory from './lib/categories/CreateNewCategory';
-
+import ChatPage from "./lib/chat/ChatPage"
 
 export {
     Aboutpage,
@@ -16,5 +16,6 @@ export {
     DisplayAllCategories,
     GetOneCategory,
     CreateNewCategory,
-    CreateNewBook
+    CreateNewBook,
+    ChatPage
 }
