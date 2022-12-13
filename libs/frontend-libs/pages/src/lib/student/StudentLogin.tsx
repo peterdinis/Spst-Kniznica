@@ -1,8 +1,11 @@
 import React from 'react'
+import {StudentLoginForm} from "@spst-kniznica-project/frontend-libs/student"
 
 function StudentLogin() {
   return (
-    <div>StudentLogin</div>
+    <>
+      <StudentLoginForm />
+    </>
   )
 }
 
