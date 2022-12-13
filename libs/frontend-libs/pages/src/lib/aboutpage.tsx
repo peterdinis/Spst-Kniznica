@@ -1,8 +1,10 @@
-import React from 'react'
+import AboutWrapper from '@spst-kniznica-project/frontend-libs/about'
 
 function Aboutpage() {
   return (
-    <div>aboutpage</div>
+    <>
+      <AboutWrapper />
+    </>
   )
 }
 

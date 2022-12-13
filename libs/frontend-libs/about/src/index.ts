@@ -1,1 +1,3 @@
-export * from './lib/frontend-libs-about';
+import AboutWrapper from "./lib/AboutWrapper";
+
+export default AboutWrapper
