@@ -78,6 +78,9 @@
       "@spst-kniznica-project/frontend-libs/pages": [
         "libs/frontend-libs/pages/src/index.ts"
       ],
+      "@spst-kniznica-project/frontend-libs/quotes": [
+        "libs/frontend-libs/quotes/src/index.ts"
+      ],
       "@spst-kniznica-project/frontend-libs/shared": [
         "libs/frontend-libs/shared/src/index.ts"
       ],
