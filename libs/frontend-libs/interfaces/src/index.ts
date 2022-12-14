@@ -1,1 +1,1 @@
-export * from './lib/frontend-libs-interfaces';
+export * from "./lib/IMessageContent"

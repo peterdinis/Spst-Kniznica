@@ -1,6 +1,7 @@
 import React from 'react'
 import {Socket} from "socket.io-client"
 import ScrollToBottom from "react-scroll-to-bottom";
+import { IMessageContent } from '@spst-kniznica-project/frontend-libs/interfaces';
 
 interface IProps {
     username: string,
@@ -45,7 +46,7 @@ function ChatForm({username, room, socket}: IProps) {
       </div>
       <div className="h-5/6 border  border-black bg-white relative">
         <ScrollToBottom className="h-full w-full overflow-y-scroll overflow-x-hidden snap-none">
-          {messageList.map((messageContent: any) => {
+          {messageList.map((messageContent: IMessageContent) => {
             return (
               <div
                 className={
