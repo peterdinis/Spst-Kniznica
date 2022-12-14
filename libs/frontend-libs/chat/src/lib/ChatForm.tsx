@@ -26,7 +26,7 @@ function ChatForm({username, room, socket}: IProps) {
           };
     
           await socket.emit("chatToServer", messageData);
-          // setMessageList((list) => [...list, messageData]);
+          setMessageList((list: any) => [...list, messageData]);
           setCurrentMessage("");
         }
       };

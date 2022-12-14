@@ -24,7 +24,7 @@ function ChatWrapper() {
             <div className="flex h-96 lg:w-1/4 sm:w-2/4 mx-auto my-auto bg-white rounded-xl shadow-lg  py-12 px-4 sm:px-6 lg:px-8">
               <div className="w-full">
                 <h1 className="text-xl font-medium text-black text-center">
-                  Join A Chat
+                  Chat s Adminami
                 </h1>
                 <div className="flex flex-col ">
                   <label className="text-xl mt-3">Name</label>
@@ -49,7 +49,7 @@ function ChatWrapper() {
                     className="mt-3 block bg-indigo-600 text-xl font-bold  text-white p-2"
                     onClick={joinRoom}
                   >
-                    Join
+                    Vstúp do chatu
                   </button>
                 </div>
               </div>
