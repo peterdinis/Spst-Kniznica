@@ -3,7 +3,9 @@ import { io } from 'socket.io-client';
 import ChatForm from './ChatForm';
 
 function ChatWrapper() {
-  const socket = io('http://localhost:3333/api/chat');
+  const socket = io('http://localhost:3333/api/chat', {
+    transports: ["websocket"]
+  });
 
   const [name, setName] = React.useState('');
   const [room, setRoom] = React.useState('');
