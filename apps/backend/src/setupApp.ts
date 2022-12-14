@@ -4,9 +4,10 @@ import helmet from "helmet";
 import { SocketAdapter } from './socket';
 
 async function setupApp(app: INestApplication) {
+
 app.enableCors({
     methods: '*',
-    allowedHeaders: '*',
+    allowedHeaders: '*',    
   });
   
   const globalPrefix = 'api';

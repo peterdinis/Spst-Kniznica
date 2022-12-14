@@ -7,6 +7,10 @@ import GetOneCategory from './lib/categories/GetOneCategory';
 import CreateNewBook from './lib/books/CreateNewBook';
 import CreateNewCategory from './lib/categories/CreateNewCategory';
 import ChatPage from "./lib/chat/ChatPage"
+import UpdateBook from './lib/books/UpdateBook';
+import UpdateCategory from './lib/categories/UpdateCategory';
+import NotFoundPage from './lib/NotFoundPage';
+import ReturnBook from './lib/booking/ReturnBook';
 
 export {
     Aboutpage,
@@ -17,5 +21,9 @@ export {
     GetOneCategory,
     CreateNewCategory,
     CreateNewBook,
-    ChatPage
+    ChatPage,
+    UpdateBook,
+    UpdateCategory,
+    NotFoundPage,
+    ReturnBook,
 }
