@@ -72,6 +72,9 @@
       "@spst-kniznica-project/frontend-libs/hooks": [
         "libs/frontend-libs/hooks/src/index.ts"
       ],
+      "@spst-kniznica-project/frontend-libs/interfaces": [
+        "libs/frontend-libs/interfaces/src/index.ts"
+      ],
       "@spst-kniznica-project/frontend-libs/pages": [
         "libs/frontend-libs/pages/src/index.ts"
       ],
