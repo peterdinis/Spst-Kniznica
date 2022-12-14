@@ -1,9 +1,9 @@
 import CreateNewBookForm from './lib/CreateNewBookForm';
+import GetAllBooks from './lib/GetAllBooks';
 import GetOneBookDisplay from './lib/GetOneBookDisplay';
 
-export * from './lib/frontend-libs-books';
-
 export {
+    GetAllBooks,
     GetOneBookDisplay,
     CreateNewBookForm
 }

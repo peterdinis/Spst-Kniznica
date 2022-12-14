@@ -1,10 +1,9 @@
-import { AllBooks } from '@spst-kniznica-project/frontend-libs/books'
-import React from 'react'
+import {GetAllBooks} from "@spst-kniznica-project/frontend-libs/books"
 
 function DisplayAllBooks() {
   return (
     <>
-        <AllBooks />
+        <GetAllBooks />
     </>
   )
 }
