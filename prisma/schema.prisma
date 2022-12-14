@@ -69,3 +69,10 @@ model Admin {
   createdAt    DateTime @default(now())
   updateAt     DateTime @updatedAt()
 }
+
+model Chat {
+  id Int      @id @default(autoincrement())
+  name String 
+  description String
+  roomId Int
+}
