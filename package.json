@@ -70,7 +70,8 @@
     "socket.io-client": "^4.5.4",
     "styled-components": "5.3.5",
     "tslib": "^2.3.0",
-    "ws": "^8.11.0"
+    "ws": "^8.11.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
@@ -102,6 +103,7 @@
     "@types/react-router-dom": "^5.3.3",
     "@types/react-scroll-to-bottom": "^4.2.0",
     "@types/styled-components": "5.1.26",
+    "@types/xlsx": "^0.0.36",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "babel-jest": "28.1.1",
