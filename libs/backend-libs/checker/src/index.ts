@@ -1,1 +1,1 @@
-export * from './lib/backend-libs-checker.module';
+export * from './lib/checker.module';
