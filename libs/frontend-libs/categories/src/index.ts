@@ -1,10 +1,10 @@
 import FindOneCategory from './lib/FindOneCategory';
 import CreateNewCategoryForm from "./lib/CreateNewCategoryForm"
-import DisplayAllCategories from "./lib/DisplayAllCategories"
+import AllCategories from "./lib/AllCategories"
 
 
 export {
     CreateNewCategoryForm,
     FindOneCategory,
-    DisplayAllCategories
+    AllCategories
 }

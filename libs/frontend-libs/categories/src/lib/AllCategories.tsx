@@ -5,7 +5,7 @@ import * as api from 'libs/frontend-libs/api/src/lib/queries/categoryQueries';
 import {SearchCategoryVal, ICategory} from "libs/frontend-libs/api/src/lib/interfaces/ICategory";
 import ScrollToTop from "libs/frontend-libs/hooks/src/lib/useScroll";
 
-function DisplayAllCategories() {
+function AllCategories() {
 
   const { data, isError } = useQuery(['categories'], api.getCategories);
   console.log(data);
@@ -31,7 +31,7 @@ function DisplayAllCategories() {
         <div className="w-full mt-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {data &&
             data  // eslint-disable-next-line array-callback-return
-            .filter((val: SearchCategoryVal) => {
+          /*   .filter((val: SearchCategoryVal) => {
               if (searchTerm === "") {
                 return val;
               } else if (
@@ -43,7 +43,7 @@ function DisplayAllCategories() {
               ) {
                 return val;
               }
-            }).map((item: ICategory) => {
+            }) */.map((item: ICategory) => {
               return (
                 <>
                   <div className="bg-whiterounded py-5 pl-6 flex items-start shadow">
@@ -69,4 +69,4 @@ function DisplayAllCategories() {
   )
 }
 
-export default DisplayAllCategories;
+export default AllCategories;
