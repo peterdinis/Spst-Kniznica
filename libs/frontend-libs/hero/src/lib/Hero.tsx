@@ -1,4 +1,5 @@
 import DateTimePicker from 'libs/frontend-libs/shared/src/lib/DateTimePicker';
+import InternetStatus from './InternetStatus';
 import RandomQuote from './RandomQoute';
 import ServiceStatus from './ServiceStatus';
 
@@ -33,6 +34,9 @@ function Hero() {
 
           <div className="ml-4">
             <ServiceStatus />
+          </div>
+          <div className="ml-4">
+            <InternetStatus />
           </div>
         </div>
       </div>

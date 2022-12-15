@@ -58,7 +58,6 @@ model Teacher {
   updateAt     DateTime @updatedAt()
 }
 
-
 model Admin {
   id           Int      @id @default(autoincrement())
   username     String   @unique
