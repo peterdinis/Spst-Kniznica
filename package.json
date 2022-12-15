@@ -17,6 +17,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.4",
+    "@hookform/resolvers": "^2.9.10",
     "@lyrasearch/lyra": "^0.3.1",
     "@mui/icons-material": "^5.10.15",
     "@mui/material": "^5.10.15",
@@ -72,7 +73,8 @@
     "styled-components": "5.3.5",
     "tslib": "^2.3.0",
     "ws": "^8.11.0",
-    "xlsx": "^0.18.5"
+    "xlsx": "^0.18.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
