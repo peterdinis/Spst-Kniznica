@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from "@nestjs/common";
 import { ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
-import { StudentD } from "./decorators/student.decorator";
+import { MyProfile } from "./decorators/student.decorator";
 import { CreateNewStudentDto } from "./dto/create-student-dto";
 import { LoginStudentDto } from "./dto/login-student-dto";
 import { StudentService } from "./student.service";
@@ -44,7 +44,7 @@ export class StudentController {
     @ApiOkResponse()
     @Get("/profile")
     async myProfile(
-        @StudentD() student: AuthUser
+        @MyProfile() student: AuthUser
     ) {
         return student;
     }

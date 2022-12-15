@@ -107,7 +107,7 @@ export class StudentService {
     return user === null;
   }
 
-  async myProfile() {
-    return;
-  }
+  async updateStudentProfile() {}
+
+  async deleteStudentProfile() {}
 }

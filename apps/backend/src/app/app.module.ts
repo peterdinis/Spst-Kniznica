@@ -1,4 +1,4 @@
-import { MiddlewareConsumer, Module } from '@nestjs/common';
+import { CacheModule, MiddlewareConsumer, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { BooksModule } from '@spst-kniznica-project/backend-libs/books';
 import { PrismaModule} from '@spst-kniznica-project/backend-libs/database';
@@ -17,6 +17,7 @@ import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
 
 @Module({
   imports: [
+    CacheModule.register(),
     CategoryModule,
     BooksModule,
     ConfigModule.forRoot({
