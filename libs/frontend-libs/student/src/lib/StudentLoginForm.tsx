@@ -1,8 +1,10 @@
 import React from 'react'
-
+import { Header } from '@spst-kniznica-project/frontend-libs/shared';
 function StudentLoginForm() {
   return (
-    <div>StudentLoginForm</div>
+    <>
+      <Header name="Prihlásenie žiak" />
+    </>
   )
 }
 

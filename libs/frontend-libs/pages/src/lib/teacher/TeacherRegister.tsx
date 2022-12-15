@@ -1,8 +1,11 @@
+import { Header } from '@spst-kniznica-project/frontend-libs/shared'
 import React from 'react'
 
 function TeacherRegister() {
   return (
-    <div>TeacherRegister</div>
+    <>
+      <Header name="Registrácia učiteľ"/> 
+    </>
   )
 }
 
