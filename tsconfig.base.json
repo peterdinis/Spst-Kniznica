@@ -21,6 +21,9 @@
       "@spst-kniznica-project/backend-libs/books": [
         "libs/backend-libs/books/src/index.ts"
       ],
+      "@spst-kniznica-project/backend-libs/cache": [
+        "libs/backend-libs/cache/src/index.ts"
+      ],
       "@spst-kniznica-project/backend-libs/casl": [
         "libs/backend-libs/casl/src/index.ts"
       ],

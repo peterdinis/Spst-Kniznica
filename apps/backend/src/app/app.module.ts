@@ -13,6 +13,7 @@ import { SeedersModule } from '@spst-kniznica-project/backend-libs/seeders';
 import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
 import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
 import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
+import { ApiCachceModule } from '@spst-kniznica-project/backend-libs/cache';
 
 
 @Module({
@@ -34,7 +35,8 @@ import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
     QuotesModule,
     SeedersModule,
     ChatModule,
-    CheckerModule
+    CheckerModule,
+    ApiCachceModule
   ],
   controllers: [AppController],
   providers: [AppService],
