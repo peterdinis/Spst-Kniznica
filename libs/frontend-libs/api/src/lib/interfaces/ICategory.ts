@@ -4,4 +4,4 @@ export interface ICategory {
     description: string;
 }
 
-export type SearchVal = Pick<ICategory, 'name' | 'description'>;
+export type SearchCategoryVal = Pick<ICategory, 'name' | 'description'>;
