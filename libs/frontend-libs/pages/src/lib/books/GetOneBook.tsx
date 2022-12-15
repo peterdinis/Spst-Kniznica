@@ -1,8 +1,10 @@
-import React from 'react'
+import { GetOneBookDisplay } from '@spst-kniznica-project/frontend-libs/books'
 
 function GetOneBook() {
   return (
-    <div>GetOneBook</div>
+    <>
+      <GetOneBookDisplay />
+    </>
   )
 }
 

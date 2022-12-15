@@ -2,7 +2,9 @@ import React from 'react'
 
 function GetOneBookDisplay() {
   return (
-    <div>GetOneBookDisplay</div>
+    <>
+      PING
+    </>
   )
 }
 

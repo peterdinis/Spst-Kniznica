@@ -1,8 +1,10 @@
-import React from 'react'
+import { Header } from '@spst-kniznica-project/frontend-libs/shared'
 
 function DisplayAllCategories() {
   return (
-    <div>DisplayAllCategories</div>
+    <>
+      <Header name="Všetky Kategórie" />
+    </>
   )
 }
 
