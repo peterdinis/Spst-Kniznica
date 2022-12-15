@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env["BACKEND_URL"] as string
+  baseURL: "http://localhost:3333/api/"
 });
 
 export const getCategories = () => api.get("category").then((res) => res.data);

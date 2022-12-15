@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '@spst-kniznica-project/frontend-libs/shared';
+import { FallbackRender, Header } from '@spst-kniznica-project/frontend-libs/shared';
 import {
   useQuery,
   useQueryErrorResetBoundary,
@@ -10,6 +10,8 @@ import { ErrorBoundary } from "react-error-boundary";
 import * as api from "libs/frontend-libs/api/src/lib/queries/bookQueries";
 import Button from '@mui/material/Button';
 import {IBook, SearchVal} from "libs/frontend-libs/api/src/lib/interfaces/IBook";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import ScrollToTop from "libs/frontend-libs/hooks/src/lib/useScroll";
 
 export function AllBooks() {
   const { reset } = useQueryErrorResetBoundary();
@@ -27,7 +29,85 @@ export function AllBooks() {
 
   return (
     <>
-      <Header name="Všetky Knihy" />
+      <ErrorBoundary
+        onReset={reset}
+        fallbackRender={({ resetErrorBoundary }) => (
+          <div>
+            <FallbackRender error="Chyba pri načítavaní knih " />
+            <Button onClick={() => resetErrorBoundary()}>Skúsiť znova</Button>
+          </div>
+        )}
+      >
+        <Header name="Všetky knihy" />
+        <div className="flex justify-center align-top">
+          <input
+            onChange={valChange}
+            className="text-gray-600 mt-4 dark:text-gray-400 focus:outline-none focus:border focus:border-indigo-700 dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border shadow"
+            placeholder="Hľadaj knihu"
+          />
+        </div>
+        <section>
+        </section>
+        <div className="grid gap-8 space-x-1 lg:grid-cols-6">
+          <>
+            {data &&
+              data
+              /* TODO: Fix search fn */
+               /*  .filter((val: SearchVal) => {
+                  if (searchTerm === "") {
+                    return val;
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
+                    return val;
+                  } else if (
+                    val.author.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
+                    return val;
+                  } 
+                }) */
+                .map((item: IBook) => {
+                  return (
+                    <>
+                      <div key={item.id} className="px-4 py-4 mt-4 bg-white">
+                        <span>
+                          {item.image === "" ||
+                          item.image === null ||
+                          item.image === undefined ||
+                          item.image === "string" ? (
+                            <LazyLoadImage
+                              alt="Placeholder"
+                              className="h-auto w-full"
+                              src="https://bitsofco.de/content/images/2018/12/broken-1.png"
+                            />
+                          ) : (
+                            <LazyLoadImage
+                              alt="Placeholder"
+                              className="h-auto w-full"
+                              src={item.image}
+                            />
+                          )}
+                        </span>
+                        <h3 className="text-2xl text-center text-gray-800">
+                          
+                          {item.name} - {item.author} 
+                        </h3>
+                        <div className="text-center mt-4">
+                          <Link
+                            className="link mt-10 bg-blue-200 p-2 rounded"
+                            to={`/book/${item.id}`}
+                          >
+                            Detail Knihy
+                          </Link>
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
+          </>
+        </div>
+        <ScrollToTop />
+      </ErrorBoundary>
     </>
   );
 }
