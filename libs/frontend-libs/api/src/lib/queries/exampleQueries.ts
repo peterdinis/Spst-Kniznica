@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios from 'axios';
 
 const api = axios.create({
-  baseURL: "http://localhost:3333/"
+  baseURL: 'http://localhost:3333/',
 });
 
-export const getBooks = () => api.get("api").then((res) => res.data);
+export const getServiceStatus = () => api.get('api').then((res) => res.data);

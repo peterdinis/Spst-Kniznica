@@ -1,10 +1,11 @@
-import DateTimePicker from "libs/frontend-libs/shared/src/lib/DateTimePicker"
-import RandomQuote from "./RandomQoute"
+import DateTimePicker from 'libs/frontend-libs/shared/src/lib/DateTimePicker';
+import RandomQuote from './RandomQoute';
+import ServiceStatus from './ServiceStatus';
 
 function Hero() {
   return (
     <>
-    <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
+      <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
         <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
           <img
             className="mx-auto"
@@ -29,9 +30,13 @@ function Hero() {
               <a href="/books">Všetky Knihy</a>
             </button>
           </div>
+
+          <div className="ml-4">
+            <ServiceStatus />
+          </div>
         </div>
       </div>
-    </>  
+    </>
   );
 }
 
