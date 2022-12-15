@@ -1,8 +1,9 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable, NotFoundException, Inject, CACHE_MANAGER } from "@nestjs/common";
 import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
 import { CreateBookDto } from "./dto/create-book-dto";
 import { UpdateBookDto } from "./dto/update-book-dto";
 import {PageOptionsDto} from "@spst-kniznica-project/backend-libs/shared"
+import { Cache } from 'cache-manager';
 
 @Injectable()
 export class BooksService {
