@@ -5,10 +5,11 @@ import {GET_POSTS_CACHE_KEY} from "libs/backend-libs/shared/src/lib/constants/ca
 export class ApiCachceService {
     constructor(@Inject(CACHE_MANAGER) private cacheManager: Cache) {}
     async clearCache() {
-        const keys: string[] = await this.cacheManager.store.keys();
-        keys.forEach((key) => {
+        /* TODO: Later remove any */
+        const appKeys: any = await this.cacheManager.keys();
+        appKeys.forEach((key: string) => {
           if (key.startsWith(GET_POSTS_CACHE_KEY)) {
-            this.cacheManager.del(key);
+            this.cacheManager.delete(appKeys);
           }
         })
       }

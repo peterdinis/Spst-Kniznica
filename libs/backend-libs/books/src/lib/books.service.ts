@@ -1,13 +1,16 @@
-import { Injectable, NotFoundException, Inject, CACHE_MANAGER } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
 import { CreateBookDto } from "./dto/create-book-dto";
 import { UpdateBookDto } from "./dto/update-book-dto";
-import {PageOptionsDto} from "@spst-kniznica-project/backend-libs/shared"
-import { Cache } from 'cache-manager';
+import {PageOptionsDto} from "@spst-kniznica-project/backend-libs/shared";
+import { ApiCachceService } from "@spst-kniznica-project/backend-libs/cache";
 
 @Injectable()
 export class BooksService {
-    constructor(private readonly prismaService: PrismaService) {}
+    constructor(
+        private readonly prismaService: PrismaService,
+        private readonly apiCacheService: ApiCachceService
+    ) {}
 
     async findAllBooks() {
         const allBooks = await this.prismaService.book.findMany();
@@ -40,7 +43,7 @@ export class BooksService {
                 image: bookData.image
             }
         })
-
+        await this.apiCacheService.clearCache();
         return newBook;
     }
 
@@ -70,7 +73,7 @@ export class BooksService {
         if(!updateBook) {
             throw new NotFoundException("Book not found")
         }
-
+        await this.apiCacheService.clearCache();
         return updateBook;
     }
 
@@ -84,7 +87,7 @@ export class BooksService {
         if(!oneBook) {
             throw new NotFoundException("Book not found");
         }
-
+        await this.apiCacheService.clearCache();
         return oneBook;
     }
 }

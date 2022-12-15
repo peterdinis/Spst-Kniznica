@@ -1,10 +1,14 @@
 import { BadRequestException, Injectable, NotFoundException } from '@nestjs/common';
+import { ApiCachceService } from '@spst-kniznica-project/backend-libs/cache';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateCategoryDto } from './dto/create-new-category.dto';
 
 @Injectable()
 export class CategoryService {
-  constructor(private readonly prismaService: PrismaService) {}
+  constructor(
+    private readonly prismaService: PrismaService,
+    private readonly apiCacheService: ApiCachceService
+  ) {}
 
   async findAllCategories() {
     const allCategories = await this.prismaService.category.findMany();
@@ -19,7 +23,8 @@ export class CategoryService {
           description: categoryDto.description,
         },
       });
-
+      
+      await this.apiCacheService.clearCache();
       return createNewBook;
     } catch (e) {
       throw new BadRequestException(e);
