@@ -18,7 +18,9 @@ import { ApiCachceModule } from '@spst-kniznica-project/backend-libs/cache';
 
 @Module({
   imports: [
-    CacheModule.register(),
+    CacheModule.register({
+      isGlobal: true
+    }),
     CategoryModule,
     BooksModule,
     ConfigModule.forRoot({
