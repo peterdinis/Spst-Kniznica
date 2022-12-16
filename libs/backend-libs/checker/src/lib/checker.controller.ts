@@ -17,13 +17,31 @@ export class CheckerController {
   ) {}
 
   @ApiOperation({
-    summary: "Example check for package nestjs/terminus"
+    summary: 'Example check for package nestjs/terminus',
   })
   @Get('example')
   @HealthCheck()
   check() {
     return this.health.check([
       () => this.http.pingCheck('nestjs-docs', 'https://docs.nestjs.com'),
+    ]);
+  }
+
+  @ApiOperation({
+    summary: 'Check database status',
+  })
+  @Get('database')
+  checkDB() {
+    return this.health.check([() => this.db.isHealthy('database')]);
+  }
+
+  @ApiOperation({
+    summary: "Check SPŠT Knižnica website status"
+  })
+  @Get("spst")
+  checkSpst() {
+    return this.health.check([
+      () => this.http.pingCheck('spst-website', 'https://www.spsbj.sk/'),
     ]);
   }
 }
