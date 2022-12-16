@@ -1,8 +1,12 @@
 import { Injectable } from "@nestjs/common";
+import { CreateRoomDto } from "./dto/create-room-dto";
+import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
 
 @Injectable()
 export class ChatService {
-    async createNewRoom() {
+    constructor(private readonly prismaService: PrismaService) {}
+    
+    async createNewRoom(createRoomDto: CreateRoomDto) {
         return;
     }
 
