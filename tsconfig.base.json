@@ -72,6 +72,9 @@
       "@spst-kniznica-project/frontend-libs/chat": [
         "libs/frontend-libs/chat/src/index.ts"
       ],
+      "@spst-kniznica-project/frontend-libs/data": [
+        "libs/frontend-libs/data/src/index.ts"
+      ],
       "@spst-kniznica-project/frontend-libs/hero": [
         "libs/frontend-libs/hero/src/index.ts"
       ],
