@@ -75,3 +75,10 @@ model Chat {
   description String
   roomId Int
 }
+
+model SocialUser {
+  id    Int     @default(autoincrement()) @id
+  name String
+  email String
+  image String
+}

@@ -14,6 +14,7 @@ import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logge
 import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
 import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
 import { ApiCachceModule } from '@spst-kniznica-project/backend-libs/cache';
+import { SocialModule } from '@spst-kniznica-project/backend-libs/social';
 
 
 @Module({
@@ -38,7 +39,8 @@ import { ApiCachceModule } from '@spst-kniznica-project/backend-libs/cache';
     SeedersModule,
     ChatModule,
     CheckerModule,
-    ApiCachceModule
+    ApiCachceModule,
+    SocialModule
   ],
   controllers: [AppController],
   providers: [AppService],
