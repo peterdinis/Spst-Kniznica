@@ -31,5 +31,9 @@ export class CaslAbilityFactory {
         builder.can(Action.UpdateCategory, "all");
         return builder;
     }
+
+    defineAbilityForAdmin() {
+        return
+    }
 }
 
