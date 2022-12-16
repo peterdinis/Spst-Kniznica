@@ -5,13 +5,15 @@ import {
   HttpHealthIndicator,
   HealthCheck,
 } from '@nestjs/terminus';
+import { PrismaHealthIndicator } from './prisma-check.service';
 
 @ApiTags('Checkers')
 @Controller('checker')
 export class CheckerController {
   constructor(
     private health: HealthCheckService,
-    private http: HttpHealthIndicator
+    private http: HttpHealthIndicator,
+    private db: PrismaHealthIndicator
   ) {}
 
   @ApiOperation({
