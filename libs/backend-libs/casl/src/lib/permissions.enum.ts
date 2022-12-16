@@ -1,7 +1,10 @@
 export enum Action {
-    Manage = "manage",
-    Create = "create",
-    Read = "read",
-    Update = "update",
-    Delete = "delete"
+    ManageBook = "ManageBook",
+    CreateBook = "CreateBook",
+    UpdateBook = "UpdateBook",
+    DeleteBook = "DeleteBook",
+    ManageCategory = "ManageCategory",
+    CreateCategory = "CreateCategory",
+    UpdateCategory = "UpdateCategory",
+    DeleteCategory = "DeleteCategory",
 }

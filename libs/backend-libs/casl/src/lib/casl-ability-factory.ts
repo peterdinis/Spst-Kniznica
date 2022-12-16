@@ -8,19 +8,27 @@ import {TeacherAbility, StudentAbility} from "./casl-types";
 export class CaslAbilityFactory {
     defineAbilityForStudent() {
         const builder = new AbilityBuilder(PureAbility as AbilityClass<TeacherAbility>);
-        builder.can(Action.Manage, "all"); // TODO: Update this
-        builder.cannot(Action.Create, "all");
-        builder.cannot(Action.Update, "all");
-        builder.cannot(Action.Delete, "all");
+        builder.can(Action.ManageBook, "all");
+        builder.cannot(Action.CreateBook, "all");
+        builder.cannot(Action.UpdateBook, "all");
+        builder.cannot(Action.DeleteBook, "all");
+        builder.can(Action.ManageCategory, "all");
+        builder.cannot(Action.CreateCategory, "all");
+        builder.cannot(Action.DeleteCategory, "all");
+        builder.cannot(Action.UpdateCategory, "all");
         return builder;
     }
 
     defineAbilityForTeacher() {
         const builder = new AbilityBuilder(PureAbility as AbilityClass<StudentAbility>);
-        builder.can(Action.Manage, "all");// TODO: Update this
-        builder.can(Action.Create, "all");
-        builder.can(Action.Update, "all");
-        builder.can(Action.Delete, "all");
+        builder.can(Action.ManageBook, "all");
+        builder.can(Action.CreateBook, "all");
+        builder.can(Action.UpdateBook, "all");
+        builder.can(Action.DeleteBook, "all");
+        builder.can(Action.ManageCategory, "all");
+        builder.can(Action.CreateCategory, "all");
+        builder.can(Action.DeleteCategory, "all");
+        builder.can(Action.UpdateCategory, "all");
         return builder;
     }
 }
