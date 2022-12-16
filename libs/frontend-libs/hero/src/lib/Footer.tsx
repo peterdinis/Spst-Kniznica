@@ -1,3 +1,6 @@
+import InternetStatus from "./InternetStatus";
+import ServiceStatus from "./ServiceStatus";
+
 function Footer() {
 
     return (

@@ -1,4 +1,3 @@
-import React from 'react';
 import {useDate} from "libs/frontend-libs/hooks/src/lib/useDate"
 
 function DateTimePicker() {

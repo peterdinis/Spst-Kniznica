@@ -1,15 +1,6 @@
-import React from "react";
 import "./Navbar.css";
-import { Menu, Transition } from "@headlessui/react";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
 
 export default function Navbar() {
-
   return (
     <nav className="nav flex flex-wrap items-center justify-between px-4">
       <div className="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">

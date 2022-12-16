@@ -31,13 +31,6 @@ function Hero() {
               <a href="/books">Všetky Knihy</a>
             </button>
           </div>
-
-          <div className="ml-4">
-            <ServiceStatus />
-          </div>
-          <div className="ml-4">
-            <InternetStatus />
-          </div>
         </div>
       </div>
     </>
