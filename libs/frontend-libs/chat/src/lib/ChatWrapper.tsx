@@ -46,6 +46,7 @@ function ChatWrapper() {
                     className="p-2 mt-3 border border-indigo-600"
                   />
                   <button
+                    disabled
                     className="mt-3 block bg-indigo-600 text-xl font-bold  text-white p-2"
                     onClick={joinRoom}
                   >

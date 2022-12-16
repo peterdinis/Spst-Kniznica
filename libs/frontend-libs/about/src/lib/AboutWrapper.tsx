@@ -14,6 +14,9 @@ function AboutWrapper() {
           iusto temporibus eaque voluptate officiis facere veniam amet
           praesentium id.
         </p>
+        <div className="mt-5 text-center">
+          <a className="text-xl text-red-800" href="/chat">Chat s adminami</a>
+        </div>
       </Paper>
     </>
   );
