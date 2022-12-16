@@ -1,1 +1,2 @@
-export * from './lib/frontend-libs-data';
+/* export * from './lib/frontend-libs-data';
+ */
