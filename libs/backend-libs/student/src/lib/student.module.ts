@@ -6,6 +6,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { StudentGateway } from './student.gateway';
+import {MulterModule} from "@nestjs/platform-express";
 
 @Module({
   imports: [
@@ -18,6 +19,9 @@ import { StudentGateway } from './student.gateway';
         expiresIn: 1000000,
       },
     }),
+    MulterModule.register({
+      dest: './upload',
+    })
   ],
   controllers: [StudentController],
   providers: [StudentService, JwtStrategy, StudentGateway]

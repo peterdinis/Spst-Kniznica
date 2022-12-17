@@ -13,10 +13,15 @@ import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
 import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
 import { ApiCachceModule } from '@spst-kniznica-project/backend-libs/cache';
 import { SocialModule } from '@spst-kniznica-project/backend-libs/social';
-
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 @Module({
   imports: [
+    EventEmitterModule.forRoot(
+      {
+        global: true
+      }
+    ),
     CacheModule.register({
       isGlobal: true
     }),

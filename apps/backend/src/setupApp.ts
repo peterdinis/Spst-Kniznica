@@ -1,7 +1,7 @@
 import { Logger, ValidationPipe, INestApplication } from '@nestjs/common';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import helmet from "helmet";
 import { SocketAdapter } from './socket';
+import { setupSwagger } from './swagger';
 
 async function setupApp(app: INestApplication) {
 
@@ -17,15 +17,8 @@ app.enableCors({
 
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
 
-  const config = new DocumentBuilder()
-    .setTitle('SPŠT Knižnica')
-    .setVersion('1.0')
-    .addBearerAuth()
-    .build();
     
-  const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('docs', app, document);
-
+  setupSwagger(app);
   const port = process.env.PORT || 3333;
   await app.listen(port);
   Logger.log(

@@ -110,4 +110,6 @@ export class StudentService {
   async updateStudentProfile() {}
 
   async deleteStudentProfile() {}
+
+  async uploadProfilePicture() {}
 }
