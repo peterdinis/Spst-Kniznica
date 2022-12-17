@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@spst-kniznica-project/admin-libs/wrapper": [
+        "libs/admin-libs/wrapper/src/index.ts"
+      ],
       "@spst-kniznica-project/backend-libs/booking": [
         "libs/backend-libs/booking/src/index.ts"
       ],
