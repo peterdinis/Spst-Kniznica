@@ -1,8 +1,12 @@
-import React from 'react'
+import { CreateNewBookForm } from '@spst-kniznica-project/frontend-libs/books'
+import { Header } from '@spst-kniznica-project/frontend-libs/shared'
 
 function CreateNewBook() {
   return (
-    <div>CreateNewBook</div>
+    <>
+      <Header name="Vytvorenie novej knihy" />
+      <CreateNewBookForm />
+    </>
   )
 }
 

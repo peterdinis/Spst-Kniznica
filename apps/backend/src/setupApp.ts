@@ -15,10 +15,9 @@ app.enableCors({
   app.use(helmet());
   app.useWebSocketAdapter(new SocketAdapter(app));
 
-  app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
-
-    
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));    
   setupSwagger(app);
+  
   const port = process.env.PORT || 3333;
   await app.listen(port);
   Logger.log(

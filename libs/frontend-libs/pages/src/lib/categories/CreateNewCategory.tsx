@@ -1,8 +1,12 @@
-import React from 'react'
+import { CreateNewCategoryForm } from '@spst-kniznica-project/frontend-libs/categories'
+import { Header } from '@spst-kniznica-project/frontend-libs/shared'
 
 function CreateNewCategory() {
   return (
-    <div>CreateNewCategory</div>
+    <>
+      <Header name="Tvorba novej kategórie" />
+      <CreateNewCategoryForm />
+    </>
   )
 }
 

@@ -7,4 +7,8 @@ export enum Action {
     CreateCategory = "CreateCategory",
     UpdateCategory = "UpdateCategory",
     DeleteCategory = "DeleteCategory",
+    ManageBooking = "ManageBooking",
+    CreateBooking = "CreateBooking",
+    UpdateBooking = "UpdateBooking",
+    DeleteBooking = "DeleteBooking"
 }
