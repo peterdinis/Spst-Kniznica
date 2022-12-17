@@ -6,10 +6,15 @@ import {
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateQuoteDto } from './dto/create-quote.dto';
 import { UpdateQuoteDto } from './dto/update-quote.dto';
+import { ApiCachceService } from '@spst-kniznica-project/backend-libs/cache';
 
 @Injectable()
 export class QuotesService {
-  constructor(private readonly prismaService: PrismaService) {}
+  constructor(
+    private readonly prismaService: PrismaService,
+    private readonly apiCacheService: ApiCachceService
+  
+  ) {}
 
   async findAllQuotes() {
     const allQuotes = await this.prismaService.quote.findMany();
@@ -38,11 +43,40 @@ export class QuotesService {
           text: quoteData.text,
         },
       });
+      await this.apiCacheService.clearCache();
       return createNewQuote;
     } catch (err) {
       throw new BadRequestException(err);
     }
   }
 
-  async updateNewQuote(id: number, quoteData: UpdateQuoteDto) {}
+  async updateNewQuote(id: number, quoteData: UpdateQuoteDto) {
+    const oneQuote = await this.prismaService.quote.update({
+      where: {
+        id
+      },
+
+      data: quoteData
+    })
+
+    if(!oneQuote) {
+      throw new NotFoundException("Qoute not found")
+    }
+    await this.apiCacheService.clearCache();
+    return oneQuote;
+  }
+
+  async deleteQuote(id: number) {
+    const oneQuote = await this.prismaService.quote.delete({
+      where: {
+        id
+      }
+    })
+
+    if(!oneQuote) {
+      throw new NotFoundException("Qoute not found")
+    }
+    await this.apiCacheService.clearCache();
+    return oneQuote;
+  }
 }
