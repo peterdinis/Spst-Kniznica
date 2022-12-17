@@ -1,5 +1,5 @@
+import { DisplayOneQoute } from '@spst-kniznica-project/frontend-libs/quotes';
 import DateTimePicker from 'libs/frontend-libs/shared/src/lib/DateTimePicker';
-import RandomQuote from './RandomQoute';
 
 function Hero() {
   return (
@@ -18,7 +18,7 @@ function Hero() {
           </h1>
           <DateTimePicker />
           <p className="ml-8 text-gray-800 text-xl font-regular mb-8 mt-6">
-            <RandomQuote />
+            <DisplayOneQoute />
           </p>
 
           <div className="ml-8">
