@@ -23,7 +23,7 @@ export class StudentService {
     try {
       const hashedPassword = await bcrypt.hash(registerDto.password, 12);
 
-      const newUser =await this.prismaService.student.create({
+      const newUser = await this.prismaService.student.create({
         data: {
           username: registerDto.username,
           email: registerDto.email,
