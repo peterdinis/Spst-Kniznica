@@ -6,6 +6,6 @@ export class SocialService {
     constructor(private readonly prismaService: PrismaService) {}
 
     async login() {
-        return;
+        /* const findOneUser = await this.prismaService.socialUser.findOne(); */
     }
 }

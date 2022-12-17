@@ -1,7 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
-import {IsString, IsNotEmpty} from "class-validator"
+import { IsNotEmpty, IsString } from "class-validator";
 
-export class CreateCategoryDto {
+export class GoogleLoginDto {
     @ApiProperty()
     @IsString()
     @IsNotEmpty()
@@ -11,4 +11,9 @@ export class CreateCategoryDto {
     @IsString()
     @IsNotEmpty()
     description: string;
+
+    @ApiProperty()
+    @IsString()
+    @IsNotEmpty()
+    image: string;
 }
