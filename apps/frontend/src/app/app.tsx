@@ -15,13 +15,16 @@ import {
   StudentProfile,
   TeacherProfile,
   TeacherRegister,
+  NotFoundPage,
 } from '@spst-kniznica-project/frontend-libs/pages';
-import Navbar from 'libs/frontend-libs/shared/src/lib/Navbar';
+import { Suspense } from 'react';
+import { FallbackLoader, Navbar } from '@spst-kniznica-project/frontend-libs/shared';
 
 export function App() {
   return (
     <>
       <Navbar />
+      <Suspense fallback={<FallbackLoader />}>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<Aboutpage />} />
@@ -38,7 +41,9 @@ export function App() {
         <Route path="/teacher/login" element={<TeacherLogin />} />
         <Route path="/teacher/register" element={<TeacherRegister />} />
         <Route path="/teacher/profile" element={<TeacherProfile />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
+      </Suspense>
     </>
   );
 }
