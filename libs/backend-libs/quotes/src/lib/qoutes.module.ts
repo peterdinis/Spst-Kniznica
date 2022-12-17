@@ -6,7 +6,6 @@ import { QuotesService } from './qoutes.service';
 @Module({
   imports: [PrismaModule],
   controllers: [QuotesController],
-  providers: [QuotesService],
-  exports: [],
+  providers: [QuotesService]
 })
 export class QuotesModule {}
