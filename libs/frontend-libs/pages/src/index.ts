@@ -17,6 +17,7 @@ import TeacherLogin from './lib/teacher/TeacherLogin';
 import TeacherProfile from './lib/teacher/TeacherProfile';
 import TeacherRegister from './lib/teacher/TeacherRegister';
 import StudentRegister from './lib/student/StudentRegister';
+import NotAllowed from './lib/NotAllowed';
 
 export {
     Aboutpage,
@@ -38,4 +39,5 @@ export {
     TeacherLogin,
     TeacherRegister,
     TeacherProfile,
+    NotAllowed
 }
