@@ -1,10 +1,12 @@
 import { Header } from '@spst-kniznica-project/frontend-libs/shared'
-import React from 'react'
+import { TeacherRegisterForm } from '@spst-kniznica-project/frontend-libs/teacher'
+
 
 function TeacherRegister() {
   return (
     <>
       <Header name="Registrácia učiteľ"/> 
+      <TeacherRegisterForm />
     </>
   )
 }
