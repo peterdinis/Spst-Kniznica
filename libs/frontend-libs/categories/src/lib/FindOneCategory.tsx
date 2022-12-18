@@ -1,8 +1,11 @@
+import { Header } from '@spst-kniznica-project/frontend-libs/shared'
 import React from 'react'
 
 function FindOneCategory() {
   return (
-    <div>FindOneCategory</div>
+    <>
+      <Header name="Detail Kategórie" />
+    </>
   )
 }
 

@@ -1,8 +1,11 @@
+import { FindOneCategory } from '@spst-kniznica-project/frontend-libs/categories'
 import React from 'react'
 
 function GetOneCategory() {
   return (
-    <div>GetOneCategory</div>
+    <>
+      <FindOneCategory />
+    </>
   )
 }
 
