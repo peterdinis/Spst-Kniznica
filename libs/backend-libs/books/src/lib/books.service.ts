@@ -46,9 +46,10 @@ export class BooksService {
           publisher: bookData.publisher,
           year: bookData.year,
           image: bookData.image,
+          status: bookData.status,
         },
       });
-      await this.apiCacheService.clearCache();
+      /* await this.apiCacheService.clearCache(); */
       return newBook;
     } catch (err) {
       throw new BadRequestException(err);

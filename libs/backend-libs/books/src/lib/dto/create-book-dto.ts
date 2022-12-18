@@ -23,6 +23,11 @@ export class CreateBookDto {
     image: string;
 
     @ApiProperty()
+    @IsString()
+    @IsNotEmpty()
+    status: string;
+
+    @ApiProperty()
     @IsNumber()
     @IsNotEmpty()
     year: number;
