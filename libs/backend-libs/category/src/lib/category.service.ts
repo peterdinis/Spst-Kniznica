@@ -28,8 +28,6 @@ export class CategoryService {
           description: categoryDto.description,
         },
       });
-
-      await this.apiCacheService.clearCache();
       return createNewBook;
     } catch (e) {
       throw new BadRequestException(e);

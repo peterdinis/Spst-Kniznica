@@ -49,7 +49,6 @@ export class BooksService {
           status: bookData.status,
         },
       });
-      /* await this.apiCacheService.clearCache(); */
       return newBook;
     } catch (err) {
       throw new BadRequestException(err);
