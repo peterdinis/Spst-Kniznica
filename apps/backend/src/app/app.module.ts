@@ -14,6 +14,7 @@ import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
 import { ApiCachceModule } from '@spst-kniznica-project/backend-libs/cache';
 import { SocialModule } from '@spst-kniznica-project/backend-libs/social';
 import { EventEmitterModule } from '@nestjs/event-emitter';
+import { AdminModule } from '@spst-kniznica-project/backend-libs/admin';
 
 @Module({
   imports: [
@@ -43,7 +44,8 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
     ChatModule,
     CheckerModule,
     ApiCachceModule,
-    SocialModule
+    SocialModule,
+    AdminModule
   ]
 })
 export class AppModule {
