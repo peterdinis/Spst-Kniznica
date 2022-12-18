@@ -1,7 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import {Action} from "./permissions.enum"
 import {PureAbility, AbilityBuilder, AbilityClass} from "@casl/ability"
-import {TeacherAbility, StudentAbility} from "./casl-types";
+import {TeacherAbility, StudentAbility, AdminAbility} from "./casl-types";
 
 
 @Injectable()
@@ -33,7 +33,16 @@ export class CaslAbilityFactory {
     }
 
     defineAbilityForAdmin() {
-        return
+        const builder = new AbilityBuilder(PureAbility as AbilityClass<AdminAbility>);
+        builder.can(Action.ManageBook, "all");
+        builder.can(Action.CreateBook, "all");
+        builder.can(Action.UpdateBook, "all");
+        builder.can(Action.DeleteBook, "all");
+        builder.can(Action.ManageCategory, "all");
+        builder.can(Action.CreateCategory, "all");
+        builder.can(Action.DeleteCategory, "all");
+        builder.can(Action.UpdateCategory, "all");
+        return builder;
     }
 }
 
