@@ -18,6 +18,9 @@
       "@spst-kniznica-project/admin-libs/wrapper": [
         "libs/admin-libs/wrapper/src/index.ts"
       ],
+      "@spst-kniznica-project/backend-libs/admin": [
+        "libs/backend-libs/admin/src/index.ts"
+      ],
       "@spst-kniznica-project/backend-libs/booking": [
         "libs/backend-libs/booking/src/index.ts"
       ],
