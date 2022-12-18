@@ -30,20 +30,7 @@ function AllCategories() {
 
         <div className="w-full mt-10 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {data &&
-            data  // eslint-disable-next-line array-callback-return
-          /*   .filter((val: SearchCategoryVal) => {
-              if (searchTerm === "") {
-                return val;
-              } else if (
-                val.name.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              } else if (
-                val.description.toLowerCase().includes(searchTerm.toLowerCase())
-              ) {
-                return val;
-              }
-            }) */.map((item: ICategory) => {
+            data.map((item: ICategory) => {
               return (
                 <>
                   <div className="bg-whiterounded py-5 pl-6 flex items-start shadow">

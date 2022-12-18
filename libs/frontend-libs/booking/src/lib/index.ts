@@ -1,1 +1,5 @@
-export * from "./queryClient"
+import BorrowModal from "./BorrowModal";
+
+export {
+    BorrowModal
+}

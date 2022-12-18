@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useQuery } from '@tanstack/react-query';
 import {placeholderBook} from "libs/frontend-libs/data/src/lib/placeholderBook";
+import { BorrowModal } from '@spst-kniznica-project/frontend-libs/booking';
 
 
 function GetOneBookDisplay() {
@@ -104,9 +105,10 @@ function GetOneBookDisplay() {
                   {data.pages}
                 </p>
               )}
+              <BorrowModal headerName="Poižčaj knihu" buttonName="Požičať">
+                PING DETAILS
+              </BorrowModal>
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5" />
-              
-
               <button className="mt-10 text-xl" onClick={navigateBack}>
                 Späť na knihy
               </button>

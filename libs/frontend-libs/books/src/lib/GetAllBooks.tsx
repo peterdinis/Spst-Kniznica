@@ -52,20 +52,6 @@ export function AllBooks() {
           <>
             {data &&
               data
-              /* TODO: Fix search fn */
-               /*  .filter((val: SearchVal) => {
-                  if (searchTerm === "") {
-                    return val;
-                  } else if (
-                    val.name.toLowerCase().includes(searchTerm.toLowerCase())
-                  ) {
-                    return val;
-                  } else if (
-                    val.author.toLowerCase().includes(searchTerm.toLowerCase())
-                  ) {
-                    return val;
-                  } 
-                }) */
                 .map((item: IBook) => {
                   return (
                     <>

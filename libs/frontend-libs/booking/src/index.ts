@@ -1,1 +1,1 @@
-export * from './lib/frontend-libs-booking';
+export * from "./lib/index"
