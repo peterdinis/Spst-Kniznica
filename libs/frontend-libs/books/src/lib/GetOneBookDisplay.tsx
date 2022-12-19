@@ -125,7 +125,7 @@ function GetOneBookDisplay() {
                       placeholder="Days"
                     />
                     <br />
-                    <button className="mt-4 bg-blue-300 rounded p-2 text-blue-50 font-semibold">
+                    <button className="mt-4 bg-blue-800 rounded p-2 text-blue-50 font-semibold">
                       Požičať
                     </button>
                   </div>
