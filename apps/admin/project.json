@@ -19,7 +19,8 @@
         "assets": ["apps/admin/src/favicon.ico", "apps/admin/src/assets"],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "@nrwl/react/plugins/webpack",
+        "port": 5000
       },
       "configurations": {
         "development": {
