@@ -21,6 +21,9 @@
       "@spst-kniznica-project/admin-libs/auth": [
         "libs/admin-libs/auth/src/index.ts"
       ],
+      "@spst-kniznica-project/admin-libs/pages": [
+        "libs/admin-libs/pages/src/index.ts"
+      ],
       "@spst-kniznica-project/admin-libs/wrapper": [
         "libs/admin-libs/wrapper/src/index.ts"
       ],
