@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "frontend": "nx serve frontend",
+    "admin": "nx serve admin",
     "build": "nx build",
     "test": "nx test",
     "lint": "prettier --check .",
