@@ -2,6 +2,7 @@ import React from 'react';
 import { io } from 'socket.io-client';
 import ChatForm from './ChatForm';
 import AvaiableRooms from './AvaiableRooms';
+import VirtualizedList from './AvaiableListRooms';
 
 function ChatWrapper() {
   const socket = io('http://localhost:3333/api/chat', {
@@ -57,7 +58,8 @@ function ChatWrapper() {
 
                 <div className="mt-4">
                   <AvaiableRooms buttonName='Dostupné rooms'>
-                    CHILDREN
+                    <h2 className="text-center text-2xl">Dostupné rooms</h2>
+                    <VirtualizedList />
                   </AvaiableRooms>
                 </div>
               </div>
