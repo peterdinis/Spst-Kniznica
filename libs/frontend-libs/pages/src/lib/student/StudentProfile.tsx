@@ -1,8 +1,10 @@
-import React from 'react'
+import { StudentProfileInfo } from '@spst-kniznica-project/frontend-libs/student'
 
 function StudentProfile() {
   return (
-    <div>StudentProfile</div>
+    <>
+      <StudentProfileInfo />
+    </>
   )
 }
 
