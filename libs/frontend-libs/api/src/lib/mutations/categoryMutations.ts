@@ -2,7 +2,7 @@ import axios from "axios";
 import {ICategory} from "../interfaces/ICategory";
 
 const api = axios.create({
-  baseURL: process.env["BACKEND_URL"] as string
+  baseURL:"http://localhost:3333/api/"
 });
 
 export const addNewCategory = async(category: ICategory) => {

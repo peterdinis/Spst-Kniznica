@@ -2,7 +2,7 @@ import axios from "axios";
 import { LoginTeacherI, RegisterTeacherI } from "../interfaces/ITeacher";
 
 const api = axios.create({
-  baseURL: process.env["BACKEND_URL"] as string,
+  baseURL: "http://localhost:3333/api/"
 });
 
 export const registerTeacher = async (registerDto: RegisterTeacherI) => {

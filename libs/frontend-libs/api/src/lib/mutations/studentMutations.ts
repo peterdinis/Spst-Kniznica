@@ -2,7 +2,7 @@ import axios from "axios";
 import { LoginUserI, RegisterUserI} from "../interfaces/IStudent";
 
 const api = axios.create({
-    baseURL: process.env["BACKEND_URL"] as string
+    baseURL: "http://localhost:3333/api/"
   });
 
   
