@@ -55,8 +55,8 @@ export class StudentController {
     })
     @ApiCreatedResponse()
     @Post("/email/avaiable")
-    async checkIfEmailIsAvailable() {
-        return;
+    async checkIfEmailIsAvailable(@Body() email: string) {
+        return await this.studentService.isEmailAvailable(email);
     }
 
     @ApiOperation({
@@ -64,7 +64,7 @@ export class StudentController {
     })
     @ApiCreatedResponse()
     @Post("/name/avaiable")
-    async checkIfNameIsAvaiable() {
-        return
+    async checkIfNameIsAvaiable(@Body() name: string) {
+        return await this.studentService.isUsernameAvailable(name);
     }
 }
