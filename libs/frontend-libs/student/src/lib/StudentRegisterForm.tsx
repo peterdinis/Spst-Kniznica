@@ -67,15 +67,15 @@ function StudentRegisterForm() {
                 className="block text-grey-darker text-sm font-bold mb-2"
                 htmlFor="password"
               >
-                Meno
+                Uživateľaské meno
               </label>
               <input
                 className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-                id="Meno"
+                id="Uživateľské meno"
                 type="text"
                 autoFocus
-                placeholder="Meno"
-                {...register("name", {
+                placeholder="Uživateľské meno"
+                {...register("username", {
                   required: true,
                   minLength: 5,
                   min: 5
@@ -83,7 +83,55 @@ function StudentRegisterForm() {
               />
 
               <p className="text-red-800">
-                {errors.name && errors.name.message}
+                {errors.username && errors.username.message}
+              </p>
+            </div>
+            <div className="mb-6">
+              <label
+                className="block text-grey-darker text-sm font-bold mb-2"
+                htmlFor="password"
+              >
+                Krstné meno
+              </label>
+              <input
+                className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+                id="Krstné meno"
+                type="text"
+                autoFocus
+                placeholder="Krstné meno"
+                {...register("firstName", {
+                  required: true,
+                  minLength: 5,
+                  min: 5
+                })}
+              />
+
+              <p className="text-red-800">
+                {errors.firstName && errors.firstName.message}
+              </p>
+            </div>
+            <div className="mb-6">
+              <label
+                className="block text-grey-darker text-sm font-bold mb-2"
+                htmlFor="password"
+              >
+                Priezvisko
+              </label>
+              <input
+                className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+                id="Priezvisko"
+                type="text"
+                autoFocus
+                placeholder="Priezvisko"
+                {...register("lastName", {
+                  required: true,
+                  minLength: 5,
+                  min: 5
+                })}
+              />
+
+              <p className="text-red-800">
+                {errors.lastName && errors.lastName.message}
               </p>
             </div>
             <label
@@ -149,36 +197,18 @@ function StudentRegisterForm() {
               autoFocus
               type={passwordShown ? "text" : "password"}
               placeholder="******************"
-              {...register("confirm", {
+              {...register("confirmedPassword", {
                 required: true,
-                validate: (val: string) => {
+               /*  validate: (val: string) => {
                   if(watch("password") != val) {
                     return "Heslá sa nezhodujú..."
                   }
-                }
+                } */
               })}
             />
             <p className="text-red-800">
-              {errors.confirm && errors.confirm.message}
+              {errors.confirmedPassword && errors.confirmedPassword.message}
             </p>
-            <button onClick={togglePassword}>Zobraziť heslo</button>
-          </div>
-
-          <div className="mb-6">
-            <label
-              className="block text-grey-darker text-sm font-bold mb-2"
-              htmlFor="password"
-            >
-              Študentské Id
-            </label>
-            <input
-              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-              id="Potvrdenie hesla"
-              placeholder={data}
-              {...register("studentProfileId", {
-                required: true,
-              })}
-            />
             <button onClick={togglePassword}>Zobraziť heslo</button>
           </div>
           <div>
