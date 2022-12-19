@@ -5,14 +5,20 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import {style} from "./style"
 
-export default function AvaiableRooms() {
+interface Props {
+  buttonName: string;
+  headerName?: string;
+  children?: React.ReactNode;
+}
+
+export default function AvaiableRooms(props: Props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
+      <Button onClick={handleOpen}>{props.buttonName}</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -20,12 +26,7 @@ export default function AvaiableRooms() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          {props.children}
         </Box>
       </Modal>
     </div>
