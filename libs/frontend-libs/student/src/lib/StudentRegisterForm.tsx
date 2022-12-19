@@ -3,11 +3,11 @@ import { toast } from 'react-toastify';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import {useMutation} from "@tanstack/react-query";
-import * as api from "libs/frontend-libs/api/src/lib/mutations/studentMutations";
-import {RegisterUserI} from "libs/frontend-libs/api/src/lib/interfaces/IStudent";
-import {useNavigate} from "react-router-dom";
-import {queryClient} from "libs/frontend-libs/api/src/lib/queryClient"
+import { useMutation } from '@tanstack/react-query';
+import * as api from 'libs/frontend-libs/api/src/lib/mutations/studentMutations';
+import { RegisterUserI } from 'libs/frontend-libs/api/src/lib/interfaces/IStudent';
+import { useNavigate } from 'react-router-dom';
+import { queryClient } from 'libs/frontend-libs/api/src/lib/queryClient';
 
 const schema = yup
   .object({
@@ -40,8 +40,8 @@ function StudentRegisterForm() {
   };
 
   const mutation = useMutation(api.registerStudent, {
-    onSuccess: () => {
-      navigate("/student/login");
+    onSuccess: (params: RegisterUserI) => {
+      queryClient.setQueriesData(['paramsStudent'], params);
       notify();
     },
 
@@ -54,9 +54,7 @@ function StudentRegisterForm() {
     <>
       <form
         onSubmit={handleSubmit((params: RegisterUserI) => {
-          queryClient.setQueryData(["studentEmail"], params.email);
-          queryClient.setQueriesData(["params"], params);
-
+          queryClient.setQueryData(['studentEmail'], params.email);
           mutation.mutate(params);
         })}
       >
@@ -75,10 +73,10 @@ function StudentRegisterForm() {
                 type="text"
                 autoFocus
                 placeholder="Uživateľské meno"
-                {...register("username", {
+                {...register('username', {
                   required: true,
                   minLength: 5,
-                  min: 5
+                  min: 5,
                 })}
               />
 
@@ -99,10 +97,10 @@ function StudentRegisterForm() {
                 type="text"
                 autoFocus
                 placeholder="Krstné meno"
-                {...register("firstName", {
+                {...register('firstName', {
                   required: true,
                   minLength: 5,
-                  min: 5
+                  min: 5,
                 })}
               />
 
@@ -123,10 +121,10 @@ function StudentRegisterForm() {
                 type="text"
                 autoFocus
                 placeholder="Priezvisko"
-                {...register("lastName", {
+                {...register('lastName', {
                   required: true,
                   minLength: 5,
-                  min: 5
+                  min: 5,
                 })}
               />
 
@@ -146,11 +144,11 @@ function StudentRegisterForm() {
               autoFocus
               type="email"
               placeholder="Email"
-              {...register("email", {
+              {...register('email', {
                 required: true,
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "invalid email address",
+                  message: 'invalid email address',
                 },
               })}
             />
@@ -169,13 +167,13 @@ function StudentRegisterForm() {
             <input
               className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
               id="password"
-              type={passwordShown ? "text" : "password"}
+              type={passwordShown ? 'text' : 'password'}
               placeholder="******************"
               autoFocus
-              {...register("password", {
+              {...register('password', {
                 required: true,
-                minLength:5,
-                min: 5
+                minLength: 5,
+                min: 5,
               })}
             />
             <p className="text-red-800">
@@ -195,11 +193,11 @@ function StudentRegisterForm() {
               className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
               id="Potvrdenie hesla"
               autoFocus
-              type={passwordShown ? "text" : "password"}
+              type={passwordShown ? 'text' : 'password'}
               placeholder="******************"
-              {...register("confirmedPassword", {
+              {...register('confirmedPassword', {
                 required: true,
-               /*  validate: (val: string) => {
+                /*  validate: (val: string) => {
                   if(watch("password") != val) {
                     return "Heslá sa nezhodujú..."
                   }

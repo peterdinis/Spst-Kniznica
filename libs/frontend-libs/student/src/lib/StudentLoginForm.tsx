@@ -33,8 +33,8 @@ function StudentLoginForm() {
   const [passwordShown, setPasswordShown] = React.useState<Boolean>(false);
 
   const mutation = useMutation(api.loginStudent, {
-    onSuccess: () => {
-      navigate("/student/profile");
+    onSuccess: (data: FormData) => {
+      queryClient.setQueriesData(["paramsStudent"],data)
       notify();
     },
     onError: () => {
@@ -52,7 +52,6 @@ function StudentLoginForm() {
       <form
         onSubmit={handleSubmit((data: FormData) => {
           localStorage.setItem("studentEmail", data.email);
-          queryClient.setQueriesData(["params"], data);
           navigate("/student/profile");
           mutation.mutate(data);
         })}
