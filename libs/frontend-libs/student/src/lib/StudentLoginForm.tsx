@@ -5,6 +5,10 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import "./Student.css";
+import {useMutation} from "@tanstack/react-query";
+import {useNavigate} from "react-router-dom";
+import * as api from "libs/frontend-libs/api/src/lib/mutations/studentMutations";
+import {queryClient} from "libs/frontend-libs/api/src/lib/queryClient";
 
 type FormData = {
   email: string;
@@ -22,10 +26,21 @@ const notify = () => toast.success("Prihlásenie bolo úspešné");
 const errorRegister = () => toast.error("Prihlásenie nebolo úspešné");
 
 function StudentLoginForm() {
+  const navigate = useNavigate();
   const { handleSubmit, register, formState: { errors } } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
   const [passwordShown, setPasswordShown] = React.useState<Boolean>(false);
+
+  const mutation = useMutation(api.loginStudent, {
+    onSuccess: () => {
+      navigate("/student/profile");
+      notify();
+    },
+    onError: () => {
+      errorRegister();
+    },
+  });
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -36,10 +51,13 @@ function StudentLoginForm() {
       <Header name="Prihlásenie žiak" />
       <form
         onSubmit={handleSubmit((data: FormData) => {
-          return data;
+          localStorage.setItem("studentEmail", data.email);
+          queryClient.setQueriesData(["params"], data);
+          navigate("/student/profile");
+          mutation.mutate(data);
         })}
       >
-        <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
