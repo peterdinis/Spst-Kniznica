@@ -17,9 +17,9 @@ function Hero() {
             Školská Knižnica
           </h1>
           <DateTimePicker />
-          <p className="ml-8 text-gray-800 text-xl font-regular mb-8 mt-6">
+          <div className="ml-8 text-gray-800 text-xl font-regular mb-8 mt-6">
             <DisplayOneQoute />
-          </p>
+          </div>
 
           <div className="ml-8">
             <button className="test bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
