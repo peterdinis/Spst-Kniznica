@@ -75,6 +75,9 @@
       "@spst-kniznica-project/frontend-libs/about": [
         "libs/frontend-libs/about/src/index.ts"
       ],
+      "@spst-kniznica-project/frontend-libs/admin": [
+        "libs/frontend-libs/admin/src/index.ts"
+      ],
       "@spst-kniznica-project/frontend-libs/api": [
         "libs/frontend-libs/api/src/index.ts"
       ],
