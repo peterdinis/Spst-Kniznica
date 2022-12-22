@@ -29,7 +29,7 @@ function ChatWrapper() {
                   Chat s Adminami
                 </h1>
                 <div className="flex flex-col ">
-                  <label className="text-xl mt-3">Name</label>
+                  <label className="text-xl mt-3">Názov miestnosti</label>
                   <input
                     type="text"
                     placeholder="Enter your name"
@@ -38,7 +38,7 @@ function ChatWrapper() {
                     }}
                     className="p-2 mt-3 border border-indigo-600"
                   />
-                  <label className="text-xl mt-3">Room ID</label>
+                  <label className="text-xl mt-3">Číslo miestnosti</label>
                   <input
                     type="text"
                     placeholder="Room ID..."
