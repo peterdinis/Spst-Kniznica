@@ -1,8 +1,7 @@
 import {
-  ConflictException,
+  HttpException,
   Injectable,
-  InternalServerErrorException,
-  NotFoundException,
+  InternalServerErrorException
 } from '@nestjs/common';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateNewBookingDto } from './dto/create-booking.dto';
@@ -33,7 +32,7 @@ export class BookingService {
     });
 
     if (!borrowedBookDetail) {
-      throw new NotFoundException('Book with this id not found');
+      throw new HttpException("message", 404, {cause: new Error("Borrowed book with id not found")})
     }
 
     return borrowedBookDetail;
@@ -45,11 +44,11 @@ export class BookingService {
         bookingDto.bookId
       );
       if (!bookForBorrow) {
-        throw new NotFoundException('Book with this id not found');
+        throw new HttpException("message", 404, {cause: new Error("Book with id not found")})
       }
 
       if (bookForBorrow.status === NONAVAIABLE) {
-        throw new ConflictException('Book can not be borrowed');
+        throw new HttpException("message", 409, {cause: new Error("Book can not be borrowed")})
       }
 
       const findStudent = await this.studentService.findOneStudent(
@@ -57,7 +56,7 @@ export class BookingService {
       );
 
       if (!findStudent) {
-        throw new NotFoundException('Student with this id not found');
+        throw new HttpException("message", 404, {cause: new Error("Student with id not found")})
       }
 
       const findTeacher = await this.teacherService.findOneTeacher(
@@ -65,7 +64,7 @@ export class BookingService {
       );
 
       if (!findTeacher) {
-        throw new NotFoundException('Teacher with this id not found');
+        throw new HttpException("message", 404, {cause: new Error("Teacher book with id not found")})
       }
 
       if (bookingDto.studentId !== null || bookingDto.studentId !== undefined) {
@@ -95,14 +94,18 @@ export class BookingService {
             }
         })
 
+        await this.booksService.updateBook(bookingDto.bookId, {
+            status: NONAVAIABLE
+        })
+
         return newBookToCard;
       }
     } catch (err) {
-      throw new InternalServerErrorException(err);
+      throw new HttpException(err, 500, {cause: err})
     }
   }
 
-  async returnBook() {}
-
-  async extendBook() {}
+  async returnBook() {
+    return;
+  }
 }

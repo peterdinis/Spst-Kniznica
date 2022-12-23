@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Patch, Post } from "@nestjs/common";
 import { BookingService } from "./booking.service";
 import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { ViewBookingDto } from "./dto/view-booking.dto";
@@ -40,5 +40,14 @@ export class BookingController {
     @Post("/")
     async borrowBook(@Body() bookingDto: CreateNewBookingDto) {
         return await this.bookingService.borrowBook(bookingDto);
+    }
+
+    @ApiOperation({
+        summary: "Return Book"
+    })
+    @ApiOkResponse()
+    @Patch("/book/return")
+    async returnBook() {
+        return await this.bookingService.returnBook();
     }
 }
