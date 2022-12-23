@@ -68,4 +68,13 @@ export class StudentController {
     async checkIfNameIsAvaiable(@Body() name: string) {
         return await this.studentService.isUsernameAvailable(name);
     }
+
+    @ApiOperation({
+        summary: "Generate random Password"
+    })
+    @ApiOkResponse()
+    @Get("/password/random")
+    async generateRandomPassword() {
+        return await this.studentService.generateRandomPassword();
+    }
 }
