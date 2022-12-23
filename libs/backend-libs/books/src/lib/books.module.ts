@@ -9,6 +9,6 @@ import { BooksService } from './books.service';
   imports: [PrismaModule, ApiCachceModule, CaslModule],
   controllers: [BooksController],
   providers: [ BooksService],
-  exports: [],
+  exports: [BooksService],
 })
 export class BooksModule {}
