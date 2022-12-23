@@ -127,4 +127,8 @@ export class StudentService {
   async deleteStudentProfile() {}
 
   async uploadProfilePicture() {}
+
+  async generateRandomPassword() {
+    return Math.random().toString(36).slice(-10);
+  }
 }

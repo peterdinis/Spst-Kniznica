@@ -11,5 +11,8 @@ export class TeacherService {
         })
 
         return oneTeacher;
+        
+    async generateRandomPassword() {
+        return Math.random().toString(36).slice(-10);
     }
 }
