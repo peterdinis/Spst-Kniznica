@@ -8,8 +8,10 @@
             "type": "node",
             "request": "attach",
             "name": "SPST Library API",
+            "protocol": "inspector",
             "sourceMaps": true,
-            "port": 3333
+            "port": 3333,
+            "trace": true
         }
     ]
 }
