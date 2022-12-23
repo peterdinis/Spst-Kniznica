@@ -1,6 +1,7 @@
 import { Controller, Get, Param } from "@nestjs/common";
 import { BookingService } from "./booking.service";
 import { ApiOkResponse, ApiOperation } from "@nestjs/swagger";
+import { ViewBookingDto } from "./dto/view-booking.dto";
 
 @Controller("booking")
 export class BookingController {
@@ -9,7 +10,9 @@ export class BookingController {
     @ApiOperation({
         summary: "Find all borrowed books"
     })
-    @ApiOkResponse()
+    @ApiOkResponse({
+        type: [ViewBookingDto]
+    })
     @Get("/")
     async allBorrowedBooks() {
         return this.bookingService.allBorrowedBooks();
@@ -18,7 +21,9 @@ export class BookingController {
     @ApiOperation({
         summary: "Find borrowed book by detail"
     })
-    @ApiOkResponse()
+    @ApiOkResponse({
+        type: ViewBookingDto
+    })
     @Get("/:id")
     async findOneBorrowedBook(
         @Param("id") id: number
