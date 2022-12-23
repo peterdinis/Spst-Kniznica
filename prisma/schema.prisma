@@ -40,7 +40,6 @@ model Quote {
 
 model Booking {
   id     Int    @id @default(autoincrement())
-  email  String
   days   String
   book   Book?  @relation(fields: [bookId], references: [id])
   bookId Int?   @unique
@@ -48,6 +47,7 @@ model Booking {
   studentId Int? @unique
   teacher Teacher? @relation(fields: [teacherId], references: [id])
   teacherId Int? @unique
+  extend Boolean?
 }
 
 model Student {
