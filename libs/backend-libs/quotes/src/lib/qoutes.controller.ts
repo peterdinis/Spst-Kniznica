@@ -1,10 +1,11 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { QuotesService } from "./qoutes.service";
-import { ApiCreatedResponse, ApiOkResponse, ApiOperation } from "@nestjs/swagger";
+import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { ViewQouteDto } from "./dto/view-quotes.dto";
 import { CreateQuoteDto } from "./dto/create-quote.dto";
 import { UpdateQuoteDto } from "./dto/update-quote.dto";
 
+@ApiTags("Quotes")
 @Controller("quotes")
 export class QuotesController {
     constructor(private readonly qoutesService: QuotesService) {}
