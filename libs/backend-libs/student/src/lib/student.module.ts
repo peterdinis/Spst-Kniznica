@@ -24,6 +24,7 @@ import {MulterModule} from "@nestjs/platform-express";
     })
   ],
   controllers: [StudentController],
-  providers: [StudentService, JwtStrategy, StudentGateway]
+  providers: [StudentService, JwtStrategy, StudentGateway],
+  exports: [StudentService]
 })
 export class StudentModule {}

@@ -1,8 +1,10 @@
 import { Module } from '@nestjs/common';
 import { BookingController } from './booking.controller';
 import { BookingService } from './booking.service';
+import {PrismaModule} from "@spst-kniznica-project/backend-libs/database"
 
 @Module({
+  imports: [PrismaModule],
   controllers: [BookingController],
   providers: [BookingService]
 })
