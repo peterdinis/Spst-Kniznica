@@ -19,6 +19,16 @@ export class StudentService {
     private readonly jwtService: JwtService
   ) {}
 
+  async findOneStudent(id: number) {
+    const oneStudent = await this.prismaService.student.findUnique({
+      where: {
+        id
+      }
+    })
+
+    return oneStudent
+  }
+
   async signupStudent(registerDto: CreateNewStudentDto) {
     try {
       const hashedPassword = await bcrypt.hash(registerDto.password, 12);
