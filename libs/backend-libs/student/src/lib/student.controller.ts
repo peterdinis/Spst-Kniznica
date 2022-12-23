@@ -13,6 +13,15 @@ export class StudentController {
     constructor(private readonly studentService: StudentService) {}
 
     @ApiOperation({
+        summary: "Find all students"
+    })
+    @ApiOkResponse()
+    @Get("/")
+    async findAllStudents() {
+        return await this.studentService.findAllStudents();
+    }
+
+    @ApiOperation({
         summary: "Register new student to app"
     })
     @ApiCreatedResponse({

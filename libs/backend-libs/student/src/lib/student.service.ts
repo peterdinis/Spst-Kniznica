@@ -19,6 +19,11 @@ export class StudentService {
     private readonly jwtService: JwtService
   ) {}
 
+  async findAllStudents() {
+    const allStudents = await this.prismaService.student.findMany();
+    return allStudents;
+  }
+
   async findOneStudent(id: number) {
     const oneStudent = await this.prismaService.student.findUnique({
       where: {
