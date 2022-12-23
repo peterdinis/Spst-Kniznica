@@ -78,6 +78,10 @@ export class BookingService {
             }
         })
 
+        await this.booksService.updateBook(bookingDto.bookId, {
+            status: NONAVAIABLE
+        })
+
         return newBookToCard;
       }
 
