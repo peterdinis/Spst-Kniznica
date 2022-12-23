@@ -1,10 +1,15 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable, InternalServerErrorException, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
 import { Booking, Book, Student, Teacher } from "@prisma/client";
+import { CreateNewBookingDto } from "./dto/create-booking.dto";
+import { BooksService } from "libs/backend-libs/books/src/lib/books.service";
 
 @Injectable()
 export class BookingService {
-    constructor(private readonly prismaService: PrismaService) {}
+    constructor(
+        private readonly prismaService: PrismaService,
+        private readonly booksService: BooksService
+    ) {}
 
     async allBorrowedBooks() {
         const allBooks = await this.prismaService.booking.findMany();
@@ -25,7 +30,13 @@ export class BookingService {
         return borrowedBookDetail;
     }
 
-    async borrowBook() {}
+    async borrowBook(bookingDto: CreateNewBookingDto) {
+        try {
+
+        } catch(err) {
+            throw new InternalServerErrorException(err);
+        }
+    }
 
     async returnBook() {}
 
