@@ -1,8 +1,9 @@
 import { Controller, Get, Param } from "@nestjs/common";
 import { BookingService } from "./booking.service";
-import { ApiOkResponse, ApiOperation } from "@nestjs/swagger";
+import { ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { ViewBookingDto } from "./dto/view-booking.dto";
 
+@ApiTags("Borrowing")
 @Controller("booking")
 export class BookingController {
     constructor(private readonly bookingService: BookingService) {}

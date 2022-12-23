@@ -2,7 +2,7 @@ import { Logger, ValidationPipe, INestApplication } from '@nestjs/common';
 import helmet from "helmet";
 import { SocketAdapter } from './socket';
 import { setupSwagger } from './swagger';
-import * as csurf from 'csurf';
+/* import * as csurf from 'csurf'; */
 
 async function setupApp(app: INestApplication) {
 
@@ -15,7 +15,7 @@ app.enableCors({
   app.setGlobalPrefix(globalPrefix);
   app.use(helmet());
   app.useWebSocketAdapter(new SocketAdapter(app));
-  app.use(csurf());
+  /* app.use(csurf()); */
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));    
   setupSwagger(app);
   

@@ -1,10 +1,8 @@
 import { Body, Controller, Get, Post, Req } from "@nestjs/common";
 import { ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
-import { MyProfile } from "./decorators/student.decorator";
 import { CreateNewStudentDto } from "./dto/create-student-dto";
 import { LoginStudentDto } from "./dto/login-student-dto";
 import { StudentService } from "./student.service";
-import { AuthUser } from "./utils/auth-user";
 import {Request} from "express";
 
 @ApiTags("Student")
