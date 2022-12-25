@@ -7,7 +7,6 @@ import { StudentModule } from '@spst-kniznica-project/backend-libs/student';
 import { BookingModule } from '@spst-kniznica-project/backend-libs/booking';
 import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
 import { ThrottlerModule } from '@nestjs/throttler';
-import { SeedersModule } from '@spst-kniznica-project/backend-libs/seeders';
 import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
 import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
 import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
@@ -40,7 +39,6 @@ import { AdminModule } from '@spst-kniznica-project/backend-libs/admin';
     CategoryModule,
     BookingModule,
     QuotesModule,
-    SeedersModule,
     ChatModule,
     CheckerModule,
     ApiCachceModule,
