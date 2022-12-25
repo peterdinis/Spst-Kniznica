@@ -3,7 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 import { BooksModule } from '@spst-kniznica-project/backend-libs/books';
 import { PrismaModule} from '@spst-kniznica-project/backend-libs/database';
 import { CategoryModule } from '@spst-kniznica-project/backend-libs/category';
-import { StudentModule } from '@spst-kniznica-project/backend-libs/student';
 import { BookingModule } from '@spst-kniznica-project/backend-libs/booking';
 import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
 import { ThrottlerModule } from '@nestjs/throttler';
@@ -36,7 +35,6 @@ import { UsersModule } from '@spst-kniznica-project/backend-libs/users';
       limit: 50,
     }),
     PrismaModule,
-    StudentModule,
     CategoryModule,
     BookingModule,
     QuotesModule,

@@ -51,12 +51,6 @@
       "@spst-kniznica-project/backend-libs/social": [
         "libs/backend-libs/social/src/index.ts"
       ],
-      "@spst-kniznica-project/backend-libs/student": [
-        "libs/backend-libs/student/src/index.ts"
-      ],
-      "@spst-kniznica-project/backend-libs/teacher": [
-        "libs/backend-libs/teacher/src/index.ts"
-      ],
       "@spst-kniznica-project/backend-libs/users": [
         "libs/backend-libs/users/src/index.ts"
       ],
