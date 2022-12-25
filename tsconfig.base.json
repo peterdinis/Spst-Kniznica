@@ -57,6 +57,9 @@
       "@spst-kniznica-project/backend-libs/teacher": [
         "libs/backend-libs/teacher/src/index.ts"
       ],
+      "@spst-kniznica-project/backend-libs/users": [
+        "libs/backend-libs/users/src/index.ts"
+      ],
       "@spst-kniznica-project/frontend-libs/about": [
         "libs/frontend-libs/about/src/index.ts"
       ],
