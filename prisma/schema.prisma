@@ -76,6 +76,14 @@ model Admin {
   updateAt  DateTime @updatedAt()
 }
 
+model User {
+  username  String @id
+  password  String
+  firstName String
+  lastName  String
+  role String
+}
+
 model Chat {
   id          Int    @id @default(autoincrement())
   name        String
