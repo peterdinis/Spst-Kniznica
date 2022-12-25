@@ -23,7 +23,6 @@ model Book {
   publisher   String
   image       String
   status      String
-  borrowed    Booking?
 }
 
 model Category {
@@ -38,17 +37,7 @@ model Quote {
   text   String
 }
 
-model Booking {
-  id     Int    @id @default(autoincrement())
-  days   String
-  book   Book?  @relation(fields: [bookId], references: [id])
-  bookId Int?   @unique
-  student Student? @relation(fields: [studentId], references: [id])
-  studentId Int? @unique
-  teacher Teacher? @relation(fields: [teacherId], references: [id])
-  teacherId Int? @unique
-  extend Boolean?
-}
+
 
 model Student {
   id        Int      @id @default(autoincrement())
@@ -59,7 +48,6 @@ model Student {
   lastName  String
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt()
-  borrowedBooks    Booking?
 }
 
 model Teacher {
@@ -71,7 +59,10 @@ model Teacher {
   lastName  String
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt()
-  borrowedBooks    Booking?
+}
+
+model Booking {
+  id        Int      @id @default(autoincrement())
 }
 
 model Admin {
