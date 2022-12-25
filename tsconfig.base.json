@@ -15,18 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@spst-kniznica-project/admin-libs/api": [
-        "libs/admin-libs/api/src/index.ts"
-      ],
-      "@spst-kniznica-project/admin-libs/auth": [
-        "libs/admin-libs/auth/src/index.ts"
-      ],
-      "@spst-kniznica-project/admin-libs/pages": [
-        "libs/admin-libs/pages/src/index.ts"
-      ],
-      "@spst-kniznica-project/admin-libs/wrapper": [
-        "libs/admin-libs/wrapper/src/index.ts"
-      ],
       "@spst-kniznica-project/backend-libs/admin": [
         "libs/backend-libs/admin/src/index.ts"
       ],
@@ -56,9 +44,6 @@
       ],
       "@spst-kniznica-project/backend-libs/quotes": [
         "libs/backend-libs/quotes/src/index.ts"
-      ],
-      "@spst-kniznica-project/backend-libs/seeders": [
-        "libs/backend-libs/seeders/src/index.ts"
       ],
       "@spst-kniznica-project/backend-libs/shared": [
         "libs/backend-libs/shared/src/index.ts"
