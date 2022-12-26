@@ -98,6 +98,9 @@
       ],
       "@spst-kniznica-project/frontend-libs/shared": [
         "libs/frontend-libs/shared/src/index.ts"
+      ],
+      "@spst-kniznica-project/frontend-libs/users": [
+        "libs/frontend-libs/users/src/index.ts"
       ]
     }
   },
