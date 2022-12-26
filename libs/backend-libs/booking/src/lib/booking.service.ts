@@ -1,15 +1,10 @@
-import {
-  HttpException,
-  Injectable,
-} from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateNewBookingDto } from './dto/create-booking.dto';
 
 @Injectable()
 export class BookingService {
-  constructor(
-    private readonly prismaService: PrismaService,
-  ) {}
+  constructor(private readonly prismaService: PrismaService) {}
 
   async allBorrowedBooks() {
     const allBooks = await this.prismaService.booking.findMany();
@@ -24,14 +19,22 @@ export class BookingService {
     });
 
     if (!borrowedBookDetail) {
-      throw new HttpException("Borrowed book with id not found", 404, {cause: new Error("Borrowed book with id not found")})
+      throw new HttpException('Borrowed book with id not found', 404, {
+        cause: new Error('Borrowed book with id not found'),
+      });
     }
 
     return borrowedBookDetail;
   }
 
   async borrowBook(bookingDto: CreateNewBookingDto) {
-   return;
+    const newBorrowedBook = await this.prismaService.booking.create({
+      data: {
+        
+      }
+    });
+
+    return newBorrowedBook;
   }
 
   async returnBook() {
