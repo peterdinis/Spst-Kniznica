@@ -8,8 +8,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url      = "postgresql://postgres:PETERdinis1234@localhost:5432/spstappnew?schema=sample"
 }
 
 model Book {
