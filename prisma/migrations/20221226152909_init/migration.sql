@@ -1,6 +1,6 @@
 -- CreateTable
 CREATE TABLE "Book" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "author" TEXT NOT NULL,
@@ -9,73 +9,96 @@ CREATE TABLE "Book" (
     "pages" INTEGER NOT NULL,
     "publisher" TEXT NOT NULL,
     "image" TEXT NOT NULL,
-    "status" TEXT NOT NULL
+    "status" TEXT NOT NULL,
+
+    CONSTRAINT "Book_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Category" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "description" TEXT NOT NULL
+    "description" TEXT NOT NULL,
+
+    CONSTRAINT "Category_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Quote" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "author" TEXT NOT NULL,
-    "text" TEXT NOT NULL
+    "text" TEXT NOT NULL,
+
+    CONSTRAINT "Quote_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Student" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "firstName" TEXT NOT NULL,
     "lastName" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updateAt" DATETIME NOT NULL
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updateAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Student_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Teacher" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "firstName" TEXT NOT NULL,
     "lastName" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updateAt" DATETIME NOT NULL
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updateAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Teacher_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Booking" (
+    "id" SERIAL NOT NULL,
+
+    CONSTRAINT "Booking_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Admin" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "username" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "firstName" TEXT NOT NULL,
     "lastName" TEXT NOT NULL,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updateAt" DATETIME NOT NULL
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updateAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Admin_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "Chat" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "description" TEXT NOT NULL,
-    "roomId" INTEGER NOT NULL
+    "roomId" INTEGER NOT NULL,
+
+    CONSTRAINT "Chat_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "SocialUser" (
-    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
-    "image" TEXT NOT NULL
+    "image" TEXT NOT NULL,
+
+    CONSTRAINT "SocialUser_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
