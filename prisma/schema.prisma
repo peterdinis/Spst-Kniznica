@@ -8,8 +8,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 model Book {
@@ -44,8 +44,8 @@ model Booking {
   to        DateTime
   bookId    Int
   book      Book     @relation(fields: [bookId], references: [id])
-  username  String
-  user      User     @relation(fields: [username], references: [username])
+  userId  Int
+  user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt()
 }
@@ -62,7 +62,8 @@ model Admin {
 }
 
 model User {
-  username  String    @id
+  id        Int      @id @default(autoincrement())
+  username  String
   password  String
   firstName String
   lastName  String
