@@ -13,17 +13,17 @@ datasource db {
 }
 
 model Book {
-  id          Int      @id @default(autoincrement())
+  id          Int       @id @default(autoincrement())
   name        String
   description String
   author      String
   year        Int
-  available   Boolean  @default(false)
+  available   Boolean   @default(false)
   pages       Int
   publisher   String
   image       String
   status      String
-  Booking Booking[]
+  borrowed    Booking[]
 }
 
 model Category {
@@ -42,11 +42,12 @@ model Booking {
   id        Int      @id @default(autoincrement())
   from      DateTime
   to        DateTime
-  user   User?   @relation(fields: [userId], references: [id])
-  userId String?
-  book   Book @relation(fields: [bookId], references: [id])
-  bookId String
-
+  bookId    Int
+  book      Book     @relation(fields: [bookId], references: [id])
+  username  String
+  user      User     @relation(fields: [username], references: [username])
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt()
 }
 
 model Admin {
@@ -61,15 +62,15 @@ model Admin {
 }
 
 model User {
-  username  String @id
+  username  String    @id
   password  String
   firstName String
   lastName  String
-  email String
-  role String
-  createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt()
-  Booking Booking[]
+  email     String
+  role      String
+  createdAt DateTime  @default(now())
+  updateAt  DateTime  @updatedAt()
+  borrowed  Booking[]
 }
 
 model Chat {
