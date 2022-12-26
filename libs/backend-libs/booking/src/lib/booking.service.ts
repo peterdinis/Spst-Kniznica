@@ -24,7 +24,7 @@ export class BookingService {
     });
 
     if (!borrowedBookDetail) {
-      throw new HttpException("message", 404, {cause: new Error("Borrowed book with id not found")})
+      throw new HttpException("Borrowed book with id not found", 404, {cause: new Error("Borrowed book with id not found")})
     }
 
     return borrowedBookDetail;
