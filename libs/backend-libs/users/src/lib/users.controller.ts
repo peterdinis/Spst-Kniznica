@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, UseGuards } from "@nestjs/common";
 import { UsersService } from "./users.service";
-import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { RegisterUserDto } from "./dto/register-users.dto";
 import { LoginUserDto } from "./dto/login-users.dto";
 import { AuthGuard } from "@nestjs/passport";
@@ -42,6 +42,7 @@ export class UsersController {
         summary: "Profile info"
     })
     @ApiOkResponse()
+    @ApiBearerAuth()
     @UseGuards(AuthGuard("jwt"))
     @Get("/profile")
     loggedUser(
