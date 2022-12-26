@@ -98,12 +98,6 @@
       ],
       "@spst-kniznica-project/frontend-libs/shared": [
         "libs/frontend-libs/shared/src/index.ts"
-      ],
-      "@spst-kniznica-project/frontend-libs/student": [
-        "libs/frontend-libs/student/src/index.ts"
-      ],
-      "@spst-kniznica-project/frontend-libs/teacher": [
-        "libs/frontend-libs/teacher/src/index.ts"
       ]
     }
   },

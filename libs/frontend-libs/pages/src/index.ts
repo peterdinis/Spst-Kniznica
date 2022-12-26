@@ -11,12 +11,6 @@ import UpdateBook from './lib/books/UpdateBook';
 import UpdateCategory from './lib/categories/UpdateCategory';
 import NotFoundPage from './lib/NotFoundPage';
 import ReturnBook from './lib/booking/ReturnBook';
-import StudentLogin from './lib/student/StudentLogin';
-import StudentProfile from './lib/student/StudentProfile';
-import TeacherLogin from './lib/teacher/TeacherLogin';
-import TeacherProfile from './lib/teacher/TeacherProfile';
-import TeacherRegister from './lib/teacher/TeacherRegister';
-import StudentRegister from './lib/student/StudentRegister';
 import NotAllowed from './lib/NotAllowed';
 
 export {
@@ -33,11 +27,5 @@ export {
     UpdateCategory,
     NotFoundPage,
     ReturnBook,
-    StudentLogin,
-    StudentRegister,
-    StudentProfile,
-    TeacherLogin,
-    TeacherRegister,
-    TeacherProfile,
     NotAllowed
 }
