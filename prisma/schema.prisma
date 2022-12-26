@@ -9,7 +9,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres:PETERdinis1234@localhost:5432/spstappnew?schema=sample"
+  url      = env("DATABASE_URL")
 }
 
 model Book {
