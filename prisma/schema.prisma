@@ -43,28 +43,6 @@ model Booking {
   to        DateTime
 }
 
-model Student {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  email     String   @unique
-  password  String
-  firstName String
-  lastName  String
-  createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt()
-}
-
-model Teacher {
-  id        Int      @id @default(autoincrement())
-  username  String   @unique
-  email     String   @unique
-  password  String
-  firstName String
-  lastName  String
-  createdAt DateTime @default(now())
-  updateAt  DateTime @updatedAt()
-}
-
 model Admin {
   id        Int      @id @default(autoincrement())
   username  String   @unique
@@ -72,6 +50,17 @@ model Admin {
   password  String
   firstName String
   lastName  String
+  createdAt DateTime @default(now())
+  updateAt  DateTime @updatedAt()
+}
+
+model User {
+  username  String @id
+  password  String
+  firstName String
+  lastName  String
+  email String
+  role String
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt()
 }

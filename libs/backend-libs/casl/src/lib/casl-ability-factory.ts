@@ -1,4 +1,6 @@
-import { Injectable } from "@nestjs/common";
+// TODO: Later refactor this
+
+/* import { Injectable } from "@nestjs/common";
 import {Action} from "./permissions.enum"
 import {PureAbility, AbilityBuilder, AbilityClass} from "@casl/ability"
 import {TeacherAbility, StudentAbility, AdminAbility} from "./casl-types";
@@ -46,3 +48,4 @@ export class CaslAbilityFactory {
     }
 }
 
+ */
