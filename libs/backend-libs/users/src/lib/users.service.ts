@@ -13,7 +13,7 @@ export class UsersService {
     ) {}
 
     async getUser(username: string) {
-        const user = await this.prismaService.user.findUnique({
+        const user = await this.prismaService.user.findFirst({
             where: { username }
         });
 
@@ -26,7 +26,7 @@ export class UsersService {
     }
 
     async createUser(registerDto: RegisterUserDto) {
-        const existing = await this.prismaService.user.findUnique({
+        const existing = await this.prismaService.user.findFirst({
             where: {
                 username: registerDto.username
             }
@@ -52,7 +52,7 @@ export class UsersService {
     async loginUser(loginDto: LoginUserDto) {
         const { username, password } = loginDto;
 
-        const user = await this.prismaService.user.findUnique({
+        const user = await this.prismaService.user.findFirst({
             where: { username }
         });
 

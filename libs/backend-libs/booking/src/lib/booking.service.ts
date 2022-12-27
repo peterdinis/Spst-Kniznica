@@ -30,8 +30,8 @@ export class BookingService {
   async borrowBook(bookingDto: CreateNewBookingDto) {
     const newBorrowedBook = await this.prismaService.booking.create({
       data: {
-        
-      }
+        ...bookingDto
+      },
     });
 
     return newBorrowedBook;
