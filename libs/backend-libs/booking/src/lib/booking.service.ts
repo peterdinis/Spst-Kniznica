@@ -82,9 +82,13 @@ export class BookingService {
         status: AVAIABLE,
       });
 
-      return removeFromList;
+    return removeFromList;
     } catch (e) {
       throw new BadRequestException(e);
     }
+  }
+
+  async extendedBook() {
+    return;
   }
 }

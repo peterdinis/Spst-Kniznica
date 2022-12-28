@@ -48,6 +48,7 @@ model Booking {
   user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt()
+  extended Boolean @default(false)
 }
 
 model Admin {
