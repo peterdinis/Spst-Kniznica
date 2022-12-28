@@ -1,9 +1,11 @@
-import { Body, Controller, Get, Param, Patch, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Patch, Post, Put } from "@nestjs/common";
 import { BookingService } from "./booking.service";
 import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { CreateNewBookingDto } from "./dto/create-booking.dto";
 import { ViewBookingDto } from "./dto/view-booking.dto";
 import { ReturnBookingDto } from "./dto/return-booking.dto";
+import { ExtendedBookingDto } from "./dto/extended-booking.dto";
+import { timeStamp } from "console";
 
 @ApiTags("Borrowing")
 @Controller("booking")
@@ -54,5 +56,16 @@ export class BookingController {
     @Patch("/book/return")
     async returnBook(@Body() returnBookingDto: ReturnBookingDto) {
         return await this.bookingService.returnBook(returnBookingDto);
+    }
+
+    @ApiOperation({
+        summary: "Extended book"
+    })
+    @ApiOkResponse({
+        type: ExtendedBookingDto
+    })
+    @Put("/book/extend")
+    async extendBook(@Body() extend: ExtendedBookingDto) {
+        return await this.bookingService.extendedBook(extend);
     }
 }

@@ -90,6 +90,36 @@ export class BookingService {
   }
 
   async extendedBook(extendDto: ExtendedBookingDto) {
-    return;
+    try {
+      const existingBorrowedBook = await this.prismaService.booking.findUnique({
+        where: {
+          id: extendDto.bookId,
+        },
+      });
+
+      if (!existingBorrowedBook) {
+        throw new NotFoundException('Booking not found');
+      }
+
+      const extendedExisitngBook = await this.prismaService.booking.update({
+        where: {
+          id: extendDto.bookId
+        },
+
+        data: {
+          to: extendDto.to
+        }
+      });
+
+      await this.bookService.updateBook(extendDto.bookId, {
+        status: AVAIABLE,
+      });
+
+      return extendedExisitngBook;
+
+
+    } catch(err) {
+      throw new BadRequestException(err);
+    }
   }
 }
