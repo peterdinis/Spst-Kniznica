@@ -69,7 +69,6 @@ model User {
   firstName String
   lastName  String
   email     String
-  role      String
   isTeacher Boolean @default(false)
   isStudent Boolean @default(false)
   createdAt DateTime  @default(now())
