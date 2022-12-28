@@ -81,4 +81,8 @@ export class UsersService {
             user
         }
     }
+
+    async logoutUser() {
+        return;
+    }
 }
