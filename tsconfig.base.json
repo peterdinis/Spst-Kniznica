@@ -93,6 +93,9 @@
       "@spst-kniznica-project/frontend-libs/pages": [
         "libs/frontend-libs/pages/src/index.ts"
       ],
+      "@spst-kniznica-project/frontend-libs/questions": [
+        "libs/frontend-libs/questions/src/index.ts"
+      ],
       "@spst-kniznica-project/frontend-libs/quotes": [
         "libs/frontend-libs/quotes/src/index.ts"
       ],
