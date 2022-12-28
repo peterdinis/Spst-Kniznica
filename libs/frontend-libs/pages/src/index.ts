@@ -11,13 +11,13 @@ import UpdateBook from './lib/books/UpdateBook';
 import UpdateCategory from './lib/categories/UpdateCategory';
 import NotFoundPage from './lib/NotFoundPage';
 import ReturnBook from './lib/booking/ReturnBook';
-import StudentLogin from './lib/student/StudentLogin';
-import StudentProfile from './lib/student/StudentProfile';
-import TeacherLogin from './lib/teacher/TeacherLogin';
-import TeacherProfile from './lib/teacher/TeacherProfile';
-import TeacherRegister from './lib/teacher/TeacherRegister';
-import StudentRegister from './lib/student/StudentRegister';
 import NotAllowed from './lib/NotAllowed';
+import TeacherRegisterPage from './lib/users/teacher/TeacherRegisterPage';
+import TeacherLoginPage from './lib/users/teacher/TeacherLoginPage';
+import TeacherProfilePage from './lib/users/teacher/TeacherProfilePage';
+import StudentLoginPage from './lib/users/student/StudentLoginPage';
+import StudentRegisterPage from './lib/users/student/StudentRegisterPage';
+import StudentProfilePage from './lib/users/student/StudentProfilePage';
 
 export {
     Aboutpage,
@@ -33,11 +33,11 @@ export {
     UpdateCategory,
     NotFoundPage,
     ReturnBook,
-    StudentLogin,
-    StudentRegister,
-    StudentProfile,
-    TeacherLogin,
-    TeacherRegister,
-    TeacherProfile,
-    NotAllowed
+    NotAllowed,
+    TeacherRegisterPage,
+    TeacherLoginPage,
+    TeacherProfilePage,
+    StudentLoginPage,
+    StudentProfilePage,
+    StudentRegisterPage
 }
