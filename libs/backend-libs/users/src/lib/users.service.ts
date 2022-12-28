@@ -45,7 +45,7 @@ export class UsersService {
         });
 
         if(existing) {
-            throw new ConflictException('username already exists');
+            throw new ConflictException('Username already exists');
         }
 
         const hashedPassword = await bcrypt.hash(registerDto.password, 10);
