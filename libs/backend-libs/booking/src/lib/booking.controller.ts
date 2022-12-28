@@ -3,6 +3,7 @@ import { BookingService } from "./booking.service";
 import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { CreateNewBookingDto } from "./dto/create-booking.dto";
 import { ViewBookingDto } from "./dto/view-booking.dto";
+import { ReturnBookingDto } from "./dto/return-booking.dto";
 
 @ApiTags("Borrowing")
 @Controller("booking")
@@ -51,7 +52,7 @@ export class BookingController {
     })
     @ApiOkResponse()
     @Patch("/book/return")
-    async returnBook() {
-        return await this.bookingService.returnBook();
+    async returnBook(@Body() returnBookingDto: ReturnBookingDto) {
+        return await this.bookingService.returnBook(returnBookingDto);
     }
 }

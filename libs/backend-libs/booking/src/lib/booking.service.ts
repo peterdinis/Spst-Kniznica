@@ -1,8 +1,14 @@
-import { HttpException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  HttpException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateNewBookingDto } from './dto/create-booking.dto';
 import { BooksService } from '@spst-kniznica-project/backend-libs/books';
-import { NONAVAIABLE } from './utils/book.status';
+import { AVAIABLE, NONAVAIABLE } from './utils/book.status';
+import { ReturnBookingDto } from './dto/return-booking.dto';
 
 @Injectable()
 export class BookingService {
@@ -33,20 +39,52 @@ export class BookingService {
   }
 
   async borrowBook(bookingDto: CreateNewBookingDto) {
-    const newBorrowedBook = await this.prismaService.booking.create({
-      data: {
-        ...bookingDto,
-      },
-    });
+    try {
+      const newBorrowedBook = await this.prismaService.booking.create({
+        data: {
+          ...bookingDto,
+        },
+      });
 
-    await this.bookService.updateBook(bookingDto.bookId, {
-      status: NONAVAIABLE,
-    });
+      await this.bookService.updateBook(bookingDto.bookId, {
+        status: NONAVAIABLE,
+      });
 
-    return newBorrowedBook;
+      return newBorrowedBook;
+    } catch (e) {
+      throw new BadRequestException(e);
+    }
   }
 
-  async returnBook() {
-    return;
+  async returnBook(returnBokingDto: ReturnBookingDto) {
+    try {
+      const existingBorrowedBook = await this.prismaService.booking.findUnique({
+        where: {
+          id: returnBokingDto.bookId,
+        },
+      });
+
+      if (!existingBorrowedBook) {
+        throw new NotFoundException('Booking not found');
+      }
+
+      const removeFromList = await this.prismaService.booking.delete({
+        where: {
+          id: existingBorrowedBook.bookId,
+        },
+      });
+
+      if (!removeFromList) {
+        throw new NotFoundException('Book not found');
+      }
+
+      await this.bookService.updateBook(returnBokingDto.bookId, {
+        status: AVAIABLE,
+      });
+
+      return removeFromList;
+    } catch (e) {
+      throw new BadRequestException(e);
+    }
   }
 }
