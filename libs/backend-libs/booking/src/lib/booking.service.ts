@@ -10,12 +10,14 @@ import { BooksService } from '@spst-kniznica-project/backend-libs/books';
 import { AVAIABLE, NONAVAIABLE } from './utils/book.status';
 import { ReturnBookingDto } from './dto/return-booking.dto';
 import { ExtendedBookingDto } from './dto/extended-booking.dto';
+import { UsersService } from '@spst-kniznica-project/backend-libs/users';
 
 @Injectable()
 export class BookingService {
   constructor(
     private readonly prismaService: PrismaService,
-    private readonly bookService: BooksService
+    private readonly bookService: BooksService,
+    private readonly usersService: UsersService
   ) {}
 
   async allBorrowedBooks() {
@@ -121,5 +123,9 @@ export class BookingService {
     } catch(err) {
       throw new BadRequestException(err);
     }
+  }
+
+  async displayMyBorowedBooks(email: string) {
+    return;
   }
 }

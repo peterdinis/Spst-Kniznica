@@ -12,6 +12,18 @@ export class UsersService {
         private readonly jwtService: JwtService
     ) {}
 
+    async findUserByEmail(email: string) {
+        const user = await this.prismaService.user.findFirst({
+            where: { email }
+        });
+
+        if(!user) {
+            throw new NotFoundException("User not found");
+        }
+        
+        return user;
+    }
+
     async getUser(username: string) {
         const user = await this.prismaService.user.findFirst({
             where: { username }

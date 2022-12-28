@@ -3,9 +3,10 @@ import { BookingController } from './booking.controller';
 import { BookingService } from './booking.service';
 import {PrismaModule} from "@spst-kniznica-project/backend-libs/database"
 import { BooksModule } from '@spst-kniznica-project/backend-libs/books';
+import { UsersModule } from '@spst-kniznica-project/backend-libs/users';
 
 @Module({
-  imports: [PrismaModule, BooksModule],
+  imports: [PrismaModule, BooksModule, UsersModule],
   controllers: [BookingController],
   providers: [BookingService]
 })
