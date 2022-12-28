@@ -82,7 +82,5 @@ export class UsersService {
         }
     }
 
-    async logoutUser() {
-        return;
-    }
+    async updateProfile() {}
 }
