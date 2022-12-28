@@ -14,6 +14,7 @@ import { SocialModule } from '@spst-kniznica-project/backend-libs/social';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { AdminModule } from '@spst-kniznica-project/backend-libs/admin';
 import { UsersModule } from '@spst-kniznica-project/backend-libs/users';
+import { QuestionsModule } from '@spst-kniznica-project/backend-libs/questions';
 
 @Module({
   imports: [
@@ -44,6 +45,7 @@ import { UsersModule } from '@spst-kniznica-project/backend-libs/users';
     SocialModule,
     AdminModule,
     UsersModule,
+    QuestionsModule
   ]
 })
 export class AppModule {
