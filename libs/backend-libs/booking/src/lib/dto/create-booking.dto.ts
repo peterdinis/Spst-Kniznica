@@ -1,35 +1,35 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsBoolean,
+  IsDateString,
   IsNotEmpty,
   IsNumber,
   IsOptional,
-  IsString,
 } from 'class-validator';
 
 export class CreateNewBookingDto {
   @ApiProperty()
-  @IsString()
+  @IsDateString()
   @IsNotEmpty()
-  days: string;
+  from: string;
 
   @ApiProperty()
+  @IsDateString()
   @IsNotEmpty()
+  to: string;
+
+  @ApiProperty()
   @IsNumber()
+  @IsNotEmpty()
   bookId: number;
 
   @ApiProperty()
-  @IsOptional()
   @IsNumber()
-  studentId: number;
+  @IsNotEmpty()
+  userId: number;
 
   @ApiProperty()
-  @IsOptional()
-  @IsNumber()
-  teacherId: number;
-
-  @ApiProperty()
-  @IsOptional()
   @IsBoolean()
-  extend: boolean;
+  @IsOptional()
+  extended: boolean;
 }

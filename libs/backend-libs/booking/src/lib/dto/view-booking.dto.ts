@@ -2,17 +2,26 @@ import { ApiProperty } from "@nestjs/swagger";
 
 export class ViewBookingDto {
     @ApiProperty()
-    days: string;
+    id: number;
+
+    @ApiProperty()
+    from: string
+
+    @ApiProperty()
+    to: string
 
     @ApiProperty()
     bookId: number;
 
     @ApiProperty()
-    studentId: number;
+    userId: number;
 
     @ApiProperty()
-    teacherId: number;
+    createdAt: string;
 
     @ApiProperty()
-    extend: boolean;
+    updatedAt: string;
+
+    @ApiProperty()
+    extended: boolean;
 }

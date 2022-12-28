@@ -6,6 +6,7 @@ import { LoginUserDto } from "./dto/login-users.dto";
 import { AuthGuard } from "@nestjs/passport";
 import AuthUser from "./decorators/user.decorator";
 import type { User } from "@prisma/client";
+import { ViewUsersDto } from "./dto/view-users.dto";
 
 @ApiTags("Application Users")
 @Controller("users")
@@ -41,7 +42,9 @@ export class UsersController {
     @ApiOperation({
         summary: "Profile info"
     })
-    @ApiOkResponse()
+    @ApiOkResponse({
+        type: ViewUsersDto
+    })
     @ApiBearerAuth()
     @UseGuards(AuthGuard("jwt"))
     @Get("/profile")

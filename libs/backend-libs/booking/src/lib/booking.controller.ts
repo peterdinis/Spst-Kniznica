@@ -1,8 +1,10 @@
-import { Body, Controller, Get, Param, Patch, Post } from "@nestjs/common";
+import { Body, Controller, Get, Param, Patch, Post, Put } from "@nestjs/common";
 import { BookingService } from "./booking.service";
 import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
-import { ViewBookingDto } from "./dto/view-booking.dto";
 import { CreateNewBookingDto } from "./dto/create-booking.dto";
+import { ViewBookingDto } from "./dto/view-booking.dto";
+import { ReturnBookingDto } from "./dto/return-booking.dto";
+import { ExtendedBookingDto } from "./dto/extended-booking.dto";
 
 @ApiTags("Borrowing")
 @Controller("booking")
@@ -21,11 +23,22 @@ export class BookingController {
     }
 
     @ApiOperation({
+        summary: "Find all my borrowed books"
+    })
+    @ApiOkResponse()
+    @Get("/borrowed/:email")
+    async myBorrowedBooks(@Param("email") email: string) {
+        return await this.bookingService.displayMyBorowedBooks(email);
+    }
+
+    @ApiOperation({
         summary: "Find borrowed book by detail"
     })
-    @ApiOkResponse({
-        type: ViewBookingDto
-    })
+    @ApiOkResponse(
+        {
+            type: ViewBookingDto
+        }
+    )
     @Get("/:id")
     async findOneBorrowedBook(
         @Param("id") id: number
@@ -36,7 +49,9 @@ export class BookingController {
     @ApiOperation({
         summary: "Borrow book"
     })
-    @ApiCreatedResponse()
+    @ApiCreatedResponse({
+        type: CreateNewBookingDto
+    })
     @Post("/")
     async borrowBook(@Body() bookingDto: CreateNewBookingDto) {
         return await this.bookingService.borrowBook(bookingDto);
@@ -47,7 +62,18 @@ export class BookingController {
     })
     @ApiOkResponse()
     @Patch("/book/return")
-    async returnBook() {
-        return await this.bookingService.returnBook();
+    async returnBook(@Body() returnBookingDto: ReturnBookingDto) {
+        return await this.bookingService.returnBook(returnBookingDto);
+    }
+
+    @ApiOperation({
+        summary: "Extended book"
+    })
+    @ApiOkResponse({
+        type: ExtendedBookingDto
+    })
+    @Put("/book/extend")
+    async extendBook(@Body() extend: ExtendedBookingDto) {
+        return await this.bookingService.extendedBook(extend);
     }
 }

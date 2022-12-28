@@ -12,8 +12,20 @@ export class UsersService {
         private readonly jwtService: JwtService
     ) {}
 
+    async findUserByEmail(email: string) {
+        const user = await this.prismaService.user.findFirst({
+            where: { email }
+        });
+
+        if(!user) {
+            throw new NotFoundException("User not found");
+        }
+
+        return user;
+    }
+
     async getUser(username: string) {
-        const user = await this.prismaService.user.findUnique({
+        const user = await this.prismaService.user.findFirst({
             where: { username }
         });
 
@@ -26,14 +38,14 @@ export class UsersService {
     }
 
     async createUser(registerDto: RegisterUserDto) {
-        const existing = await this.prismaService.user.findUnique({
+        const existing = await this.prismaService.user.findFirst({
             where: {
                 username: registerDto.username
             }
         });
 
         if(existing) {
-            throw new ConflictException('username already exists');
+            throw new ConflictException('Username already exists');
         }
 
         const hashedPassword = await bcrypt.hash(registerDto.password, 10);
@@ -52,7 +64,7 @@ export class UsersService {
     async loginUser(loginDto: LoginUserDto) {
         const { username, password } = loginDto;
 
-        const user = await this.prismaService.user.findUnique({
+        const user = await this.prismaService.user.findFirst({
             where: { username }
         });
 
@@ -81,4 +93,6 @@ export class UsersService {
             user
         }
     }
+
+    async updateProfile() {}
 }
