@@ -126,6 +126,13 @@ export class BookingService {
   }
 
   async displayMyBorowedBooks(email: string) {
-    return;
+    const oneStudent = await this.usersService.findUserByEmail(email);
+    const myBorrowedBooks = await this.prismaService.booking.findMany({
+      where: {
+        id: oneStudent.id
+      }
+    })
+
+    return myBorrowedBooks;
   }
 }

@@ -5,7 +5,6 @@ import { CreateNewBookingDto } from "./dto/create-booking.dto";
 import { ViewBookingDto } from "./dto/view-booking.dto";
 import { ReturnBookingDto } from "./dto/return-booking.dto";
 import { ExtendedBookingDto } from "./dto/extended-booking.dto";
-import { timeStamp } from "console";
 
 @ApiTags("Borrowing")
 @Controller("booking")
@@ -21,6 +20,15 @@ export class BookingController {
     @Get("/")
     async allBorrowedBooks() {
         return this.bookingService.allBorrowedBooks();
+    }
+
+    @ApiOperation({
+        summary: "Find all my borrowed books"
+    })
+    @ApiOkResponse()
+    @Get("/borrowed/:email")
+    async myBorrowedBooks(@Param("email") email: string) {
+        return await this.bookingService.displayMyBorowedBooks(email);
     }
 
     @ApiOperation({
