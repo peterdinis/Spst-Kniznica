@@ -21,4 +21,7 @@ export class ViewBookingDto {
 
     @ApiProperty()
     updatedAt: string;
+
+    @ApiProperty()
+    extended: boolean;
 }

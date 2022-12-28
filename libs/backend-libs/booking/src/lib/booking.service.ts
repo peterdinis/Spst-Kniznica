@@ -9,6 +9,7 @@ import { CreateNewBookingDto } from './dto/create-booking.dto';
 import { BooksService } from '@spst-kniznica-project/backend-libs/books';
 import { AVAIABLE, NONAVAIABLE } from './utils/book.status';
 import { ReturnBookingDto } from './dto/return-booking.dto';
+import { ExtendedBookingDto } from './dto/extended-booking.dto';
 
 @Injectable()
 export class BookingService {
@@ -88,7 +89,7 @@ export class BookingService {
     }
   }
 
-  async extendedBook() {
+  async extendedBook(extendDto: ExtendedBookingDto) {
     return;
   }
 }

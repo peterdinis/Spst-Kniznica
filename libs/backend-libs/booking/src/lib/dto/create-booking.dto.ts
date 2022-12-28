@@ -1,5 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
+  IsBoolean,
   IsDateString,
   IsNotEmpty,
   IsNumber,
@@ -26,4 +27,9 @@ export class CreateNewBookingDto {
   @IsNumber()
   @IsNotEmpty()
   userId: number;
+
+  @ApiProperty()
+  @IsBoolean()
+  @IsOptional()
+  extended: boolean;
 }
