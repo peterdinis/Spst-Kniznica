@@ -12,6 +12,12 @@ import UpdateCategory from './lib/categories/UpdateCategory';
 import NotFoundPage from './lib/NotFoundPage';
 import ReturnBook from './lib/booking/ReturnBook';
 import NotAllowed from './lib/NotAllowed';
+import TeacherRegisterPage from './lib/users/teacher/TeacherRegisterPage';
+import TeacherLoginPage from './lib/users/teacher/TeacherLoginPage';
+import TeacherProfilePage from './lib/users/teacher/TeacherProfilePage';
+import StudentLoginPage from './lib/users/student/StudentLoginPage';
+import StudentRegisterPage from './lib/users/student/StudentRegisterPage';
+import StudentProfilePage from './lib/users/student/StudentProfilePage';
 
 export {
     Aboutpage,
@@ -27,5 +33,11 @@ export {
     UpdateCategory,
     NotFoundPage,
     ReturnBook,
-    NotAllowed
+    NotAllowed,
+    TeacherRegisterPage,
+    TeacherLoginPage,
+    TeacherProfilePage,
+    StudentLoginPage,
+    StudentProfilePage,
+    StudentRegisterPage
 }
