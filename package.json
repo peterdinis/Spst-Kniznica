@@ -9,7 +9,7 @@
     "test": "nx test",
     "lint": "prettier --check .",
     "format": "prettier --write .",
-    "cypress": "cypress open"
+    "cypress": "nx e2e frontend-e2e --watch"
   },
   "private": true,
   "dependencies": {
