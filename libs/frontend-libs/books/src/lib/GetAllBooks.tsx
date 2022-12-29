@@ -6,7 +6,6 @@ import {
 import { useQuery, useQueryErrorResetBoundary } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-/* TODO: Update !! */
 import * as api from 'libs/frontend-libs/api/src/lib/queries/bookQueries';
 import Button from '@mui/material/Button';
 import { IBook } from 'libs/frontend-libs/api/src/lib/interfaces/IBook';
@@ -46,7 +45,6 @@ export function AllBooks() {
             placeholder="Hľadaj knihu"
           />
         </div>
-        <section></section>
         <div className="grid gap-8 space-x-1 lg:grid-cols-6">
           <>
             {data &&
@@ -81,7 +79,7 @@ export function AllBooks() {
                             className="link mt-10 bg-blue-200 p-2 rounded"
                             to={`/book/${item.id}`}
                           >
-                            Detail Knihy
+                            Detail
                           </Link>
                         </div>
                       </div>
