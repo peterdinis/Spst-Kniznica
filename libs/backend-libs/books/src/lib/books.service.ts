@@ -7,7 +7,6 @@ import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateBookDto } from './dto/create-book-dto';
 import { UpdateBookDto } from './dto/update-book-dto';
 import { PageOptionsDto } from '@spst-kniznica-project/backend-libs/shared';
-import { ApiCachceService } from '@spst-kniznica-project/backend-libs/cache';
 
 @Injectable()
 export class BooksService {

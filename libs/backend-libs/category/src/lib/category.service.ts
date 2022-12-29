@@ -3,7 +3,6 @@ import {
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { ApiCachceService } from '@spst-kniznica-project/backend-libs/cache';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateCategoryDto } from './dto/create-new-category.dto';
 import { UpdateCategoryDto } from './dto/update-category-dto';
