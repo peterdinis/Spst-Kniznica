@@ -25,8 +25,8 @@ import {
 export function App() {
   return (
     <>
-      <Navbar />
       <Suspense fallback={<FallbackLoader />}>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<Aboutpage />} />
