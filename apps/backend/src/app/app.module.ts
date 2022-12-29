@@ -9,7 +9,6 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
 import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
 import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
-import { ApiCachceModule } from '@spst-kniznica-project/backend-libs/cache';
 import { SocialModule } from '@spst-kniznica-project/backend-libs/social';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { AdminModule } from '@spst-kniznica-project/backend-libs/admin';
@@ -45,7 +44,6 @@ import { AppController } from './app.controller';
     QuotesModule,
     ChatModule,
     CheckerModule,
-    ApiCachceModule,
     SocialModule,
     AdminModule,
     UsersModule,

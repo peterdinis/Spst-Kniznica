@@ -5,14 +5,12 @@ import {
 } from '@nestjs/common';
 import { CreateRoomDto } from './dto/create-room-dto';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
-import { ApiCachceService } from '@spst-kniznica-project/backend-libs/cache';
 import { UpdateRoomDto } from './dto/update-room.dto';
 
 @Injectable()
 export class ChatService {
   constructor(
-    private readonly prismaService: PrismaService,
-    private readonly apiCacheService: ApiCachceService
+    private readonly prismaService: PrismaService
   ) {}
 
   async createNewRoom(createRoomDto: CreateRoomDto) {
@@ -23,7 +21,6 @@ export class ChatService {
         roomId: createRoomDto.roomId,
       },
     });
-    await this.apiCacheService.clearCache();
     return newBook;
   }
 

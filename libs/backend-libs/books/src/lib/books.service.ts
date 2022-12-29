@@ -12,8 +12,7 @@ import { ApiCachceService } from '@spst-kniznica-project/backend-libs/cache';
 @Injectable()
 export class BooksService {
   constructor(
-    private readonly prismaService: PrismaService,
-    private readonly apiCacheService: ApiCachceService
+    private readonly prismaService: PrismaService
   ) {}
 
   async findAllBooks() {
@@ -82,7 +81,6 @@ export class BooksService {
       if (!updateBook) {
         throw new NotFoundException('Book not found');
       }
-      await this.apiCacheService.clearCache();
       return updateBook;
     } catch (err) {
       throw new BadRequestException(err);
@@ -99,7 +97,6 @@ export class BooksService {
     if (!oneBook) {
       throw new NotFoundException('Book not found');
     }
-    await this.apiCacheService.clearCache();
     return oneBook;
   }
 }

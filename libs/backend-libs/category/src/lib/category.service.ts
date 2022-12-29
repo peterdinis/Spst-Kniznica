@@ -11,8 +11,7 @@ import { UpdateCategoryDto } from './dto/update-category-dto';
 @Injectable()
 export class CategoryService {
   constructor(
-    private readonly prismaService: PrismaService,
-    private readonly apiCacheService: ApiCachceService
+    private readonly prismaService: PrismaService
   ) {}
 
   async findAllCategories() {
@@ -60,8 +59,6 @@ export class CategoryService {
       if (!updateCategory) {
         throw new NotFoundException('Category not found');
       }
-
-      await this.apiCacheService.clearCache();
       return updateCategory;
     } catch (e) {
       throw new BadRequestException(e);
@@ -78,7 +75,6 @@ export class CategoryService {
     if (!oneCategory) {
       throw new NotFoundException('Category not found');
     }
-    await this.apiCacheService.clearCache();
     return oneCategory;
   }
 }

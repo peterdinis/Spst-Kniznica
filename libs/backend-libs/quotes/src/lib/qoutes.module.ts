@@ -2,10 +2,9 @@ import { Module } from '@nestjs/common';
 import { PrismaModule } from '@spst-kniznica-project/backend-libs/database';
 import { QuotesController } from './qoutes.controller';
 import { QuotesService } from './qoutes.service';
-import { ApiCachceModule } from '@spst-kniznica-project/backend-libs/cache';
 
 @Module({
-  imports: [PrismaModule, ApiCachceModule],
+  imports: [PrismaModule],
   controllers: [QuotesController],
   providers: [QuotesService]
 })

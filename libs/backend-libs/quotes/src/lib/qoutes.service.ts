@@ -6,13 +6,11 @@ import {
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateQuoteDto } from './dto/create-quote.dto';
 import { UpdateQuoteDto } from './dto/update-quote.dto';
-import { ApiCachceService } from '@spst-kniznica-project/backend-libs/cache';
 
 @Injectable()
 export class QuotesService {
   constructor(
-    private readonly prismaService: PrismaService,
-    private readonly apiCacheService: ApiCachceService
+    private readonly prismaService: PrismaService
   
   ) {}
 
@@ -36,18 +34,13 @@ export class QuotesService {
   }
 
   async createNewQuote(quoteData: CreateQuoteDto) {
-    try {
       const createNewQuote = await this.prismaService.quote.create({
         data: {
           author: quoteData.author,
           text: quoteData.text,
         },
       });
-      await this.apiCacheService.clearCache();
       return createNewQuote;
-    } catch (err) {
-      throw new BadRequestException(err);
-    }
   }
 
   async updateNewQuote(id: number, quoteData: UpdateQuoteDto) {
@@ -62,7 +55,6 @@ export class QuotesService {
     if(!oneQuote) {
       throw new NotFoundException("Qoute not found")
     }
-    await this.apiCacheService.clearCache();
     return oneQuote;
   }
 
@@ -76,7 +68,6 @@ export class QuotesService {
     if(!oneQuote) {
       throw new NotFoundException("Qoute not found")
     }
-    await this.apiCacheService.clearCache();
     return oneQuote;
   }
 }
