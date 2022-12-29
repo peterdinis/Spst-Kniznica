@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 
 function Hero() {
   const { data, isError } = useQuery(['exampleData'], api.getTestData);
-
+ 
   queryClient.setQueryData(['exampleData'], data);
 
   const issue = () => toast.error('Na backende je chyba');
