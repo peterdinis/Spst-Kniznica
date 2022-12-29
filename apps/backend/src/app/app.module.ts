@@ -15,9 +15,13 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
 import { AdminModule } from '@spst-kniznica-project/backend-libs/admin';
 import { UsersModule } from '@spst-kniznica-project/backend-libs/users';
 import { QuestionsModule } from '@spst-kniznica-project/backend-libs/questions';
+import { HttpModule } from '@nestjs/axios';
+import { AppService } from './app.service';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
+    HttpModule,
     EventEmitterModule.forRoot(
       {
         global: true
@@ -46,6 +50,14 @@ import { QuestionsModule } from '@spst-kniznica-project/backend-libs/questions';
     AdminModule,
     UsersModule,
     QuestionsModule
+  ],
+
+  providers: [
+    AppService
+  ],
+
+  controllers: [
+    AppController
   ]
 })
 export class AppModule {
