@@ -4,7 +4,6 @@ import { BooksModule } from '@spst-kniznica-project/backend-libs/books';
 import { PrismaModule} from '@spst-kniznica-project/backend-libs/database';
 import { CategoryModule } from '@spst-kniznica-project/backend-libs/category';
 import { BookingModule } from '@spst-kniznica-project/backend-libs/booking';
-import { QuotesModule } from '@spst-kniznica-project/backend-libs/quotes';
 import { ThrottlerModule } from '@nestjs/throttler';
 import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
 import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
@@ -41,7 +40,6 @@ import { AppController } from './app.controller';
     PrismaModule,
     CategoryModule,
     BookingModule,
-    QuotesModule,
     ChatModule,
     CheckerModule,
     SocialModule,

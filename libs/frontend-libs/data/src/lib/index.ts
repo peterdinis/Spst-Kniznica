@@ -3,3 +3,4 @@ export * from "./placeholderBook";
 export * from "./placeholderCategory";
 export * from "./placeholderStudent";
 export * from "./placeholderTeacher"
+export * from "./placeholderQuote"
