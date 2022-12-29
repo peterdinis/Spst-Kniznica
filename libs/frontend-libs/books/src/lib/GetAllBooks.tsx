@@ -11,14 +11,10 @@ import Button from '@mui/material/Button';
 import { IBook } from 'libs/frontend-libs/api/src/lib/interfaces/IBook';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ScrollToTop from 'libs/frontend-libs/hooks/src/lib/useScroll';
+import ReactSearchBox from "react-search-box";
 
 export function AllBooks() {
   const { reset } = useQueryErrorResetBoundary();
-  const [searchTerm, setSearchTerm] = React.useState<string>('');
-
-  const valChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
 
   const { data, isError } = useQuery(['allBooks'], api.getBooks);
 
@@ -40,7 +36,7 @@ export function AllBooks() {
         <Header name="Všetky knihy" />
         <div className="flex justify-center align-top">
           <input
-            onChange={valChange}
+            
             className="text-gray-600 mt-4 dark:text-gray-400 focus:outline-none focus:border focus:border-indigo-700 dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border shadow"
             placeholder="Hľadaj knihu"
           />
