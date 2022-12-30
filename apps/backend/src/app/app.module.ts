@@ -17,6 +17,7 @@ import { HttpModule } from '@nestjs/axios';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
 import { ScheduleModule } from '@nestjs/schedule';
+import { NotificationsModule } from '@spst-kniznica-project/backend-libs/notifications';
 
 @Module({
   imports: [
@@ -47,7 +48,8 @@ import { ScheduleModule } from '@nestjs/schedule';
     SocialModule,
     AdminModule,
     UsersModule,
-    QuestionsModule
+    QuestionsModule,
+    NotificationsModule
   ],
 
   providers: [

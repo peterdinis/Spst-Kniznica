@@ -1,7 +1,8 @@
-import { Controller, Get, Param, Put } from "@nestjs/common";
+import { Controller, Delete, Get, Param, Put } from "@nestjs/common";
 import { NotificationsService } from "./notifications.service";
-import { ApiOkResponse, ApiOperation } from "@nestjs/swagger";
+import { ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 
+@ApiTags("Notifications")
 @Controller("notifications")
 export class NotificationsController {
     constructor(private readonly notificationsService: NotificationsService) {}
@@ -18,8 +19,19 @@ export class NotificationsController {
     @ApiOperation({
         summary: "Marked notifcation as read"
     })
+    @ApiOkResponse()
     @Put("/:notifcationId/read")
     async readNotifcation(@Param("notifcationId") notificationId: number) {
         return await this.notificationsService.markNotificationAsRead(notificationId);
+    }
+
+
+    @ApiOperation({
+        summary: "Removed all notifcations with status isRead=true"
+    })
+    @ApiOkResponse()
+    @Delete("/readed")
+    async deleteReadedNotifications() {
+        return await this.notificationsService.removeReadNotification();
     }
 }
