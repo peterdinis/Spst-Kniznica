@@ -4,6 +4,7 @@ import { RegisterUserDto } from "./dto/register-users.dto";
 import * as bcrypt from "bcrypt";
 import {JwtService} from "@nestjs/jwt";
 import { LoginUserDto } from "./dto/login-users.dto";
+import { UpdateUserDto } from "./dto/update-users.dto";
 
 @Injectable()
 export class UsersService {
@@ -94,5 +95,15 @@ export class UsersService {
         }
     }
 
-    async updateProfile() {}
+    async updateProfile(id: number, updatedData: UpdateUserDto) {
+        const updatedUser = await this.prismaService.user.update({
+            where: {
+                id
+            },
+
+            data: updatedData
+        })
+
+        return updatedUser;
+    }
 }
