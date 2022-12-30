@@ -21,7 +21,7 @@ model Book {
   publisher   String
   image       String
   status      String
-  categoryId  Int
+  categoryId  Int @default(1)
   category    Category  @relation(fields: [categoryId], references: [id])
   borrowed    Booking[]
 }
