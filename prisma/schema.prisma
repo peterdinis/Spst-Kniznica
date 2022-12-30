@@ -75,18 +75,7 @@ model User {
   createdAt  DateTime     @default(now())
   updateAt   DateTime     @updatedAt()
   borrowed   Booking[]
-  UserTokens UserTokens[]
-}
-
-model UserTokens {
-  id           String   @id @default(uuid())
-  userId       Int
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  refreshToken String
-  family       String   @unique
-  browserInfo  String?
-  expiresAt    DateTime
-  createdAt    DateTime @default(now())
+  myNotification Notification[]
 }
 
 model Chat {
@@ -115,4 +104,6 @@ model Notification {
    description String
    count Int
    isRead Boolean
+   userId    Int
+   user      User     @relation(fields: [userId], references: [id])
 }
