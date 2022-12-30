@@ -114,4 +114,5 @@ model Notification {
    name String
    description String
    count Int
+   isRead Boolean
 }
