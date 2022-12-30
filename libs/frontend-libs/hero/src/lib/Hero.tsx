@@ -1,4 +1,3 @@
-import { DisplayOneQoute } from '@spst-kniznica-project/frontend-libs/quotes';
 import DateTimePicker from 'libs/frontend-libs/shared/src/lib/DateTimePicker';
 import { useQuery } from '@tanstack/react-query';
 import * as api from 'libs/frontend-libs/api/src/lib/queries/exampleQuery';
