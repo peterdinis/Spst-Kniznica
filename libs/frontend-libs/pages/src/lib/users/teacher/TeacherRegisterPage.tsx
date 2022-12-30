@@ -1,8 +1,11 @@
+import { RegisterTeacherForm } from '@spst-kniznica-project/frontend-libs/users'
 import React from 'react'
 
 function TeacherRegisterPage() {
   return (
-    <div>TeacherRegisterPage</div>
+    <>
+      <RegisterTeacherForm />
+    </>
   )
 }
 
