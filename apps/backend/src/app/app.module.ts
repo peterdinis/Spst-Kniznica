@@ -16,6 +16,7 @@ import { QuestionsModule } from '@spst-kniznica-project/backend-libs/questions';
 import { HttpModule } from '@nestjs/axios';
 import { AppService } from './app.service';
 import { AppController } from './app.controller';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { AppController } from './app.controller';
         global: true
       }
     ),
+    ScheduleModule.forRoot(),
     CacheModule.register({
       isGlobal: true
     }),

@@ -1,1 +1,1 @@
-export * from './lib/backend-libs-notifications.module';
+export * from './lib/notifications.module';
