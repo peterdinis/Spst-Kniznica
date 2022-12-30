@@ -21,6 +21,8 @@ model Book {
   publisher   String
   image       String
   status      String
+  categoryId  Int
+  category    Category  @relation(fields: [categoryId], references: [id])
   borrowed    Booking[]
 }
 
@@ -28,6 +30,7 @@ model Category {
   id          Int    @id @default(autoincrement())
   name        String
   description String
+  books       Book[]
 }
 
 model Quote {
@@ -42,11 +45,11 @@ model Booking {
   to        DateTime
   bookId    Int
   book      Book     @relation(fields: [bookId], references: [id])
-  userId  Int
+  userId    Int
   user      User     @relation(fields: [userId], references: [id])
   createdAt DateTime @default(now())
   updateAt  DateTime @updatedAt()
-  extended Boolean @default(false)
+  extended  Boolean  @default(false)
 }
 
 model Admin {
@@ -61,24 +64,24 @@ model Admin {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  username  String
-  password  String
-  firstName String
-  lastName  String
-  email     String
-  isTeacher Boolean @default(false)
-  isStudent Boolean @default(false)
-  createdAt DateTime  @default(now())
-  updateAt  DateTime  @updatedAt()
-  borrowed  Booking[]
+  id         Int          @id @default(autoincrement())
+  username   String
+  password   String
+  firstName  String
+  lastName   String
+  email      String
+  isTeacher  Boolean      @default(false)
+  isStudent  Boolean      @default(false)
+  createdAt  DateTime     @default(now())
+  updateAt   DateTime     @updatedAt()
+  borrowed   Booking[]
   UserTokens UserTokens[]
 }
 
 model UserTokens {
-  id String @id @default(uuid())
-  userId Int
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id           String   @id @default(uuid())
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   refreshToken String
   family       String   @unique
   browserInfo  String?
@@ -100,9 +103,8 @@ model SocialUser {
   image String
 }
 
-
 model Question {
-  id    Int    @id @default(autoincrement())
-  name String
+  id     Int    @id @default(autoincrement())
+  name   String
   answer String
 }
