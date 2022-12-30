@@ -14,7 +14,11 @@ export class CategoryService {
   ) {}
 
   async findAllCategories() {
-    const allCategories = await this.prismaService.category.findMany();
+    const allCategories = await this.prismaService.category.findMany({
+      select: {
+        books: true
+      }
+    });
     return allCategories;
   }
 

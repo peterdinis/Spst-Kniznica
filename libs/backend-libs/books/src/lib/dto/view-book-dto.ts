@@ -24,4 +24,7 @@ export class ViewBookDto {
 
     @ApiProperty()
     publisher: string;
+
+    @ApiProperty()
+    categoryId: number;
 }

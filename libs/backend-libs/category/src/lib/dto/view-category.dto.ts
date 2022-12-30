@@ -1,4 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { ViewBookDto } from "libs/backend-libs/books/src/lib/dto/view-book-dto";
 
 export class ViewCategoryDto {
     @ApiProperty()
@@ -6,4 +7,7 @@ export class ViewCategoryDto {
 
     @ApiProperty()
     description: string;
+
+    @ApiProperty()
+    books: ViewBookDto[]
 }
