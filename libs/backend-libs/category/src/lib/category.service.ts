@@ -6,6 +6,7 @@ import {
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateCategoryDto } from './dto/create-new-category.dto';
 import { UpdateCategoryDto } from './dto/update-category-dto';
+import { PageOptionsDto } from '@spst-kniznica-project/backend-libs/shared';
 
 @Injectable()
 export class CategoryService {
@@ -20,6 +21,19 @@ export class CategoryService {
       }
     });
     return allCategories;
+  }
+
+  async paginateCategories(pageOptionsDto: PageOptionsDto) {
+    if (isNaN(pageOptionsDto.skip)) {
+      return this.prismaService.category.findMany({
+        take: pageOptionsDto.take,
+      });
+    } else {
+      return this.prismaService.category.findMany({
+        skip: pageOptionsDto.skip,
+        take: pageOptionsDto.take,
+      });
+    }
   }
 
   async createNewCategory(categoryDto: CreateCategoryDto) {

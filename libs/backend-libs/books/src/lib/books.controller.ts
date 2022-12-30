@@ -61,7 +61,7 @@ export class BooksController {
         summary: "Update book"
     })
     @ApiResponse({
-        type: ViewBookDto
+        type: UpdateBookDto
     })
     @Put("/:id/update")
     async updateBook(
