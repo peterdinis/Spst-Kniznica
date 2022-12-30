@@ -46,4 +46,9 @@ export class CreateBookDto {
     @IsString()
     @IsNotEmpty()
     publisher: string;
+
+    @ApiProperty()
+    @IsNumber()
+    @IsNotEmpty()
+    categoryId: number;
 }

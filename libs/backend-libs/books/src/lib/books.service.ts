@@ -45,7 +45,11 @@ export class BooksService {
           year: bookData.year,
           image: bookData.image,
           status: bookData.status,
+          categoryId: bookData.categoryId,
         },
+        include: {
+          category: true
+        }
       });
       return newBook;
     } catch (err) {
