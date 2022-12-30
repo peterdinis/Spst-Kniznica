@@ -25,7 +25,7 @@ function ChatWrapper() {
           {!showChat ? (
             <div className="flex h-96 lg:w-1/4 sm:w-2/4 mx-auto my-auto bg-white rounded-xl shadow-lg  py-12 px-4 sm:px-6 lg:px-8">
               <div className="w-full">
-                <h1 className="text-xl font-medium text-black text-center">
+                <h1 className="text-2xl font-bold text-black text-center">
                   Chat s Adminami
                 </h1>
                 <div className="flex flex-col ">
@@ -55,13 +55,10 @@ function ChatWrapper() {
                     Vstúp do chatu
                   </button>
                 </div>
-
-                <div className="mt-4">
-                  <AvaiableRooms buttonName='Dostupné rooms'>
-                    <h2 className="text-center text-2xl">Dostupné rooms</h2>
+                  <AvaiableRooms buttonName='Dostupné miestnosti'>
+                    <h2 className="text-center text-2xl">Dostupné miestnosti</h2>
                     <VirtualizedList />
                   </AvaiableRooms>
-                </div>
               </div>
             </div>
           ) : (
