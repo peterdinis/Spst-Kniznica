@@ -1,15 +1,17 @@
 import { Injectable } from "@nestjs/common";
 import { PrismaService } from "@spst-kniznica-project/backend-libs/database";
-import { EventEmitter2, OnEvent } from '@nestjs/event-emitter';
-import { Cron, CronExpression, SchedulerRegistry } from '@nestjs/schedule';
+import { NotificationCreatedEvent } from "./events/notification-created.event";
 
 @Injectable()
 export class NotificationsService {
     constructor(
         private readonly prismaService: PrismaService,
-        private readonly eventEmitter: EventEmitter2,
-        private schedulerRegistry: SchedulerRegistry,
     ) {}
+
+    async allCreatedNotifications() {
+        const allNotifications = await this.prismaService.notification.findMany();
+        return allNotifications;
+    }
 
     async displayUserNotifications(userId: number) {
         const allUsersNotifcations = await this.prismaService.notification.findMany({
@@ -33,6 +35,13 @@ export class NotificationsService {
         });
 
         return markedNotifcation;
+    }
+    async createNewNotification(payload: NotificationCreatedEvent) {
+        const newNotifcation = await this.prismaService.notification.create({
+            data: payload
+        })
+
+        return newNotifcation;
     }
 
     async removeReadNotification() {

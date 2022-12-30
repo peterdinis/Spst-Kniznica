@@ -8,6 +8,15 @@ export class NotificationsController {
     constructor(private readonly notificationsService: NotificationsService) {}
 
     @ApiOperation({
+        summary: "All notifcations"
+    })
+    @ApiOkResponse()
+    @Get("/")
+    async allNotifications() {
+        return await this.notificationsService.allCreatedNotifications()
+    }
+
+    @ApiOperation({
         summary: "Display user notifications"
     })
     @ApiOkResponse()
