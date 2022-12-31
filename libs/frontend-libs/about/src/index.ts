@@ -1,3 +1,7 @@
 import AboutWrapper from "./lib/AboutWrapper";
+import Faq from "./lib/Faq";
 
-export default AboutWrapper
+export {
+    AboutWrapper,
+    Faq
+}
