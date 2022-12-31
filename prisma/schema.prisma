@@ -21,7 +21,7 @@ model Book {
   publisher   String
   image       String
   status      String
-  categoryId  Int @default(1)
+  categoryId  Int       @default(1)
   category    Category  @relation(fields: [categoryId], references: [id])
   borrowed    Booking[]
 }
@@ -64,17 +64,17 @@ model Admin {
 }
 
 model User {
-  id         Int          @id @default(autoincrement())
-  username   String
-  password   String
-  firstName  String
-  lastName   String
-  email      String
-  isTeacher  Boolean      @default(false)
-  isStudent  Boolean      @default(false)
-  createdAt  DateTime     @default(now())
-  updateAt   DateTime     @updatedAt()
-  borrowed   Booking[]
+  id             Int            @id @default(autoincrement())
+  username       String
+  password       String
+  firstName      String
+  lastName       String
+  email          String
+  isTeacher      Boolean        @default(false)
+  isStudent      Boolean        @default(false)
+  createdAt      DateTime       @default(now())
+  updateAt       DateTime       @updatedAt()
+  borrowed       Booking[]
   myNotification Notification[]
 }
 
@@ -99,11 +99,11 @@ model Question {
 }
 
 model Notification {
-   id     Int    @id @default(autoincrement())
-   name String
-   description String
-   count Int
-   isRead Boolean
-   userId    Int
-   user      User     @relation(fields: [userId], references: [id])
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String
+  count       Int
+  isRead      Boolean
+  userId      Int
+  user        User    @relation(fields: [userId], references: [id])
 }
