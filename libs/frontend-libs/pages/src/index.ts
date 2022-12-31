@@ -18,6 +18,7 @@ import TeacherProfilePage from './lib/users/teacher/TeacherProfilePage';
 import StudentLoginPage from './lib/users/student/StudentLoginPage';
 import StudentRegisterPage from './lib/users/student/StudentRegisterPage';
 import StudentProfilePage from './lib/users/student/StudentProfilePage';
+import NewFaqQuestionPage from './lib/faq/NewFaqQuestionPage';
 
 export {
     Aboutpage,
@@ -39,5 +40,6 @@ export {
     TeacherProfilePage,
     StudentLoginPage,
     StudentProfilePage,
-    StudentRegisterPage
+    StudentRegisterPage,
+    NewFaqQuestionPage
 }
