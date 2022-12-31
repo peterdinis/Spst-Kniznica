@@ -31,7 +31,7 @@ function Hero() {
           </h1>
           <DateTimePicker />
           <div className="ml-8 text-gray-800 text-xl font-regular mb-8 mt-6">
-            Pridaj tu niečo neskôr
+          Knihy sú jedinečne prenosné kúzlo - <span className="font-bold">Stephen King</span>
           </div>
 
           <div className="ml-8">
