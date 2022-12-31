@@ -36,6 +36,16 @@ export class CategoryService {
     }
   }
 
+  async searchForCategory(name: string) {
+    const requestedCategory = await this.prismaService.category.findMany({
+      where: {
+        name
+      }
+    })
+
+    return requestedCategory;
+  }
+
   async createNewCategory(categoryDto: CreateCategoryDto) {
     try {
       const createNewBook = await this.prismaService.category.create({

@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Param, Body, Put, Delete, Query } from "@nestjs/common";
-import { ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
+import { ApiOkResponse, ApiOperation, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { ApiPaginatedResponse, PageOptionsDto } from "@spst-kniznica-project/backend-libs/shared";
 import { BooksService } from "./books.service";
 import { CreateBookDto } from "./dto/create-book-dto";
@@ -20,6 +20,19 @@ export class BooksController {
     @Get("/")
     async allBooks() {
         return await this.booksService.findAllBooks();
+    }
+
+    @ApiOperation({
+        summary: "Search for specific book"
+    })
+    @ApiOkResponse({
+        type: ViewBookDto
+    })
+    @Get("/search")
+    async searchForBook(
+        @Query("name") name: string,
+    ) {
+        return await this.booksService.searchingForBook(name);
     }
 
     @ApiOperation({

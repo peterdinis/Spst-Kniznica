@@ -71,6 +71,16 @@ export class BooksService {
     return oneBook;
   }
 
+  async searchingForBook(name: string) {
+    const requestedBook = await this.prismaService.book.findMany({
+      where: {
+        name
+      }
+    })
+
+    return requestedBook;
+  }
+
   async updateBook(id: number, updateData: UpdateBookDto) {
     try {
       const updateBook = await this.prismaService.book.update({
