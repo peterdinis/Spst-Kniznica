@@ -2,17 +2,12 @@ import React from 'react';
 import { useQuery} from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import * as api from 'libs/frontend-libs/api/src/lib/queries/categoryQueries';
-import {SearchCategoryVal, ICategory} from "libs/frontend-libs/api/src/lib/interfaces/ICategory";
+import {ICategory} from "libs/frontend-libs/api/src/lib/interfaces/ICategory";
 import ScrollToTop from "libs/frontend-libs/hooks/src/lib/useScroll";
 
 function AllCategories() {
 
   const { data, isError } = useQuery(['categories'], api.getCategories);
-  console.log(data);
-  const [searchTerm, setSearchTerm] = React.useState<string>('');
-  const valChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-  };
 
   if (isError) {
     console.log('Adding something here');
@@ -22,7 +17,6 @@ function AllCategories() {
     <>
         <div className="flex justify-center align-top">
           <input
-            onChange={valChange}
             className="control text-gray-600 mt-4 dark:text-gray-400 focus:outline-none focus:border focus:border-indigo-700 dark:focus:border-indigo-700 dark:border-gray-700 dark:bg-gray-800 bg-white font-normal w-64 h-10 flex items-center pl-3 text-sm border-gray-300 rounded border shadow"
             placeholder="Hľadaj kategóriu"
           />

@@ -10,5 +10,3 @@ export interface IBook {
     isbn: string;
     categoryId: number;
 } 
-
-export type SearchVal = Pick<IBook, 'name' |'author'>;

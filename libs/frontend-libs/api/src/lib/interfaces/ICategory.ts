@@ -3,5 +3,3 @@ export interface ICategory {
     name: string;
     description: string;
 }
-
-export type SearchCategoryVal = Pick<ICategory, 'name' | 'description'>;
