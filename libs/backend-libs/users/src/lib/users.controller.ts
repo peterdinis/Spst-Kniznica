@@ -5,6 +5,7 @@ import {
   Param,
   Post,
   Put,
+  Query,
   UseGuards,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
@@ -37,6 +38,14 @@ export class UsersController {
   @Post('/register')
   async registerUser(@Body() registerUserDto: RegisterUserDto) {
     return this.usersService.registerUser(registerUserDto);
+  }
+
+  @ApiOperation({
+    summary: "Search for specific user"
+  })
+  @Get("/search")
+  async searchForUser(@Query("username") username: string) {
+    return await this.usersService.searchForUser(username)
   }
 
   @ApiOperation({

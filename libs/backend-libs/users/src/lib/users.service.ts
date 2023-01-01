@@ -38,6 +38,13 @@ export class UsersService {
         return user;
     }
 
+    async searchForUser(username: string) {
+        const user = await this.prismaService.user.findFirst({
+            where: { username }
+        });
+        return user;
+    }
+
     async createUser(registerDto: RegisterUserDto) {
         const existing = await this.prismaService.user.findFirst({
             where: {
