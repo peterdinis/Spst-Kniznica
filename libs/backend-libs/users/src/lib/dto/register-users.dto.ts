@@ -28,12 +28,7 @@ export class RegisterUserDto {
     lastName: string;
 
     @ApiProperty()
-    @IsBoolean()
+    @IsString()
     @IsNotEmpty()
-    isTeacher: boolean;
-
-    @ApiProperty()
-    @IsBoolean()
-    @IsNotEmpty()
-    isStudent: boolean;
+    role: string;
 }

@@ -19,9 +19,4 @@ export class ViewUsersDto {
 
   @ApiProperty()
   role: string;
-
-  @ApiProperty({
-    type: [ViewBookingDto]
-  })
-  borrowedBooks: ViewBookingDto
 }
