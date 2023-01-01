@@ -1,8 +1,11 @@
-import React from 'react'
+import { NewFaqForm } from '@spst-kniznica-project/frontend-libs/about'
+
 
 function NewFaqQuestionPage() {
   return (
-    <div>NewFaqQuestionPage</div>
+    <>
+      <NewFaqForm />
+    </>
   )
 }
 
