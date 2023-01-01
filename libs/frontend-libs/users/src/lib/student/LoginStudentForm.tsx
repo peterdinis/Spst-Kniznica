@@ -140,7 +140,7 @@ function LoginStudentForm() {
             <div>
               <a
                 className="mt-4 inline-block align-baseline font-bold text-2xl text-blue hover:text-blue-darker"
-                href="/student/login"
+                href="/student/register"
               >
                 Prihlásenie tu
               </a>
