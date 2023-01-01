@@ -20,6 +20,6 @@ export type IRegisterUser = Pick<
   | 'role'
 >;
 
-export type ILoginUser = Pick<IUser, 'username' | 'email'>;
+export type ILoginUser = Pick<IUser, 'username' | 'password'>;
 
 export type IUpdateUser = Partial<IUser>;

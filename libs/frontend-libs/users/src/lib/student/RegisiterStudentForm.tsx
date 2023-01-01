@@ -28,7 +28,6 @@ function RegisiterStudentForm() {
   const {
     handleSubmit,
     register,
-    watch,
     formState: { errors },
   } = useForm<IRegisterUser>({
     resolver: yupResolver(schema),
@@ -174,14 +173,16 @@ function RegisiterStudentForm() {
               Učiteľ
             </label>
             <input
-              className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+             className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
               id="Meno"
               type="text"
               autoFocus
-              placeholder="Priezvisko"
+              placeholder="Žiak"
+              disabled
               {...register('role', {
                 required: true,
                 minLength: 5,
+                value:"Žiak",
                 min: 5,
               })}
             />
