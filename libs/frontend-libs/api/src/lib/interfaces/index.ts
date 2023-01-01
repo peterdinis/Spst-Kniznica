@@ -1,11 +1,7 @@
-import { IBook, SearchVal } from "./IBook";
-import {ICategory, SearchCategoryVal} from "./ICategory";
-import {IQuote} from "./IQoute";
+import { IBook } from "./IBook";
+import {ICategory} from "./ICategory";
 
 export {
     IBook,
-    SearchVal,
     ICategory,
-    SearchCategoryVal,
-    IQuote
 }

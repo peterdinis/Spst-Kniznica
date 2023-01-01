@@ -3,10 +3,11 @@ export interface IBook {
     name: string;
     description: string;
     author: string;
+    year: number;
+    available: boolean;
+    pages: number;
+    publisher: string;
     image: string;
-    year: string;
     status: string;
-    pages: string;
-    isbn: string;
     categoryId: number;
 } 
