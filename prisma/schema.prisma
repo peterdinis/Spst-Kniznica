@@ -70,8 +70,7 @@ model User {
   firstName      String
   lastName       String
   email          String
-  isTeacher      Boolean        @default(false)
-  isStudent      Boolean        @default(false)
+  role           String         @default("Učiteľ")
   createdAt      DateTime       @default(now())
   updateAt       DateTime       @updatedAt()
   borrowed       Booking[]

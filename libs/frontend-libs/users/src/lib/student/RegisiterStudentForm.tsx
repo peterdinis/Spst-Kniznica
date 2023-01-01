@@ -68,7 +68,7 @@ function RegisiterStudentForm() {
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">
-            <div className="mb-6">
+            <div className="mb-2">
               <label
                 className="block text-grey-darker text-sm font-bold mb-2"
                 htmlFor="password"
@@ -81,40 +81,138 @@ function RegisiterStudentForm() {
                 type="text"
                 autoFocus
                 placeholder="Meno"
-                 {...register("username", {
+                {...register('username', {
                   required: true,
                   minLength: 5,
-                  min: 5
+                  min: 5,
                 })}
               />
 
-               <p className="text-red-800">
+              <p className="text-red-800">
                 {errors.username && errors.username.message}
               </p>
             </div>
+            <div className="mb-2">
+              <label
+                className="block text-grey-darker text-sm font-bold mb-2"
+                htmlFor="username"
+              >
+                Email
+              </label>
+              <input
+                className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+                id="email"
+                autoFocus
+                type="email"
+                placeholder="Email"
+                {...register('email', {
+                  required: true,
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: 'invalid email address',
+                  },
+                })}
+              />
+
+              <p className="text-red-800">
+                {errors.email && errors.email.message}
+              </p>
+            </div>
+          </div>
+          <div className="mb-2">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
-              htmlFor="username"
+              htmlFor="password"
             >
-              Email
+              Používateľské meno
             </label>
             <input
-              className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-              id="email"
+              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+              id="Meno"
+              type="text"
               autoFocus
-              type="email"
-              placeholder="Email"
-              {...register("email", {
+              placeholder="Meno"
+              {...register('username', {
                 required: true,
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "invalid email address",
-                },
+                minLength: 5,
+                min: 5,
               })}
             />
 
-             <p className="text-red-800">
-              {errors.email && errors.email.message}
+            <p className="text-red-800">
+              {errors.username && errors.username.message}
+            </p>
+          </div>
+          <div className="mb-2">
+            <label
+              className="block text-grey-darker text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Priezvisko
+            </label>
+            <input
+              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+              id="Meno"
+              type="text"
+              autoFocus
+              placeholder="Priezvisko"
+              {...register('lastname', {
+                required: true,
+                minLength: 5,
+                min: 5,
+              })}
+            />
+
+            <p className="text-red-800">
+              {errors.username && errors.username.message}
+            </p>
+          </div>
+          <div className="mb-2">
+            <label
+              className="block text-grey-darker text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Učiteľ
+            </label>
+            <input
+              className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
+              id="Meno"
+              type="checkbox"
+              autoFocus
+              placeholder="Priezvisko"
+              {...register('lastname', {
+                required: true,
+                minLength: 5,
+                min: 5,
+              })}
+            />
+
+            <p className="text-red-800">
+              {errors.username && errors.username.message}
+            </p>
+          </div>
+          <div className="mb-2">
+            <label
+              className="block text-grey-darker text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Žiak
+            </label>
+            <input
+              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+              id="Meno"
+              type="text"
+              autoFocus
+              placeholder="Priezvisko"
+              {...register('lastname', {
+                required: true,
+                minLength: 5,
+                min: 5,
+              })}
+            />
+
+            <p className="text-red-800">
+              {errors.username && errors.username.message}
             </p>
           </div>
           <div>
