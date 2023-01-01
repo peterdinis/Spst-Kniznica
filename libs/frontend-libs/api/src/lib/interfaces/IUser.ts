@@ -5,8 +5,7 @@ export interface IUser {
   firstname: string;
   lastname: string;
   email: string;
-  isTeacher?: boolean;
-  isStudent?: boolean;
+  role: string;
   borrowedBooks?: any; // later Booking[]
 }
 
@@ -18,8 +17,7 @@ export type IRegisterUser = Pick<
   | 'firstname'
   | 'lastname'
   | 'email'
-  | 'isTeacher'
-  | 'isStudent'
+  | 'role'
 >;
 
 export type ILoginUser = Pick<IUser, 'username' | 'email'>;

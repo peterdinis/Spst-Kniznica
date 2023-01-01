@@ -17,8 +17,7 @@ const schema = yup
     username: yup.string().required(),
     password: yup.string().required(),
     lastName: yup.string().required(),
-    isTeacher: yup.boolean().required(),
-    isStudent: yup.boolean().required(),
+    role: yup.string().required(),
   })
   .required();
 
@@ -177,34 +176,10 @@ function RegisiterStudentForm() {
             <input
               className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
               id="Meno"
-              type="checkbox"
-              autoFocus
-              placeholder="Priezvisko"
-              {...register('lastname', {
-                required: true,
-                minLength: 5,
-                min: 5,
-              })}
-            />
-
-            <p className="text-red-800">
-              {errors.username && errors.username.message}
-            </p>
-          </div>
-          <div className="mb-2">
-            <label
-              className="block text-grey-darker text-sm font-bold mb-2"
-              htmlFor="password"
-            >
-              Žiak
-            </label>
-            <input
-              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-              id="Meno"
               type="text"
               autoFocus
               placeholder="Priezvisko"
-              {...register('lastname', {
+              {...register('role', {
                 required: true,
                 minLength: 5,
                 min: 5,
