@@ -178,7 +178,6 @@ function RegisiterStudentForm() {
               type="text"
               autoFocus
               placeholder="Žiak"
-              disabled
               {...register('role', {
                 required: true,
                 minLength: 5,

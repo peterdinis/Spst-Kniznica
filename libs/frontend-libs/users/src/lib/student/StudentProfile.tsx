@@ -1,6 +1,7 @@
 import React from 'react'
 
 function StudentProfile() {
+  const userUsername = localStorage.getItem('studentUsername');
   return (
     <>
     <section className="text-gray-700 body-font overflow-hidden bg-white">
@@ -13,7 +14,7 @@ function StudentProfile() {
           />
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
             <h1 className="text-red-900 text-3xl title-font font-medium mb-1">
-              uuuu
+              {userUsername}
             </h1>
             <p className="leading-relaxed text-2xl m-3 text-gray-700">
               <a href="/student/profile/update">Upraviť Profil</a>

@@ -138,14 +138,6 @@ function LoginTeacherForm() {
             <button className="reg registerButton" type="submit">
               Registrácia
             </button>
-            <div>
-              <a
-                className="mt-4 inline-block align-baseline font-bold text-2xl text-blue hover:text-blue-darker"
-                href="/teacher/register"
-              >
-                Prihlásenie tu
-              </a>
-            </div>
           </div>
         </div>
       </form>
