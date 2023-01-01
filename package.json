@@ -59,6 +59,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "react": "18.2.0",
+    "react-cookie": "^4.1.1",
     "react-detect-offline": "^2.4.5",
     "react-dom": "18.2.0",
     "react-error-boundary": "^3.1.4",
@@ -83,7 +84,8 @@
     "uuid": "^9.0.0",
     "ws": "^8.11.0",
     "xlsx": "^0.18.5",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "zod": "^3.20.2"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
