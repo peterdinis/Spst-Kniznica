@@ -92,6 +92,7 @@ function LoginStudentForm() {
             <input
               className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
               id="password"
+              type="password"
               placeholder="******************"
               autoFocus
               {...register("password", {
