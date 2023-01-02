@@ -57,13 +57,13 @@ function RegisiterStudentForm() {
     <>
       <Header name="Prihlásenie žiak" />
       <form
-        onSubmit={handleSubmit((params: IRegisterUser) => {
+        /* onSubmit={handleSubmit((params: IRegisterUser) => {
           queryClient.setQueryData(['studentEmail'], params.email);
           queryClient.setQueriesData(['params'], params);
 
           mutation.mutate(params);
-          alert("FOO");
-        })}
+          alert("FOO"); 
+        })} */
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">
