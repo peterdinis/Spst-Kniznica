@@ -53,17 +53,14 @@ function RegisiterStudentForm() {
     setPasswordShown(!passwordShown);
   };
 
+  const foo = () => {
+    alert("FOO");
+  }
+
   return (
     <>
       <Header name="Prihlásenie žiak" />
       <form
-        /* onSubmit={handleSubmit((params: IRegisterUser) => {
-          queryClient.setQueryData(['studentEmail'], params.email);
-          queryClient.setQueriesData(['params'], params);
-
-          mutation.mutate(params);
-          alert("FOO"); 
-        })} */
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">
@@ -128,20 +125,17 @@ function RegisiterStudentForm() {
                 className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
                 id="email"
                 autoFocus
-                type="password"
+                type={passwordShown ? "text" : "password"}
                 placeholder="*********************************"
                 {...register('password', {
                   required: true,
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'invalid password address',
-                  },
                 })}
               />
 
               <p className="text-red-800">
                 {errors.password && errors.password.message}
               </p>
+              <button onClick={togglePassword}>Zobraziť heslo</button>
             </div>
           </div>
           <div className="mb-2">
@@ -218,7 +212,7 @@ function RegisiterStudentForm() {
             </p>
           </div>
           <div>
-            <button className="reg registerButton" type="submit">
+            <button onClick={foo} className="reg registerButton" type="submit">
               Registrácia
             </button>
             <div>
