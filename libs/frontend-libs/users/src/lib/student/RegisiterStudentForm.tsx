@@ -56,7 +56,7 @@ function RegisiterStudentForm() {
 
   return (
     <>
-      <Header name="Prihlásenie žiak" />
+      <Header name="Registrácia žiak" />
       <form
         onSubmit={handleSubmit((params: IRegisterUser) => {
           queryClient.setQueryData(['studentEmail'], params.email);
