@@ -59,10 +59,9 @@ function RegisiterStudentForm() {
       <Header name="Registrácia žiak" />
       <form
         onSubmit={handleSubmit((params: IRegisterUser) => {
-          /*   queryClient.setQueryData(['studentEmail'], params.email);
-            queryClient.setQueriesData(['params'], params);
-            mutation.mutate(params); */
-            console.log(params);
+          queryClient.setQueryData(['studentEmail'], params.email);
+          queryClient.setQueriesData(['params'], params);
+          mutation.mutate(params);
         })}
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">

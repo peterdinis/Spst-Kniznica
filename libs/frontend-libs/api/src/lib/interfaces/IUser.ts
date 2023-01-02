@@ -15,7 +15,6 @@ export type IRegisterUser = Pick<
   | 'password'
   | 'firstname'
   | 'lastname'
-  | 'email'
   | 'role'
 >;
 
