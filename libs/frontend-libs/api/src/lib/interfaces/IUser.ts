@@ -6,7 +6,6 @@ export interface IUser {
   lastname: string;
   email: string;
   role: string;
-  borrowedBooks?: any; // later Booking[]
 }
 
 export type IRegisterUser = Pick<
