@@ -1,3 +1,4 @@
+import React from "react";
 import {Header} from "@spst-kniznica-project/frontend-libs/shared"
 import "../Users.css";
 import { toast } from 'react-toastify';
@@ -21,6 +22,7 @@ const notify = () => toast.success('Registrácia bola úspešná');
 const errorLogin = () => toast.error('Registrácia nebola úspešná');
 
 function LoginStudentForm() {
+  const [passwordShown, setPasswordShown] = React.useState<Boolean>(false);
   const {
     handleSubmit,
     register,

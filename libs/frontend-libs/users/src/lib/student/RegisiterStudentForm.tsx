@@ -16,6 +16,7 @@ const schema = yup
     email: yup.string().required(),
     username: yup.string().required(),
     password: yup.string().required(),
+    firstName: yup.string().required(),
     lastName: yup.string().required(),
     role: yup.string().required(),
   })
@@ -53,14 +54,15 @@ function RegisiterStudentForm() {
     setPasswordShown(!passwordShown);
   };
 
-  const foo = () => {
-    alert("FOO");
-  }
-
   return (
     <>
       <Header name="Prihlásenie žiak" />
       <form
+        onSubmit={handleSubmit((params: IRegisterUser) => {
+          queryClient.setQueryData(['studentEmail'], params.email);
+          queryClient.setQueriesData(['params'], params);
+          mutation.mutate(params);
+        })}
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">
@@ -125,7 +127,7 @@ function RegisiterStudentForm() {
                 className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
                 id="email"
                 autoFocus
-                type={passwordShown ? "text" : "password"}
+                type={passwordShown ? 'text' : 'password'}
                 placeholder="*********************************"
                 {...register('password', {
                   required: true,
@@ -194,7 +196,7 @@ function RegisiterStudentForm() {
               Rola
             </label>
             <input
-             className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
               id="Meno"
               type="text"
               autoFocus
@@ -202,7 +204,7 @@ function RegisiterStudentForm() {
               {...register('role', {
                 required: true,
                 minLength: 5,
-                value:"Žiak",
+                value: 'Žiak',
                 min: 5,
               })}
             />
@@ -212,7 +214,7 @@ function RegisiterStudentForm() {
             </p>
           </div>
           <div>
-            <button onClick={foo} className="reg registerButton" type="submit">
+            <button className="reg registerButton" type="submit">
               Registrácia
             </button>
             <div>
