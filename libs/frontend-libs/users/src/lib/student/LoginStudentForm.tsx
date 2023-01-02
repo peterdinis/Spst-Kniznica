@@ -114,7 +114,7 @@ function LoginStudentForm() {
                 className="mt-4 inline-block align-baseline font-bold text-2xl text-blue hover:text-blue-darker"
                 href="/student/register"
               >
-                Prihlásenie tu
+                Registrácia tu
               </a>
             </div>
           </div>
