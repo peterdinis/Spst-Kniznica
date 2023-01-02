@@ -153,7 +153,7 @@ function RegisiterStudentForm() {
               type="text"
               autoFocus
               placeholder="Meno"
-              {...register('username', {
+              {...register('firstname', {
                 required: true,
                 minLength: 5,
                 min: 5,
@@ -161,7 +161,7 @@ function RegisiterStudentForm() {
             />
 
             <p className="text-red-800">
-              {errors.username && errors.username.message}
+              {errors.firstname && errors.firstname.message}
             </p>
           </div>
           <div className="mb-2">
