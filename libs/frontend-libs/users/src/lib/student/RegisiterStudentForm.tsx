@@ -59,9 +59,10 @@ function RegisiterStudentForm() {
       <Header name="Registrácia žiak" />
       <form
         onSubmit={handleSubmit((params: IRegisterUser) => {
-          queryClient.setQueryData(['studentEmail'], params.email);
-          queryClient.setQueriesData(['params'], params);
-          mutation.mutate(params);
+          /*   queryClient.setQueryData(['studentEmail'], params.email);
+            queryClient.setQueriesData(['params'], params);
+            mutation.mutate(params); */
+            console.log(params);
         })}
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
@@ -185,7 +186,7 @@ function RegisiterStudentForm() {
             />
 
             <p className="text-red-800">
-              {errors.username && errors.username.message}
+              {errors.lastname && errors.lastname.message}
             </p>
           </div>
           <div className="mb-2">
@@ -210,7 +211,7 @@ function RegisiterStudentForm() {
             />
 
             <p className="text-red-800">
-              {errors.username && errors.username.message}
+              {errors.role && errors.role.message}
             </p>
           </div>
           <div>
