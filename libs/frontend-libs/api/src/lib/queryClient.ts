@@ -17,19 +17,5 @@ const twentyFourHoursInMs = 1000 * 60 * 60 * 24;
     mutations: {
       networkMode: 'offlineFirst',
     },
-  },
-  logger: {
-    log: (...args) => {
-     console.log(...args);
-     console.log("Log info")
-    },
-    warn: (...args) => {
-      console.log(...args);
-      console.log("Warn info")
-    },
-    error: (...args) => {
-      console.log(...args);
-      console.log("Error info")
-    },
   }
 })

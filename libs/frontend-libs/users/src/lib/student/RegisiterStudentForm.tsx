@@ -62,6 +62,7 @@ function RegisiterStudentForm() {
           queryClient.setQueriesData(['params'], params);
 
           mutation.mutate(params);
+          alert("FOO");
         })}
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
@@ -116,13 +117,39 @@ function RegisiterStudentForm() {
                 {errors.email && errors.email.message}
               </p>
             </div>
+            <div className="mb-2">
+              <label
+                className="block text-grey-darker text-sm font-bold mb-2"
+                htmlFor="username"
+              >
+                Heslo
+              </label>
+              <input
+                className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+                id="email"
+                autoFocus
+                type="password"
+                placeholder="*********************************"
+                {...register('password', {
+                  required: true,
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: 'invalid password address',
+                  },
+                })}
+              />
+
+              <p className="text-red-800">
+                {errors.password && errors.password.message}
+              </p>
+            </div>
           </div>
           <div className="mb-2">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
               htmlFor="password"
             >
-              Používateľské meno
+              Krstné meno
             </label>
             <input
               className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
@@ -170,7 +197,7 @@ function RegisiterStudentForm() {
               className="block text-grey-darker text-sm font-bold mb-2"
               htmlFor="password"
             >
-              Učiteľ
+              Rola
             </label>
             <input
              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
