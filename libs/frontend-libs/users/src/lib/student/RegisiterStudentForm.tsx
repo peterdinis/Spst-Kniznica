@@ -38,14 +38,14 @@ function RegisiterStudentForm() {
   const [passwordShown, setPasswordShown] = React.useState<Boolean>(false);
 
   const mutation = useMutation(api.registerUser, {
-    onSuccess: (data: IRegisterUser) => {
-      console.log(data);
+    onSuccess: (data: ITokenUser) => {
+      queryClient.setQueryData(["userToken"], data.token);
+      localStorage.setItem("userEmail", data.email);
       navigate('/student/login');
       notify();
     },
 
-    onError: (data: ITokenUser) => {
-      console.log(data);
+    onError: () => {
       errorRegister();
     },
   });

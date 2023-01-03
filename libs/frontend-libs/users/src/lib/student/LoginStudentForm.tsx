@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ILoginUser } from 'libs/frontend-libs/api/src/lib/interfaces/IUser';
+import { ILoginUser, ITokenUser } from 'libs/frontend-libs/api/src/lib/interfaces/IUser';
 import { useMutation } from '@tanstack/react-query';
 import * as api from 'libs/frontend-libs/api/src/lib/mutations/userMutations';
 import { queryClient } from 'libs/frontend-libs/api/src/lib/queryClient';
@@ -18,8 +18,8 @@ const schema = yup
   })
   .required();
 
-const notify = () => toast.success('Registrácia bola úspešná');
-const errorLogin = () => toast.error('Registrácia nebola úspešná');
+const notify = () => toast.success('Prihlásenie bolo úspešné');
+const errorLogin = () => toast.error('Prihlásenie bolo neúspešné');
 
 function LoginStudentForm() {
   const [passwordShown, setPasswordShown] = React.useState<Boolean>(false);
@@ -35,14 +35,15 @@ function LoginStudentForm() {
   const navigate = useNavigate();
 
   const mutation = useMutation(api.loginUser, {
-    onSuccess: (data: ILoginUser) => {
-      console.log(data);
+    onSuccess: (data: ITokenUser) => {
+      navigate('/student/profile');
+      queryClient.setQueryData(["userToken"], data.token);
+      localStorage.setItem("userEmail", data.email);
       navigate('/student/login');
       notify();
     },
 
-    onError: (data: ILoginUser) => {
-      console.log(data);
+    onError: () => {
       errorLogin();
     },
   });
