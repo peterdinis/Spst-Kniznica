@@ -18,6 +18,10 @@ export type IRegisterUser = Pick<
   | 'role'
 >;
 
+export interface ITokenUser extends IRegisterUser {
+  token: string
+}
+
 export type ILoginUser = Pick<IUser, 'username' | 'password'>;
 
 export type IUpdateUser = Partial<IUser>;

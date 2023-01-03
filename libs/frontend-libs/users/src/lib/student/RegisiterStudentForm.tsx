@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { IRegisterUser } from 'libs/frontend-libs/api/src/lib/interfaces/IUser';
+import { IRegisterUser, ITokenUser } from 'libs/frontend-libs/api/src/lib/interfaces/IUser';
 import { useMutation } from '@tanstack/react-query';
 import * as api from 'libs/frontend-libs/api/src/lib/mutations/userMutations';
 import { queryClient } from 'libs/frontend-libs/api/src/lib/queryClient';
@@ -44,7 +44,7 @@ function RegisiterStudentForm() {
       notify();
     },
 
-    onError: (data: IRegisterUser) => {
+    onError: (data: ITokenUser) => {
       console.log(data);
       errorRegister();
     },
