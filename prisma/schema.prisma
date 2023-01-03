@@ -67,8 +67,8 @@ model User {
   id             Int            @id @default(autoincrement())
   username       String
   password       String
-  firstName      String
-  lastName       String
+  firstname      String         @default("FOO")
+  lastname       String         @default("BAR")
   email          String
   role           String         @default("Učiteľ")
   createdAt      DateTime       @default(now())
