@@ -115,7 +115,7 @@ function LoginStudentForm() {
           </div>
           <div>
             <button className="reg registerButton" type="submit">
-              Registrácia
+              Prihlásenie
             </button>
             <div>
               <a
