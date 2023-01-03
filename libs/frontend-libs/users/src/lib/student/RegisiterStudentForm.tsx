@@ -16,8 +16,8 @@ const schema = yup
     email: yup.string().required(),
     username: yup.string().required(),
     password: yup.string().required(),
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
+    firstname: yup.string().required(),
+    lastname: yup.string().required(),
     role: yup.string().required(),
   })
   .required();
@@ -204,7 +204,6 @@ function RegisiterStudentForm() {
               {...register('role', {
                 required: true,
                 minLength: 5,
-                value: 'Žiak',
                 min: 5,
               })}
             />
