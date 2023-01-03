@@ -16,7 +16,8 @@ const schema = yup
     email: yup.string().required(),
     username: yup.string().required(),
     password: yup.string().required(),
-    lastName: yup.string().required(),
+    firstname: yup.string().required(),
+    lastname: yup.string().required(),
     role: yup.string().required(),
   })
   .required();
@@ -55,14 +56,12 @@ function RegisiterStudentForm() {
 
   return (
     <>
-      <Header name="Prihlásenie žiak" />
+      <Header name="Registrácia žiak" />
       <form
         onSubmit={handleSubmit((params: IRegisterUser) => {
           queryClient.setQueryData(['studentEmail'], params.email);
           queryClient.setQueriesData(['params'], params);
-
           mutation.mutate(params);
-          alert("FOO");
         })}
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
@@ -128,20 +127,17 @@ function RegisiterStudentForm() {
                 className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
                 id="email"
                 autoFocus
-                type="password"
+                type={passwordShown ? 'text' : 'password'}
                 placeholder="*********************************"
                 {...register('password', {
                   required: true,
-                  pattern: {
-                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'invalid password address',
-                  },
                 })}
               />
 
               <p className="text-red-800">
                 {errors.password && errors.password.message}
               </p>
+              <button onClick={togglePassword}>Zobraziť heslo</button>
             </div>
           </div>
           <div className="mb-2">
@@ -157,7 +153,7 @@ function RegisiterStudentForm() {
               type="text"
               autoFocus
               placeholder="Meno"
-              {...register('username', {
+              {...register('firstname', {
                 required: true,
                 minLength: 5,
                 min: 5,
@@ -165,7 +161,7 @@ function RegisiterStudentForm() {
             />
 
             <p className="text-red-800">
-              {errors.username && errors.username.message}
+              {errors.firstname && errors.firstname.message}
             </p>
           </div>
           <div className="mb-2">
@@ -189,7 +185,7 @@ function RegisiterStudentForm() {
             />
 
             <p className="text-red-800">
-              {errors.username && errors.username.message}
+              {errors.lastname && errors.lastname.message}
             </p>
           </div>
           <div className="mb-2">
@@ -200,7 +196,7 @@ function RegisiterStudentForm() {
               Rola
             </label>
             <input
-             className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
               id="Meno"
               type="text"
               autoFocus
@@ -208,13 +204,12 @@ function RegisiterStudentForm() {
               {...register('role', {
                 required: true,
                 minLength: 5,
-                value:"Žiak",
                 min: 5,
               })}
             />
 
             <p className="text-red-800">
-              {errors.username && errors.username.message}
+              {errors.role && errors.role.message}
             </p>
           </div>
           <div>

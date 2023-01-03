@@ -1,5 +1,6 @@
-import {Header} from "@spst-kniznica-project/frontend-libs/shared"
-import "../Users.css";
+import React from 'react';
+import { Header } from '@spst-kniznica-project/frontend-libs/shared';
+import '../Users.css';
 import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
@@ -21,6 +22,8 @@ const notify = () => toast.success('Registrácia bola úspešná');
 const errorLogin = () => toast.error('Registrácia nebola úspešná');
 
 function LoginStudentForm() {
+  const [passwordShown, setPasswordShown] = React.useState<Boolean>(false);
+
   const {
     handleSubmit,
     register,
@@ -44,16 +47,20 @@ function LoginStudentForm() {
     },
   });
 
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
   return (
     <>
-    <Header name="Prihlásenie žiak" />
-    <form
-       onSubmit={handleSubmit((params: ILoginUser) => {
-        queryClient.setQueryData(['studentUsername'], params.username);
-        queryClient.setQueriesData(['params'], params);
+      <Header name="Prihlásenie žiak" />
+      <form
+        onSubmit={handleSubmit((params: ILoginUser) => {
+          queryClient.setQueryData(['studentUsername'], params.username);
+          queryClient.setQueriesData(['params'], params);
 
-        mutation.mutate(params);
-      })}
+          mutation.mutate(params);
+        })}
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">
@@ -70,10 +77,10 @@ function LoginStudentForm() {
                 type="text"
                 autoFocus
                 placeholder="Meno"
-                {...register("username", {
+                {...register('username', {
                   required: true,
                   minLength: 5,
-                  min: 5
+                  min: 5,
                 })}
               />
 
@@ -92,18 +99,19 @@ function LoginStudentForm() {
             <input
               className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
               id="password"
-              type="password"
+              type={passwordShown ? 'text' : 'password'}
               placeholder="******************"
               autoFocus
-              {...register("password", {
+              {...register('password', {
                 required: true,
-                minLength:5,
-                min: 5
+                minLength: 5,
+                min: 5,
               })}
             />
             <p className="text-red-800">
               {errors.password && errors.password.message}
             </p>
+            <button onClick={togglePassword}>Zobraziť heslo</button>
           </div>
           <div>
             <button className="reg registerButton" type="submit">
@@ -114,14 +122,14 @@ function LoginStudentForm() {
                 className="mt-4 inline-block align-baseline font-bold text-2xl text-blue hover:text-blue-darker"
                 href="/student/register"
               >
-                Prihlásenie tu
+                Registrácia tu
               </a>
             </div>
           </div>
         </div>
       </form>
     </>
-  )
+  );
 }
 
-export default LoginStudentForm
+export default LoginStudentForm;

@@ -5,10 +5,7 @@ import { setupSwagger } from './swagger';
 
 async function setupApp(app: INestApplication) {
 
-app.enableCors({
-    methods: '*',
-    allowedHeaders: '*',    
-  });
+app.enableCors();
   
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);

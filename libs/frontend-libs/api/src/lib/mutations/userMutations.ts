@@ -5,8 +5,6 @@ const api = axios.create({
     baseURL:"http://localhost:3333/api/"
 });
 
-api.defaults.headers.common['Content-Type'] = 'application/json';
-
 export const registerUser = async (registerUser: IRegisterUser) => {
  const {data}= await api.post("users/register", registerUser);
  return data;
