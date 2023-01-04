@@ -19,3 +19,8 @@ export const updateUserProfile = async(id: number, updateUser: IUpdateUser) => {
   const {data} = await api.put(`users/${id}/update`, updateUser);
   return data;
 }
+
+export const logoutUser = () => {
+  localStorage.clear();
+  window.location.replace("/");
+}

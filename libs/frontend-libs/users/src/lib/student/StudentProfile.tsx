@@ -1,5 +1,12 @@
+import {logoutUser} from "libs/frontend-libs/api/src/lib/mutations/userMutations";
+
 function StudentProfile() {
-  const userEmail = localStorage.getItem('userEmail');
+
+  const logoutFn = () =>{
+    logoutUser();
+  }
+
+  const userUsername = localStorage.getItem('userUsername');
   return (
     <>
       <section className="text-gray-700 body-font overflow-hidden bg-white">
@@ -12,8 +19,12 @@ function StudentProfile() {
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h1 className="text-red-900 text-3xl title-font font-medium mb-1">
-                {userEmail} FOO
+                {userUsername}
               </h1>
+              <hr />
+              <button onClick={logoutFn}>
+                Odhlásenie
+              </button>
               <p className="leading-relaxed text-2xl m-3 text-gray-700">
                 <a href="/student/profile/update">Upraviť Profil</a>
               </p>

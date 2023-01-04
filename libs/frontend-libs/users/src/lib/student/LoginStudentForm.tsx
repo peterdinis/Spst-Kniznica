@@ -37,7 +37,7 @@ function LoginStudentForm() {
   const mutation = useMutation(api.loginUser, {
     onSuccess: (data: ITokenUser) => {
       queryClient.setQueryData(["userToken"], data.token);
-      localStorage.setItem("userEmail", data.email);
+      localStorage.setItem("userUsername", data.username);
       navigate('/student/profile');
       notify();
     },
@@ -56,9 +56,6 @@ function LoginStudentForm() {
       <Header name="Prihlásenie žiak" />
       <form
         onSubmit={handleSubmit((params: ILoginUser) => {
-          queryClient.setQueryData(['studentUsername'], params.username);
-          queryClient.setQueriesData(['params'], params);
-
           mutation.mutate(params);
         })}
       >

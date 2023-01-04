@@ -1,6 +1,8 @@
-import "./Navbar.css";
+import './Navbar.css';
 
 export default function Navbar() {
+  const userUsername = localStorage.getItem('userUsername');
+
   return (
     <nav className="nav flex flex-wrap items-center justify-between px-4">
       <div className="flex flex-no-shrink items-center mr-6 py-3 text-grey-darkest">
@@ -47,26 +49,50 @@ export default function Navbar() {
             href="/categories"
             className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold"
           >
-           Všetky Kategórie
+            Všetky Kategórie
           </a>
         </li>
-        <li className="border-t md:border-none">
-          <a
-            href="/student/login"
-            className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold"
-          >
-           Prihlásenie žiak
-          </a>
-        </li>
+        {!userUsername ? (
+          <>
+            <li className="border-t md:border-none">
+              <a
+                href="/student/login"
+                className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold"
+              >
+                Prihlásenie žiak
+              </a>
+            </li>
 
-        <li className="border-t md:border-none">
-          <a
-            href="/teacher/login"
-            className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold"
-          >
-           Prihlásenie učiteľ
-          </a>
-        </li>
+            <li className="border-t md:border-none">
+              <a
+                href="/teacher/login"
+                className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold"
+              >
+                Prihlásenie učiteľ
+              </a>
+            </li>
+          </>
+        ) : (
+          <>
+            <li className="border-t md:border-none">
+              <a
+                href="/student/profile"
+                className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold"
+              >
+                Prihlásenie žiak
+              </a>
+            </li>
+
+            <li className="border-t md:border-none">
+              <a
+                href="/borrowed"
+                className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold"
+              >
+                Moje požičané knihy
+              </a>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );
