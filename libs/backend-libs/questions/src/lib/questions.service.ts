@@ -21,4 +21,34 @@ export class QuestionsService {
 
         return newQuestion;
     }
+
+    async answerQuestion(questionId: number, newAnswer: string) {
+        const oneQuestion = await this.prismaService.question.findFirst({
+            where: {
+                id: questionId
+            }
+        })
+
+        const answerTheQuestion = await this.prismaService.question.update({ 
+            where: {
+                id: oneQuestion.id
+            },
+
+            data: {
+                answer: newAnswer
+            }
+        })
+
+        return answerTheQuestion;
+    }
+
+    async removeQuestion(questionId: number) {
+        const questionToRemoved = await this.prismaService.question.delete({
+            where: {
+                id: questionId
+            }
+        })
+
+        return questionToRemoved;
+    }
 }
