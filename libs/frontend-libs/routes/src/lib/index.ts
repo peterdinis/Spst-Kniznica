@@ -1,9 +1,7 @@
 import AdminPrivateRoute from "./AdminPrivateRoute";
-import StudentPrivateRoute from "./StudentPrivateRoute";
-import TeacherPrivateRoute from "./TeacherPrivateRoute";
+import UserPrivateRoute from "./UserPrivateRoute";
 
 export {
     AdminPrivateRoute,
-    StudentPrivateRoute,
-    TeacherPrivateRoute
+    UserPrivateRoute
 }
