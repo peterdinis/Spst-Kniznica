@@ -36,7 +36,7 @@ function Hero() {
 
           <div className="ml-8">
             <button className="test bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              <a href="https://www.spsbj.sk/">Školská Knižnica</a>
+              <a href="https://www.spsbj.sk/">Školská Stránka</a>
             </button>
             <button className="newTest ml-10 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
               <a href="/books">Všetky Knihy</a>
