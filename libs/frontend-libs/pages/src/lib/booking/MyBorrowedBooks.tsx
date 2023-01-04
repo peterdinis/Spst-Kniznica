@@ -1,8 +1,11 @@
-import React from 'react'
+import { MyAllBorrowedBooks } from '@spst-kniznica-project/frontend-libs/booking'
+
 
 function MyBorrowedBooks() {
   return (
-    <div>MyBorrowedBooks</div>
+    <>
+      <MyAllBorrowedBooks />
+    </>
   )
 }
 
