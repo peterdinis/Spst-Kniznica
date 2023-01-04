@@ -1,6 +1,18 @@
-import { Controller } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { Controller, Get } from "@nestjs/common";
+import { ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
+import { QuestionsService } from "./questions.service";
 
 @ApiTags("Questions")
 @Controller("questions")
-export class QuestionsController {}
+export class QuestionsController {
+    constructor(private readonly questionService: QuestionsService) {}
+
+    @ApiOperation({
+        summary: "All app questions"
+    })
+    @ApiOkResponse()
+    @Get("/")
+    async allQuestions() {
+        return await this.questionService.allQuestions();
+    }
+}
