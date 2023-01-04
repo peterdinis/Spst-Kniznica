@@ -40,7 +40,7 @@ function RegisiterStudentForm() {
   const mutation = useMutation(api.registerUser, {
     onSuccess: (data: ITokenUser) => {
       queryClient.setQueryData(["userToken"], data.token);
-      localStorage.setItem("userEmail", data.email);
+      localStorage.setItem("userUsername", data.username);
       navigate('/student/login');
       notify();
     },
@@ -59,7 +59,7 @@ function RegisiterStudentForm() {
       <Header name="Registrácia žiak" />
       <form
         onSubmit={handleSubmit((params: IRegisterUser) => {
-          queryClient.setQueryData(['studentEmail'], params.email);
+          queryClient.setQueryData(['userUsername'], params.username);
           queryClient.setQueriesData(['params'], params);
           mutation.mutate(params);
         })}
@@ -205,6 +205,7 @@ function RegisiterStudentForm() {
                 required: true,
                 minLength: 5,
                 min: 5,
+                value: "Žiak"
               })}
             />
 

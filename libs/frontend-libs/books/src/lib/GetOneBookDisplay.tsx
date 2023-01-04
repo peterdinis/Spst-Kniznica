@@ -113,6 +113,8 @@ function GetOneBookDisplay() {
                     <input
                       className="py-3 px-4 w-full rounded shadow font-thin focus:outline-none focus:shadow-lg focus:shadow-slate-200 duration-100 shadow-gray-100"
                       placeholder="Book ID"
+                      value={id}
+                      
                     />
                     <br />
                     <input

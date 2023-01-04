@@ -1,9 +1,5 @@
 import { Header } from "@spst-kniznica-project/frontend-libs/shared"
 import "../Users.css";
-import { toast } from "react-toastify";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
 
 
 
@@ -12,12 +8,6 @@ function RegisterTeacherForm() {
     <>
     <Header name="Prihlásenie žiak" />
     <form
-       /*  onSubmit={handleSubmit((params: RegisterUserI) => {
-          queryClient.setQueryData(["studentEmail"], params.email);
-          queryClient.setQueriesData(["params"], params);
-
-          mutation.mutate(params);
-        })} */
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">
