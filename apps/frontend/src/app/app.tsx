@@ -15,7 +15,6 @@ import {
   StudentRegisterPage,
   StudentLoginPage,
   StudentProfilePage,
-  NewFaqQuestionPage,
   MyBorrowedBooks,
 } from '@spst-kniznica-project/frontend-libs/pages';
 import { Suspense } from 'react';
@@ -32,7 +31,6 @@ export function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<Aboutpage />} />
-          <Route path="/faq" element={<NewFaqQuestionPage />} />
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/books" element={<DisplayAllBooks />} />
           <Route path="/book/:id" element={<GetOneBook />} />
@@ -46,7 +44,6 @@ export function App() {
           <Route path="/student/register" element={<StudentRegisterPage />} />
           <Route path="/student/login" element={<StudentLoginPage />} />
           <Route path="/student/profile" element={<StudentProfilePage />} />
-          <Route path="/faq" element={<NewFaqQuestionPage />} />
           <Route path="/borrowed" element={<MyBorrowedBooks/> } />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

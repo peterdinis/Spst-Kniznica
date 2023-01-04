@@ -18,7 +18,6 @@ import TeacherProfilePage from './lib/users/teacher/TeacherProfilePage';
 import StudentLoginPage from './lib/users/student/StudentLoginPage';
 import StudentRegisterPage from './lib/users/student/StudentRegisterPage';
 import StudentProfilePage from './lib/users/student/StudentProfilePage';
-import NewFaqQuestionPage from './lib/faq/NewFaqQuestionPage';
 import MyBorrowedBooks from './lib/booking/MyBorrowedBooks';
 
 export {
@@ -42,6 +41,5 @@ export {
     StudentLoginPage,
     StudentProfilePage,
     StudentRegisterPage,
-    NewFaqQuestionPage,
     MyBorrowedBooks
 }

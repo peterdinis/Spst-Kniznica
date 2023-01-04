@@ -1,21 +1,13 @@
 import FaqQuestions from './FaqQuestions';
-import {useNavigate} from "react-router-dom";
 
 const Faq = () => {
-
-  const navigate = useNavigate();
-
-  const navigateToFaq = () => {
-    navigate("/faq");
-  }
-
   return (
     <div className=" lg:container lg:mx-auto lg:py-16 md:py-12 md:px-6 py-12 px-4">
       <h1 className="text-center lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800 font-semibold">
         Časté otázky
       </h1>
       <div className="text-center mt-5">
-        <button onClick={navigateToFaq}>Nová otázka</button>
+        <button>Nová otázka</button>
       </div>
       <div className=" lg:mt-12 bg-gray-100 md:mt-10 mt-8 lg:py-7 lg:px-6 md:p-6 py-6 px-4 lg:w-8/12 w-full mx-auto ">
         <div className=" flex justify-between md:flex-row flex-col ">

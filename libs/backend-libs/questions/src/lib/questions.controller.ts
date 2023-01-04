@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { ApiCreatedResponse, ApiOkResponse, ApiOperation, ApiTags } from "@nestjs/swagger";
 import { QuestionsService } from "./questions.service";
 import { ViewQuestionDto } from "./dto/view-question.dto";
@@ -38,8 +38,8 @@ export class QuestionsController {
     })
     @ApiOkResponse()
     @Put("/:id/update")
-    async updateQuestion(@Param("questionId") questionId: number, @Body() updateQuestion: UpdateQuestionDto) {
-        return await this.questionService.updateQuestion(questionId, updateQuestion);
+    async updateQuestion(@Param("id") id: number, @Body() updateQuestion: UpdateQuestionDto) {
+        return await this.questionService.updateQuestion(id, updateQuestion);
     }
 
     @ApiOperation({
@@ -47,8 +47,8 @@ export class QuestionsController {
     })
     @ApiOkResponse()
     @Put("/:id/question/answer")
-    async answerQuestion(@Param("questionId") questionId: number, @Body() answerQuestion: AnswerTheQuestionDto) {
-        return await this.questionService.answerQuestion(questionId, answerQuestion);
+    async answerQuestion(@Param("id") id: number, @Body() answerQuestion: AnswerTheQuestionDto) {
+        return await this.questionService.answerQuestion(id, answerQuestion);
     }
 
     @ApiOperation({

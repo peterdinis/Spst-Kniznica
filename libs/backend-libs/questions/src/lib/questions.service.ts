@@ -24,10 +24,10 @@ export class QuestionsService {
     return newQuestion;
   }
 
-  async updateQuestion(questionId: number, questionDto: UpdateQuestionDto) {
+  async updateQuestion(id: number, questionDto: UpdateQuestionDto) {
     const oneQuestion = await this.prismaService.question.findFirst({
       where: {
-        id: questionId,
+        id: id,
       }
     })
 
@@ -42,10 +42,10 @@ export class QuestionsService {
     return updatingQuestion;
   }
 
-  async answerQuestion(questionId: number,answerQuestionDto: AnswerTheQuestionDto) {
+  async answerQuestion(id: number,answerQuestionDto: AnswerTheQuestionDto) {
     const oneQuestion = await this.prismaService.question.findFirst({
       where: {
-        id: questionId,
+        id
       },
     });
 
@@ -62,10 +62,10 @@ export class QuestionsService {
     return answerTheQuestion;
   }
 
-  async removeQuestion(questionId: number) {
+  async removeQuestion(id: number) {
     const questionToRemoved = await this.prismaService.question.delete({
       where: {
-        id: questionId,
+        id
       },
     });
 
