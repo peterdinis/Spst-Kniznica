@@ -6,7 +6,7 @@ function NotAllowed() {
           401
         </h1>
         <div className="bg-[#FF6A3D] px-2 text-sm rounded rotate-12 absolute">
-          Nemáme prístup k tejto stránke
+          Nemáte prístup k tejto stránke
         </div>
         <button className="mt-5">
           <a className="relative inline-block text-sm font-medium text-[#FF6A3D] group active:text-orange-500 focus:outline-none focus:ring">
