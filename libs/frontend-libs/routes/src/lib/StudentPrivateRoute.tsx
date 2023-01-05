@@ -2,8 +2,8 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 const StudentPrivateRoute = () => {
-  const adminEmail = localStorage.getItem("adminEmail");
-  return adminEmail ? <Outlet /> : <Navigate to="/notallowed" />;
+  const userUsername = localStorage.getItem("userUsername");
+  return userUsername ? <Outlet /> : <Navigate to="/notallowed" />;
 };
 
 export default StudentPrivateRoute;

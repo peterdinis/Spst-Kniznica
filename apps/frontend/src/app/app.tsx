@@ -23,6 +23,7 @@ import {
   Navbar,
 } from '@spst-kniznica-project/frontend-libs/shared';
 import { UpdateProfile, UpdateTeacherProfile } from '@spst-kniznica-project/frontend-libs/users';
+import StudentPrivateRoute from "libs/frontend-libs/routes/src/lib/StudentPrivateRoute";
 
 export function App() {
   return (
@@ -44,8 +45,10 @@ export function App() {
           <Route path="/teacher/profile" element={<TeacherProfilePage />} />
           <Route path="/student/register" element={<StudentRegisterPage />} />
           <Route path="/student/login" element={<StudentLoginPage />} />
+          <Route element={<StudentPrivateRoute />}>
           <Route path="/student/profile" element={<StudentProfilePage />} />
           <Route path="/student/profile/update" element={<UpdateProfile />} />
+          </Route>
           <Route path="/teacher/profile/update" element={<UpdateTeacherProfile />} />
           <Route path="/borrowed" element={<MyBorrowedBooks/> } />
           <Route path="*" element={<NotFoundPage />} />
