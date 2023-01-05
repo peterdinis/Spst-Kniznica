@@ -1,13 +1,13 @@
-import { CacheModule, MiddlewareConsumer, Module } from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { BooksModule } from '@spst-kniznica-project/backend-libs/books';
-import { PrismaModule} from '@spst-kniznica-project/backend-libs/database';
+import { PrismaModule } from '@spst-kniznica-project/backend-libs/database';
 import { CategoryModule } from '@spst-kniznica-project/backend-libs/category';
 import { BookingModule } from '@spst-kniznica-project/backend-libs/booking';
 import { ThrottlerModule } from '@nestjs/throttler';
 import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
-import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
-import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
+import { ChatModule } from '@spst-kniznica-project/backend-libs/chat';
+import { CheckerModule } from '@spst-kniznica-project/backend-libs/checker';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { AdminModule } from '@spst-kniznica-project/backend-libs/admin';
 import { UsersModule } from '@spst-kniznica-project/backend-libs/users';
@@ -21,15 +21,10 @@ import { NotificationsModule } from '@spst-kniznica-project/backend-libs/notific
 @Module({
   imports: [
     HttpModule,
-    EventEmitterModule.forRoot(
-      {
-        global: true
-      }
-    ),
-    ScheduleModule.forRoot(),
-    CacheModule.register({
-      isGlobal: true
+    EventEmitterModule.forRoot({
+      global: true,
     }),
+    ScheduleModule.forRoot(),
     CategoryModule,
     BooksModule,
     ConfigModule.forRoot({
@@ -47,21 +42,15 @@ import { NotificationsModule } from '@spst-kniznica-project/backend-libs/notific
     AdminModule,
     UsersModule,
     QuestionsModule,
-    NotificationsModule
+    NotificationsModule,
   ],
 
-  providers: [
-    AppService
-  ],
+  providers: [AppService],
 
-  controllers: [
-    AppController
-  ]
+  controllers: [AppController],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(LoggerMiddleware)
-      .forRoutes('*');
+    consumer.apply(LoggerMiddleware).forRoutes('*');
   }
 }

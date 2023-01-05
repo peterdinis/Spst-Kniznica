@@ -84,13 +84,6 @@ model Chat {
   roomId      Int
 }
 
-model SocialUser {
-  id    Int    @id @default(autoincrement())
-  name  String
-  email String
-  image String
-}
-
 model Question {
   id     Int     @id @default(autoincrement())
   name   String
