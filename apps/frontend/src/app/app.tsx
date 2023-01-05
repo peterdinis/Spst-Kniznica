@@ -22,6 +22,7 @@ import {
   FallbackLoader,
   Navbar,
 } from '@spst-kniznica-project/frontend-libs/shared';
+import { UpdateProfile, UpdateTeacherProfile } from '@spst-kniznica-project/frontend-libs/users';
 
 export function App() {
   return (
@@ -44,6 +45,8 @@ export function App() {
           <Route path="/student/register" element={<StudentRegisterPage />} />
           <Route path="/student/login" element={<StudentLoginPage />} />
           <Route path="/student/profile" element={<StudentProfilePage />} />
+          <Route path="/student/profile/update" element={<UpdateProfile />} />
+          <Route path="/teacher/profile/update" element={<UpdateTeacherProfile />} />
           <Route path="/borrowed" element={<MyBorrowedBooks/> } />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

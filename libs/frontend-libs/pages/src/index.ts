@@ -19,6 +19,8 @@ import StudentLoginPage from './lib/users/student/StudentLoginPage';
 import StudentRegisterPage from './lib/users/student/StudentRegisterPage';
 import StudentProfilePage from './lib/users/student/StudentProfilePage';
 import MyBorrowedBooks from './lib/booking/MyBorrowedBooks';
+import UpdateTeacherProfile from './lib/users/teacher/UpdateTeacherProfile';
+import UpdateStudentProfile from './lib/users/student/UpdateStudentProfile';
 
 export {
     Aboutpage,
@@ -41,5 +43,7 @@ export {
     StudentLoginPage,
     StudentProfilePage,
     StudentRegisterPage,
-    MyBorrowedBooks
+    MyBorrowedBooks,
+    UpdateStudentProfile,
+    UpdateTeacherProfile
 }
