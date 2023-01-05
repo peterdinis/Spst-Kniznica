@@ -24,9 +24,6 @@
       "@spst-kniznica-project/backend-libs/books": [
         "libs/backend-libs/books/src/index.ts"
       ],
-      "@spst-kniznica-project/backend-libs/cache": [
-        "libs/backend-libs/cache/src/index.ts"
-      ],
       "@spst-kniznica-project/backend-libs/casl": [
         "libs/backend-libs/casl/src/index.ts"
       ],
@@ -102,8 +99,8 @@
       "@spst-kniznica-project/frontend-libs/routes": [
         "libs/frontend-libs/routes/src/index.ts"
       ],
-      "@spst-kniznica-project/frontend-libs/social": [
-        "libs/frontend-libs/social/src/index.ts"
+      "@spst-kniznica-project/frontend-libs/shared": [
+        "libs/frontend-libs/shared/src/index.ts"
       ],
       "@spst-kniznica-project/frontend-libs/users": [
         "libs/frontend-libs/users/src/index.ts"
