@@ -2,6 +2,7 @@ import './Navbar.css';
 
 export default function Navbar() {
   const userUsername = localStorage.getItem('userUsername');
+  console.log(userUsername);
 
   return (
     <nav className="nav flex flex-wrap items-center justify-between px-4">
@@ -52,7 +53,7 @@ export default function Navbar() {
             Všetky Kategórie
           </a>
         </li>
-        {userUsername !== null || userUsername !== undefined? (
+        {userUsername === null || userUsername === undefined? (
           <>
             <li className="border-t md:border-none">
               <a
@@ -79,7 +80,7 @@ export default function Navbar() {
                 href="/student/profile"
                 className="block md:inline-block px-4 py-3 no-underline text-grey-darkest hover:text-grey-darker font-bold"
               >
-                Prihlásenie žiak
+                Profil
               </a>
             </li>
 

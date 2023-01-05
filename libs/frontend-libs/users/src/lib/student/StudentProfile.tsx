@@ -29,10 +29,6 @@ function StudentProfile() {
                 <a href="/student/profile/update">Upraviť Profil</a>
               </p>
               <hr />
-              <p className="leading-relaxed text-2xl m-3 text-gray-700">
-                Moje požičané knihy: iiiii
-              </p>
-              <hr />
             </div>
           </div>
         </div>
