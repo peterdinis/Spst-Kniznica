@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch, Post, Put } from '@nestjs/common';
+import { Body, Controller, Get, Param, Patch, Post, Put, Query } from '@nestjs/common';
 import { BookingService } from './booking.service';
 import {
   ApiCreatedResponse,
@@ -28,15 +28,6 @@ export class BookingController {
   }
 
   @ApiOperation({
-    summary: 'Find all my borrowed books',
-  })
-  @ApiOkResponse()
-  @Get('/borrowed/:email')
-  async myBorrowedBooks(@Param('email') email: string) {
-    return await this.bookingService.displayMyBorowedBooks(email);
-  }
-
-  @ApiOperation({
     summary: 'Find borrowed book by detail',
   })
   @ApiOkResponse({
@@ -56,6 +47,15 @@ export class BookingController {
   @Post('/')
   async borrowBook(@Body() bookingDto: CreateNewBookingDto) {
     return await this.bookingService.borrowBook(bookingDto);
+  }
+
+  @ApiOperation({
+    summary: "Display my borrowed books"
+  })
+  @ApiOkResponse()
+  @Get("/myBorrowedBooks")
+  async myBorrowedBooks(@Query("username") username: string) {
+    return await this.bookingService.displayMyBorowedBooks(username);
   }
 
   @ApiOperation({

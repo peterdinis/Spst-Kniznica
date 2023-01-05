@@ -125,8 +125,8 @@ export class BookingService {
     }
   }
 
-  async displayMyBorowedBooks(email: string) {
-    const oneStudent = await this.usersService.findUserByEmail(email);
+  async displayMyBorowedBooks(username: string) {
+    const oneStudent = await this.usersService.findUserByEmail(username);
     const myBorrowedBooks = await this.prismaService.booking.findMany({
       where: {
         id: oneStudent.id
