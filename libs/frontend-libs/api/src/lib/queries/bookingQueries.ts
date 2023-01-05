@@ -5,9 +5,9 @@ const api = axios.create({
 });
 
 export const searchingForUser = (username: string) => {
-  if(!username) {
-    return;
+    if(!username) {
+      return;
+    }
+  
+    return api.get(`booking/myBorrowedBooks?username=${username}`).then((res) => res.data);
   }
-
-  return api.get(`users/search?username=${username}`).then((res) => res.data);
-}
