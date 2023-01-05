@@ -1,11 +1,4 @@
-import {logoutUser} from "libs/frontend-libs/api/src/lib/mutations/userMutations";
-
 function StudentProfile() {
-
-  const logoutFn = () =>{
-    logoutUser();
-  }
-
   const userUsername = localStorage.getItem('userUsername');
   return (
     <>
@@ -22,9 +15,6 @@ function StudentProfile() {
                 {userUsername}
               </h1>
               <hr />
-              <button onClick={logoutFn}>
-                Odhlásenie
-              </button>
               <p className="leading-relaxed text-2xl m-3 text-gray-700">
                 <a href="/student/profile/update">Upraviť Profil</a>
               </p>

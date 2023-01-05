@@ -22,5 +22,4 @@ export const updateUserProfile = async(id: number, updateUser: IUpdateUser) => {
 
 export const logoutUser = () => {
   localStorage.clear();
-  window.location.replace("/");
 }
