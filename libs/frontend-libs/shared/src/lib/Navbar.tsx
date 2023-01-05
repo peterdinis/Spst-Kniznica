@@ -52,7 +52,7 @@ export default function Navbar() {
             Všetky Kategórie
           </a>
         </li>
-        {!userUsername ? (
+        {userUsername !== null || userUsername !== undefined? (
           <>
             <li className="border-t md:border-none">
               <a

@@ -42,6 +42,10 @@ export class UsersService {
         const user = await this.prismaService.user.findFirst({
             where: { username }
         });
+
+        if(!user) {
+            throw new NotFoundException("User not found");
+        }
         return user;
     }
 
