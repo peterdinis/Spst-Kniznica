@@ -8,7 +8,6 @@ import { ThrottlerModule } from '@nestjs/throttler';
 import LoggerMiddleware from 'libs/backend-libs/shared/src/lib/middlewares/logger.middleware';
 import {ChatModule } from '@spst-kniznica-project/backend-libs/chat'
 import {CheckerModule } from '@spst-kniznica-project/backend-libs/checker'
-import { SocialModule } from '@spst-kniznica-project/backend-libs/social';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { AdminModule } from '@spst-kniznica-project/backend-libs/admin';
 import { UsersModule } from '@spst-kniznica-project/backend-libs/users';
@@ -45,7 +44,6 @@ import { NotificationsModule } from '@spst-kniznica-project/backend-libs/notific
     BookingModule,
     ChatModule,
     CheckerModule,
-    SocialModule,
     AdminModule,
     UsersModule,
     QuestionsModule,

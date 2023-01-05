@@ -54,9 +54,6 @@
       "@spst-kniznica-project/backend-libs/shared": [
         "libs/backend-libs/shared/src/index.ts"
       ],
-      "@spst-kniznica-project/backend-libs/social": [
-        "libs/backend-libs/social/src/index.ts"
-      ],
       "@spst-kniznica-project/backend-libs/users": [
         "libs/backend-libs/users/src/index.ts"
       ],
@@ -104,9 +101,6 @@
       ],
       "@spst-kniznica-project/frontend-libs/routes": [
         "libs/frontend-libs/routes/src/index.ts"
-      ],
-      "@spst-kniznica-project/frontend-libs/shared": [
-        "libs/frontend-libs/shared/src/index.ts"
       ],
       "@spst-kniznica-project/frontend-libs/social": [
         "libs/frontend-libs/social/src/index.ts"
