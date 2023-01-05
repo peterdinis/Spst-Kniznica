@@ -40,7 +40,7 @@ function RegisiterStudentForm() {
   const mutation = useMutation(api.registerUser, {
     onSuccess: (data: ITokenUser) => {
       queryClient.setQueryData(["userToken"], data.token);
-      localStorage.setItem("userUsername", data.username);
+      localStorage.setItem("userUsername", data.user.username);
       navigate('/student/login');
       notify();
     },

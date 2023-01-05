@@ -18,7 +18,8 @@ export type IRegisterUser = Pick<
   | 'role'
 >;
 
-export interface ITokenUser extends IRegisterUser {
+export interface ITokenUser {
+  user: IRegisterUser,
   token: string
 }
 

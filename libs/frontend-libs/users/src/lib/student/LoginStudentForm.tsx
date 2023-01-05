@@ -37,7 +37,7 @@ function LoginStudentForm() {
   const mutation = useMutation(api.loginUser, {
     onSuccess: (data: ITokenUser) => {
       queryClient.setQueryData(["userToken"], data.token);
-      localStorage.setItem("userUsername", data.username);
+      localStorage.setItem("userUsername", data.user!.username);
       navigate('/student/profile');
       notify();
     },

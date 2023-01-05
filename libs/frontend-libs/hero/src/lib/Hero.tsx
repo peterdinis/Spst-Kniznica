@@ -1,20 +1,6 @@
 import DateTimePicker from 'libs/frontend-libs/shared/src/lib/DateTimePicker';
-import { useQuery } from '@tanstack/react-query';
-import * as api from 'libs/frontend-libs/api/src/lib/queries/exampleQuery';
-import { queryClient } from '@spst-kniznica-project/frontend-libs/api';
-import { toast } from 'react-toastify';
 
 function Hero() {
-  const { data, isError } = useQuery(['exampleData'], api.getTestData);
- 
-  queryClient.setQueryData(['exampleData'], data);
-
-  const issue = () => toast.error('Na backende je chyba');
-
-  if (isError) {
-    issue();
-  }
-
   return (
     <>
       <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
