@@ -228,6 +228,7 @@ function RegisiterStudentForm() {
               id="Meno"
               type="text"
               autoFocus
+              
               placeholder="Vaše id"
               {...register('externalId', {
                 required: true,
