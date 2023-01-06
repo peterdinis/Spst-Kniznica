@@ -2,7 +2,7 @@ function StudentProfile() {
   const userUsername = localStorage.getItem('userUsername');
   return (
     <>
-      <div className="w-full relative mt-4  rounded my-24 overflow-hidden">
+      <div className="w-full mt-0 rounded overflow-hidden">
         <div className="top h-64 w-full bg-blue-600 overflow-hidden relative">
           <img
             src="https://images.unsplash.com/photo-1503264116251-35a269479413?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
@@ -19,10 +19,18 @@ function StudentProfile() {
         </div>
         <div className="grid grid-cols-12 bg-white ">
           <div className="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
-            <span
-              className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold"
-            >
+            <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
               Profilové informácie
+            </span>
+            <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
+              <a href="/student/profile/update">
+                Upraviť profil
+              </a>
+            </span>
+            <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
+              <a href="/borrowed">
+                Moje požičané knihy
+              </a>
             </span>
           </div>
 
@@ -30,7 +38,9 @@ function StudentProfile() {
             <div className="px-4 pt-4">
               <form action="#" className="flex flex-col space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold">Základné informácie</h3>
+                  <h3 className="text-2xl font-semibold">
+                    Základné informácie
+                  </h3>
                   <hr />
                 </div>
 
@@ -67,7 +77,9 @@ function StudentProfile() {
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold ">Ostatné informácie</h3>
+                  <h3 className="text-2xl font-semibold ">
+                    Ostatné informácie
+                  </h3>
                   <hr />
                 </div>
 
