@@ -4,14 +4,8 @@ import "../Users.css";
 function LoginTeacherForm() {
   return (
     <>
-    <Header name="Prihlásenie žiak" />
+    <Header name="Prihlásenie učiteľ" />
     <form
-       /*  onSubmit={handleSubmit((params: RegisterUserI) => {
-          queryClient.setQueryData(["studentEmail"], params.email);
-          queryClient.setQueriesData(["params"], params);
-
-          mutation.mutate(params);
-        })} */
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">

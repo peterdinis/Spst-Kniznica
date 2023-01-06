@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { CreateQuestionDto } from './dto/create-question.dto';
-import { AnswerTheQuestionDto } from './dto/answer-question.dto';
 import { UpdateQuestionDto } from './dto/update-question.dto';
+import { AnswerTheQuestionDto } from './dto/answer-question.dto';
 
 @Injectable()
 export class QuestionsService {
@@ -21,6 +21,23 @@ export class QuestionsService {
     });
 
     return newQuestion;
+  }
+
+  async updateQuestion(questionId: number, questionDto: UpdateQuestionDto) {
+
+    const updateQuestion = await this.prismaService.question.update({
+      where: {
+        id: questionId
+      },
+
+      data: questionDto
+    });
+
+    return updateQuestion;
+  }
+
+  async answerTheQuestion(questionId: number, answerDto: AnswerTheQuestionDto) {
+    return;
   }
 
 
