@@ -1,5 +1,5 @@
 export interface IUser {
-  id?: number;
+  id: number;
   username: string;
   password: string;
   firstname: string;
@@ -19,7 +19,7 @@ export type IRegisterUser = Pick<
 >;
 
 export interface ITokenUser {
-  user: IRegisterUser,
+  user: IUser,
   token: string
 }
 

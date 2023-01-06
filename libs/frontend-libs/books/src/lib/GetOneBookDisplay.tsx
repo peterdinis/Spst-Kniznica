@@ -21,6 +21,10 @@ function GetOneBookDisplay() {
     }
   );
 
+  console.log(data);
+
+  const getUserId = localStorage.getItem('userId');
+
   const navigateBack = () => {
     navigate('/books');
   };
@@ -108,6 +112,11 @@ function GetOneBookDisplay() {
                     {data.pages}
                   </p>
                 )}
+                {getUserId === null && data.status === "Dostupná" || getUserId === undefined && data.status === "Dostupná" ? (
+                  <>
+                    <Missing name="Musíte byť prihlásení ak chcete si požičať knihu" />
+                  </>
+                ): (<>
                 <BorrowModal headerName="Poižčaj knihu" buttonName="Požičať">
                   <div className="mt-4">
                     <input
@@ -119,7 +128,8 @@ function GetOneBookDisplay() {
                     <br />
                     <input
                       className="mt-4 py-3 px-4 w-full rounded shadow font-thin focus:outline-none focus:shadow-lg focus:shadow-slate-200 duration-100 shadow-gray-100"
-                      placeholder="Name"
+                      placeholder="User Id"
+                      value={getUserId!}
                     />
                     <br />
                     <input
@@ -132,6 +142,7 @@ function GetOneBookDisplay() {
                     </button>
                   </div>
                 </BorrowModal>
+                </>)}
 
                 <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5" />
                 <button className="mt-10 text-xl" onClick={navigateBack}>

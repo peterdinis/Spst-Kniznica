@@ -38,6 +38,7 @@ function LoginStudentForm() {
     onSuccess: (data: ITokenUser) => {
       queryClient.setQueryData(["userToken"], data.token);
       localStorage.setItem("userUsername", data.user!.username);
+      localStorage.setItem("userId", data.user.id! as unknown as string)
       navigate('/student/profile');
       notify();
     },
