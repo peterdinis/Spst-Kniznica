@@ -95,9 +95,16 @@ model Chat {
 }
 
 model Question {
-  id     Int     @id @default(autoincrement())
+  id     Int      @id @default(autoincrement())
   name   String
-  answer String?
+  answer Answer[]
+}
+
+model Answer {
+  id         Int       @id @default(autoincrement())
+  answer     String
+  questionId Int?      @default(12345)
+  question   Question? @relation(fields: [questionId], references: [id])
 }
 
 model Notification {

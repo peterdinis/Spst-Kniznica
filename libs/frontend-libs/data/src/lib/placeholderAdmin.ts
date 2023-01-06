@@ -4,6 +4,8 @@ export const placeholderAdmin = [
         email: "randomAdmin@gmail.com",
         password: "randomAdmin",
         firstName: "Random Admin Name",
-        lastName: "Random Admin Name"
+        lastName: "Random Admin Name",
+        role: "Admin",
+        externalId: 293
     }
 ]

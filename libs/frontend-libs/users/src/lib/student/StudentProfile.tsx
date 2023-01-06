@@ -29,9 +29,6 @@ function StudentProfile() {
         <div className="grid grid-cols-12 bg-white ">
           <div className="col-span-12 w-full px-3 py-6 justify-center flex space-x-4 border-b border-solid md:space-x-0 md:space-y-4 md:flex-col md:col-span-2 md:justify-start ">
             <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
-              Profilové informácie
-            </span>
-            <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
               <a href="/student/profile/update">
                 Upraviť profil
               </a>

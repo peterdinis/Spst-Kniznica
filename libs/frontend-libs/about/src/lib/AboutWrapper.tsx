@@ -15,7 +15,7 @@ function AboutWrapper() {
           praesentium id.
         </p>
         <div className="mt-5 text-center">
-          <a className="text-xl text-red-800" href="/chat">Chat s adminami</a>
+          <a className="text-xl text-red-800" href="/chat">Pri probléme píšte tu</a>
         </div>
       </Paper>
     </>
