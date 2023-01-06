@@ -17,14 +17,19 @@ import {
   StudentProfilePage,
   MyBorrowedBooks,
   NotAllowed,
+  StudentBorrowedBooks,
+  TeacherBorrowedBooks,
 } from '@spst-kniznica-project/frontend-libs/pages';
 import { Suspense } from 'react';
 import {
   FallbackLoader,
   Navbar,
 } from '@spst-kniznica-project/frontend-libs/shared';
-import { UpdateProfile, UpdateTeacherProfile } from '@spst-kniznica-project/frontend-libs/users';
-import StudentPrivateRoute from "libs/frontend-libs/routes/src/lib/StudentPrivateRoute";
+import {
+  UpdateProfile,
+  UpdateTeacherProfile,
+} from '@spst-kniznica-project/frontend-libs/users';
+import StudentPrivateRoute from 'libs/frontend-libs/routes/src/lib/StudentPrivateRoute';
 
 export function App() {
   return (
@@ -44,14 +49,21 @@ export function App() {
           <Route path="/student/register" element={<StudentRegisterPage />} />
           <Route path="/student/login" element={<StudentLoginPage />} />
           <Route element={<StudentPrivateRoute />}>
-          <Route path="/student/profile" element={<StudentProfilePage />} />
-          <Route path="/student/profile/update" element={<UpdateProfile />} />
+            <Route path="/student/profile" element={<StudentProfilePage />} />
+            <Route path="/student/profile/update" element={<UpdateProfile />} />
+            <Route
+              path="/student/borrowed"
+              element={<StudentBorrowedBooks />}
+            />
           </Route>
           <Route path="/teacher/register" element={<TeacherProfilePage />} />
           <Route path="/teacher/login" element={<TeacherLoginPage />} />
           <Route path="/teacher/profile" element={<TeacherProfilePage />} />
-          <Route path="/teacher/profile/update" element={<UpdateTeacherProfile />} />
-          <Route path="/borrowed" element={<MyBorrowedBooks/> } />
+          <Route
+            path="/teacher/profile/update"
+            element={<UpdateTeacherProfile />}
+          />
+          <Route path="/teacher/borrowed" element={<TeacherBorrowedBooks />} />
           <Route path="/notallowed" element={<NotAllowed />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

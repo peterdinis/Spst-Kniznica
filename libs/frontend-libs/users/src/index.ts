@@ -6,6 +6,8 @@ import RegisterTeacherForm from "./lib/teacher/RegisterTeacherForm";
 import TeacherProfile from "./lib/teacher/TeacherProfile";
 import UpdateProfile from "./lib/student/UpdateProfile";
 import UpdateTeacherProfile from "./lib/teacher/UpdateTeacherProfile";
+import MyStudentBorrowedBooks from "./lib/student/MyStudentBorrowedBooks";
+import MyTeacherBorrowedBooks from "./lib/teacher/MyTeacherBorrowedBooks";
 
 export {
     LoginStudentForm,
@@ -15,5 +17,7 @@ export {
     LoginTeacherForm,
     TeacherProfile,
     UpdateProfile,
-    UpdateTeacherProfile
+    UpdateTeacherProfile,
+    MyStudentBorrowedBooks,
+    MyTeacherBorrowedBooks
 }
