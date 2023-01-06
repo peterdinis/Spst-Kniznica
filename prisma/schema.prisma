@@ -52,6 +52,12 @@ model Booking {
   extended  Boolean  @default(false)
 }
 
+model Avatar {
+  id       Int    @id @default(autoincrement())
+  filename String
+  data     Bytes
+}
+
 model Admin {
   id        Int      @id @default(autoincrement())
   username  String   @unique
