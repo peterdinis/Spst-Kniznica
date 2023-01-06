@@ -15,7 +15,6 @@ import {
   StudentRegisterPage,
   StudentLoginPage,
   StudentProfilePage,
-  MyBorrowedBooks,
   NotAllowed,
   StudentBorrowedBooks,
   TeacherBorrowedBooks,

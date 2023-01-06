@@ -28,7 +28,7 @@ function StudentProfile() {
               </a>
             </span>
             <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
-              <a href="/borrowed">
+              <a href="/student/borrowed">
                 Moje požičané knihy
               </a>
             </span>
