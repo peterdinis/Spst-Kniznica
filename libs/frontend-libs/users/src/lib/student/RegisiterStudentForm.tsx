@@ -19,6 +19,7 @@ const schema = yup
     firstname: yup.string().required(),
     lastname: yup.string().required(),
     role: yup.string().required(),
+    externalId: yup.number().required()
   })
   .required();
 
@@ -212,6 +213,31 @@ function RegisiterStudentForm() {
 
             <p className="text-red-800">
               {errors.role && errors.role.message}
+            </p>
+          </div>
+
+          <div className="mb-2">
+            <label
+              className="block text-grey-darker text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Študentské id
+            </label>
+            <input
+              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+              id="Meno"
+              type="text"
+              autoFocus
+              placeholder="Vaše id"
+              {...register('externalId', {
+                required: true,
+                minLength: 5,
+                min: 5,
+              })}
+            />
+
+            <p className="text-red-800">
+              {errors.externalId && errors.externalId.message}
             </p>
           </div>
           <div>

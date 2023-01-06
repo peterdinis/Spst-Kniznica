@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ViewBookingDto } from '@spst-kniznica-project/backend-libs/booking';
 
 export class ViewUsersDto {
   @ApiProperty()
@@ -19,4 +18,7 @@ export class ViewUsersDto {
 
   @ApiProperty()
   role: string;
+
+  @ApiProperty()
+  externalId: number;
 }

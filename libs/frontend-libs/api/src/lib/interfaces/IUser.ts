@@ -6,6 +6,7 @@ export interface IUser {
   lastname: string;
   email: string;
   role: string;
+  externalId: number;
 }
 
 export type IRegisterUser = Pick<
@@ -16,6 +17,7 @@ export type IRegisterUser = Pick<
   | 'firstname'
   | 'lastname'
   | 'role'
+  | "externalId"
 >;
 
 export interface ITokenUser {
