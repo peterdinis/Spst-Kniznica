@@ -78,6 +78,7 @@ model User {
   lastname       String         @default("BAR")
   email          String
   role           String         @default("Učiteľ")
+  externalId     Int            @default(20202020202020202)
   createdAt      DateTime       @default(now())
   updateAt       DateTime       @updatedAt()
   borrowed       Booking[]
