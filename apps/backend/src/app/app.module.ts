@@ -35,7 +35,6 @@ import { NotificationsModule } from '@spst-kniznica-project/backend-libs/notific
       limit: 50,
     }),
     PrismaModule,
-    CategoryModule,
     BookingModule,
     ChatModule,
     CheckerModule,
