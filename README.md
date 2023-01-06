@@ -1,6 +1,6 @@
-
-
 # SpstKniznicaProject
+
+- Copy of project from high school. School library where the student can borrow a book and return a book, the teacher can do the same as the student, plus he can create, edit, delete a book and the admin manages it all
 
 This project was generated using [Nx](https://nx.dev).
 
@@ -78,8 +78,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 
