@@ -98,10 +98,6 @@ export default function Navbar() {
                     <a href="/student/profile">Profil</a>
                   </Menu.Button>
 
-                  <Menu.Button>
-                    <a href="/borrowed">Moje požičané knihy</a>
-                  </Menu.Button>
-
                   <Transition
                     as={Fragment}
                     enter="transition ease-out duration-100"
