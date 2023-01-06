@@ -1,5 +1,14 @@
+import {useQuery} from "@tanstack/react-query";
+import * as api from "libs/frontend-libs/api/src/lib/queries/userQueries";
+import {placeholderUser} from "libs/frontend-libs/data/src/lib/placeholderUsers";
+
 function StudentProfile() {
-  const userUsername = localStorage.getItem('userUsername');
+  const userUsername = localStorage.getItem('userUsername') as unknown as string;
+  
+  const {data, isError} = useQuery(["userInfo"], () => api.searchingForUser(userUsername), {
+    placeholderData: placeholderUser
+  });
+  console.log(data);
   return (
     <>
       <div className="w-full mt-0 rounded overflow-hidden">
@@ -50,23 +59,21 @@ function StudentProfile() {
                 </div>
 
                 <div className="form-item">
-                  <label className="text-xl ">Full Name</label>
+                  <label className="text-xl ">Krstné meno</label>
                   <input
                     type="text"
-                    value="Antonia P. Howell"
+                    value={data.firstName}
                     className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
-                    disabled
                   />
                 </div>
 
                 <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
                   <div className="form-item w-full">
-                    <label className="text-xl ">Username</label>
+                    <label className="text-xl ">Priezvisko</label>
                     <input
                       type="text"
-                      value="antonia"
+                      value={data.lastName}
                       className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
-                      disabled
                     />
                   </div>
 
@@ -74,9 +81,17 @@ function StudentProfile() {
                     <label className="text-xl ">Email</label>
                     <input
                       type="text"
-                      value="antoniaph@gmail.com"
+                      value={data.email}
                       className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
-                      disabled
+                    />
+                  </div>
+
+                  <div className="form-item w-full">
+                    <label className="text-xl ">Rola</label>
+                    <input
+                      type="text"
+                      value={data.role}
+                      className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
                     />
                   </div>
                 </div>
