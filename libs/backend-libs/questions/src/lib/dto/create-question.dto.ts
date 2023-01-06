@@ -6,9 +6,4 @@ export class CreateQuestionDto {
     @IsString()
     @IsNotEmpty()
     name: string;
-
-    @ApiProperty()
-    @IsString()
-    @IsOptional()
-    answer: string;
 }

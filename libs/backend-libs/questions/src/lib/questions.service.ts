@@ -17,50 +17,12 @@ export class QuestionsService {
     const newQuestion = await this.prismaService.question.create({
       data: {
         name: questionDto.name,
-        answer: questionDto.answer,
       },
     });
 
     return newQuestion;
   }
 
-  async updateQuestion(id: number, questionDto: UpdateQuestionDto) {
-    const oneQuestion = await this.prismaService.question.findFirst({
-      where: {
-        id: id,
-      }
-    })
-
-    const updatingQuestion = await this.prismaService.question.update({
-      where: {
-        id: oneQuestion.id,
-      },
-
-      data: questionDto
-    })
-
-    return updatingQuestion;
-  }
-
-  async answerQuestion(id: number,answerQuestionDto: AnswerTheQuestionDto) {
-    const oneQuestion = await this.prismaService.question.findFirst({
-      where: {
-        id
-      },
-    });
-
-    const answerTheQuestion = await this.prismaService.question.update({
-      where: {
-        id: oneQuestion.id,
-      },
-
-      data: {
-        answer: answerQuestionDto.newAnswer,
-      },
-    });
-
-    return answerTheQuestion;
-  }
 
   async removeQuestion(id: number) {
     const questionToRemoved = await this.prismaService.question.delete({
