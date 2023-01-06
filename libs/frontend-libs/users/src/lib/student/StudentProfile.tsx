@@ -32,6 +32,11 @@ function StudentProfile() {
                 Moje požičané knihy
               </a>
             </span>
+            <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
+              <a href="/student/borrowed">
+                Nový avatar
+              </a>
+            </span>
           </div>
 
           <div className="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">
