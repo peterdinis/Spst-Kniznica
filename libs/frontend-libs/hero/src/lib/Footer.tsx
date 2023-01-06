@@ -10,7 +10,7 @@ function Footer() {
                   href="https://www.creative-tim.com/product/notus-js"
                   className="text-blueGray-500 text-2xl hover:text-gray-800"
                 >
-                  &copy; SPŠT Knižnica 2022
+                  &copy; SPŠT Knižnica 2023
                 </a>
               </div>
             </div>
