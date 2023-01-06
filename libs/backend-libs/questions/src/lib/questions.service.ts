@@ -25,7 +25,7 @@ export class QuestionsService {
 
   async updateQuestion(questionId: number, questionDto: UpdateQuestionDto) {
 
-    const updateQuestion = await this.prismaService.question.update({
+    const updateExistingQuestion = await this.prismaService.question.update({
       where: {
         id: questionId
       },
@@ -33,7 +33,7 @@ export class QuestionsService {
       data: questionDto
     });
 
-    return updateQuestion;
+    return updateExistingQuestion;
   }
 
   async answerTheQuestion(questionId: number, answerDto: AnswerTheQuestionDto) {
