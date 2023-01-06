@@ -17,6 +17,7 @@ import { AppService } from './app.service';
 import { AppController } from './app.controller';
 import { ScheduleModule } from '@nestjs/schedule';
 import { NotificationsModule } from '@spst-kniznica-project/backend-libs/notifications';
+import {AvatarModule } from '@spst-kniznica-project/backend-libs/avatar'
 
 @Module({
   imports: [
@@ -42,6 +43,7 @@ import { NotificationsModule } from '@spst-kniznica-project/backend-libs/notific
     UsersModule,
     QuestionsModule,
     NotificationsModule,
+    AvatarModule
   ],
 
   providers: [AppService],
