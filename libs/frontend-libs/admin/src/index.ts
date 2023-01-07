@@ -1,1 +1,1 @@
-export * from './lib/frontend-libs-admin';
+import React from "react";
