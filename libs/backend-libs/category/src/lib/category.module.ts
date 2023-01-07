@@ -6,8 +6,7 @@ import { PrismaModule } from '@spst-kniznica-project/backend-libs/database';
 @Module({
   imports: [PrismaModule],
   controllers: [CategoryController],
-  providers: [CategoryService],
-  exports: [],
+  providers: [CategoryService]
 })
 
 export class CategoryModule {}
