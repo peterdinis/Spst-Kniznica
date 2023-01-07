@@ -65,9 +65,7 @@ CREATE TABLE "User" (
     "role" TEXT NOT NULL DEFAULT 'Učiteľ',
     "externalId" INTEGER NOT NULL DEFAULT 1,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updateAt" DATETIME NOT NULL,
-    "avatarId" INTEGER DEFAULT 12345,
-    CONSTRAINT "User_avatarId_fkey" FOREIGN KEY ("avatarId") REFERENCES "Avatar" ("id") ON DELETE SET NULL ON UPDATE CASCADE
+    "updateAt" DATETIME NOT NULL
 );
 
 -- CreateTable
