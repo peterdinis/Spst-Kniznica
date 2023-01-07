@@ -29,6 +29,7 @@ import {
   UpdateTeacherProfile,
 } from '@spst-kniznica-project/frontend-libs/users';
 import StudentPrivateRoute from 'libs/frontend-libs/routes/src/lib/StudentPrivateRoute';
+import TeacherPrivateRoute from 'libs/frontend-libs/routes/src/lib/TeacherPrivateRoute';
 
 export function App() {
   return (
@@ -57,11 +58,13 @@ export function App() {
           </Route>
           <Route path="/teacher/register" element={<TeacherProfilePage />} />
           <Route path="/teacher/login" element={<TeacherLoginPage />} />
+          <Route element={<TeacherPrivateRoute />}>
           <Route path="/teacher/profile" element={<TeacherProfilePage />} />
           <Route
             path="/teacher/profile/update"
             element={<UpdateTeacherProfile />}
           />
+          </Route>
           <Route path="/teacher/borrowed" element={<TeacherBorrowedBooks />} />
           <Route path="/notallowed" element={<NotAllowed />} />
           <Route path="*" element={<NotFoundPage />} />
