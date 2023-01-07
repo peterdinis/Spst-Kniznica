@@ -5,10 +5,9 @@ import {placeholderUser} from "libs/frontend-libs/data/src/lib/placeholderUsers"
 function StudentProfile() {
   const userUsername = localStorage.getItem('userUsername') as unknown as string;
   
-  const {data, isError} = useQuery(["userInfo"], () => api.searchingForUser(userUsername), {
+  const {data} = useQuery(["userInfo"], () => api.searchingForUser(userUsername), {
     placeholderData: placeholderUser
   });
-  console.log(data);
   return (
     <>
       <div className="w-full mt-0 rounded overflow-hidden">
