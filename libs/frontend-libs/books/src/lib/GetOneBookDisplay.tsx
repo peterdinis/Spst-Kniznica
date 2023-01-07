@@ -138,6 +138,7 @@ function GetOneBookDisplay() {
                         buttonName="Požičať"
                       >
                         <div className="mt-4">
+                          <label className='ml-2'>Id knihy</label>
                           <input
                             className="py-3 px-4 w-full rounded shadow font-thin focus:outline-none focus:shadow-lg focus:shadow-slate-200 duration-100 shadow-gray-100"
                             placeholder="Book ID"
@@ -145,6 +146,7 @@ function GetOneBookDisplay() {
                           />
                           <br />
                           <div className="mt-4">
+                            <label className='ml-2'>Id prihláseného používateľa</label>
                             <input
                               className="mt-4 py-3 px-4 w-full rounded shadow font-thin focus:outline-none focus:shadow-lg focus:shadow-slate-200 duration-100 shadow-gray-100"
                               placeholder="User Id"
@@ -152,6 +154,7 @@ function GetOneBookDisplay() {
                             />
                           </div>
                           <br />
+                          <label className='ml-2'>Odkedy chcem knihu</label>
                           <div className="mt-4">
                             <DesktopDatePicker
                               className="mt-4 py-3 px-4 w-full rounded shadow font-thin focus:outline-none focus:shadow-lg focus:shadow-slate-200 duration-100 shadow-gray-100"
@@ -165,6 +168,7 @@ function GetOneBookDisplay() {
                             />
                           </div>
                           <br />
+                          <label className='ml-2'>Dokedy chcem knihu</label>
                           <div className="mt-4">
                             <DesktopDatePicker
                               className="mt-4 py-3 px-4 w-full rounded shadow font-thin focus:outline-none focus:shadow-lg focus:shadow-slate-200 duration-100 shadow-gray-100"
@@ -177,7 +181,6 @@ function GetOneBookDisplay() {
                               ) => <TextField {...params} />}
                             />
                           </div>
-
                           <button className="mt-4 bg-blue-800 rounded p-2 text-blue-50 font-semibold">
                             Požičať
                           </button>
