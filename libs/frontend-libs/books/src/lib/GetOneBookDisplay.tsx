@@ -7,7 +7,7 @@ import {
 import * as api from 'libs/frontend-libs/api/src/lib/queries/bookQueries';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, useMutation } from '@tanstack/react-query';
 import { placeholderBook } from 'libs/frontend-libs/data/src/lib/placeholderBook';
 import { BorrowModal } from '@spst-kniznica-project/frontend-libs/booking';
 import dayjs, { Dayjs } from 'dayjs';
@@ -42,7 +42,7 @@ function GetOneBookDisplay() {
   }
 
   const [value, setValue] = React.useState<Dayjs | null>(
-    dayjs('2014-08-18T21:11:54')
+    dayjs(new Date().toISOString())
   );
 
   const handleChange = (newValue: Dayjs | null) => {

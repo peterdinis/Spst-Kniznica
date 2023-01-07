@@ -37,11 +37,12 @@ function StudentProfile() {
                 Moje požičané knihy
               </a>
             </span>
-            <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
+            {/* For now we do not create logic for create new avatar */}
+            {/* <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
               <a href="/student/borrowed">
                 Nový avatar
               </a>
-            </span>
+            </span> */}
           </div>
 
           <div className="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">
@@ -58,7 +59,7 @@ function StudentProfile() {
                   <label className="text-xl ">Krstné meno</label>
                   <input
                     type="text"
-                    value={data.firstName}
+                    value={data.firstname}
                     className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                   />
                 </div>
@@ -68,7 +69,7 @@ function StudentProfile() {
                     <label className="text-xl ">Priezvisko</label>
                     <input
                       type="text"
-                      value={data.lastName}
+                      value={data.lastname}
                       className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
                     />
                   </div>
@@ -100,18 +101,14 @@ function StudentProfile() {
                 </div>
 
                 <div className="form-item w-full">
-                  <label className="text-xl ">Biography</label>
+                  <label className="text-xl ">Moje požičané knihy</label>
                   <textarea
                     cols={30}
                     rows={10}
-                    className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
                     disabled
+                    className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
                   >
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Dolorem natus nobis odio. Lorem ipsum dolor sit amet
-                    consectetur adipisicing elit. Accusantium, eveniet fugiat?
-                    Explicabo assumenda dignissimos quisquam perspiciatis
-                    corporis sint commodi cumque rem tempora!
+                    Pri probléme je dostupný chat kde Vám niekto odpovie...
                   </textarea>
                 </div>
               </form>
