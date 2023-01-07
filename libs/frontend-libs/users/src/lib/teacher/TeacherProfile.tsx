@@ -6,7 +6,7 @@ import {placeholderUser} from "libs/frontend-libs/data/src/lib/placeholderUsers"
 function TeacherProfile() {
   const userTeacher = localStorage.getItem('userTeacher')as unknown as string;
 
-  const {data} = useQuery(["userInfo"], () => api.searchingForUser(userTeacher), {
+  const {data} = useQuery(["teacherInfo"], () => api.searchingForUser(userTeacher), {
     placeholderData: placeholderUser
   });
   return (
