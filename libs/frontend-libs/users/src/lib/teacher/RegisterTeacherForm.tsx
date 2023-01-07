@@ -1,22 +1,82 @@
-import { Header } from "@spst-kniznica-project/frontend-libs/shared"
-import "../Users.css";
+import React from 'react';
+import { Header } from '@spst-kniznica-project/frontend-libs/shared';
+import '../Users.css';
+import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import {
+  IRegisterUser,
+  ITokenUser,
+} from 'libs/frontend-libs/api/src/lib/interfaces/IUser';
+import { useMutation } from '@tanstack/react-query';
+import * as api from 'libs/frontend-libs/api/src/lib/mutations/userMutations';
+import { queryClient } from 'libs/frontend-libs/api/src/lib/queryClient';
+import { useNavigate } from 'react-router-dom';
 
+const schema = yup
+  .object({
+    email: yup.string().required(),
+    username: yup.string().required(),
+    password: yup.string().required(),
+    firstname: yup.string().required(),
+    lastname: yup.string().required(),
+    role: yup.string().required(),
+    externalId: yup.number().required(),
+  })
+  .required();
 
+const notify = () => toast.success('Registrácia bola úspešná');
+const errorRegister = () => toast.error('Registrácia nebola úspešná');
 
 function RegisterTeacherForm() {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm<IRegisterUser>({
+    resolver: yupResolver(schema),
+  });
+  const navigate = useNavigate();
+
+  const [passwordShown, setPasswordShown] = React.useState<Boolean>(false);
+
+  const mutation = useMutation(api.registerUser, {
+    onSuccess: (data: ITokenUser) => {
+      queryClient.setQueryData(['userToken'], data.token);
+      localStorage.setItem('userUsername', data.user.username);
+      localStorage.setItem('userId', data.user.id! as unknown as string);
+      navigate('/student/login');
+      notify();
+    },
+
+    onError: () => {
+      errorRegister();
+    },
+  });
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
   return (
     <>
-    <Header name="Registrácia učiteľ" />
-    <form
+      <Header name="Registrácia učiteľ" />
+      <form
+        onSubmit={handleSubmit((params: IRegisterUser) => {
+          queryClient.setQueryData(['userUsername'], params.username);
+          queryClient.setQueriesData(['params'], params);
+          mutation.mutate(params);
+        })}
       >
         <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
           <div className="mb-4">
-            <div className="mb-6">
+            <div className="mb-2">
               <label
                 className="block text-grey-darker text-sm font-bold mb-2"
                 htmlFor="password"
               >
-                Meno
+                Používateľské meno
               </label>
               <input
                 className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
@@ -24,111 +84,162 @@ function RegisterTeacherForm() {
                 type="text"
                 autoFocus
                 placeholder="Meno"
-               /*  {...register("name", {
+                {...register('username', {
                   required: true,
                   minLength: 5,
-                  min: 5
-                })} */
+                  min: 5,
+                })}
               />
 
-             {/*  <p className="text-red-800">
-                {errors.name && errors.name.message}
-              </p> */}
+              <p className="text-red-800">
+                {errors.username && errors.username.message}
+              </p>
             </div>
-            <label
-              className="block text-grey-darker text-sm font-bold mb-2"
-              htmlFor="username"
-            >
-              Email
-            </label>
-            <input
-              className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-              id="email"
-              autoFocus
-              type="email"
-              placeholder="Email"
-              /* {...register("email", {
-                required: true,
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "invalid email address",
-                },
-              })} */
-            />
+            <div className="mb-2">
+              <label
+                className="block text-grey-darker text-sm font-bold mb-2"
+                htmlFor="username"
+              >
+                Email
+              </label>
+              <input
+                className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+                id="email"
+                autoFocus
+                type="email"
+                placeholder="Email"
+                {...register('email', {
+                  required: true,
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                    message: 'invalid email address',
+                  },
+                })}
+              />
 
-           {/*  <p className="text-red-800">
-              {errors.email && errors.email.message}
-            </p> */}
-          </div>
-          <div className="mb-4">
-            <label
-              className="block text-grey-darker text-sm font-bold mb-2"
-              htmlFor="username"
-            >
-              Heslo
-            </label>
-            <input
-              className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
-              id="password"
-           /*    type={passwordShown ? "text" : "password"} */
-              placeholder="******************"
-              autoFocus
-             /*  {...register("password", {
-                required: true,
-                minLength:5,
-                min: 5
-              })} */
-            />
-          {/*   <p className="text-red-800">
-              {errors.password && errors.password.message}
-            </p> */}
-            {/* <button onClick={togglePassword}>Zobraziť heslo</button> */}
-          </div>
+              <p className="text-red-800">
+                {errors.email && errors.email.message}
+              </p>
+            </div>
+            <div className="mb-2">
+              <label
+                className="block text-grey-darker text-sm font-bold mb-2"
+                htmlFor="username"
+              >
+                Heslo
+              </label>
+              <input
+                className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker"
+                id="email"
+                autoFocus
+                type={passwordShown ? 'text' : 'password'}
+                placeholder="*********************************"
+                {...register('password', {
+                  required: true,
+                })}
+              />
 
-          <div className="mb-6">
+              <p className="text-red-800">
+                {errors.password && errors.password.message}
+              </p>
+              <button onClick={togglePassword}>Zobraziť heslo</button>
+            </div>
+          </div>
+          <div className="mb-2">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
               htmlFor="password"
             >
-              Potvrdenie hesla
+              Krstné meno
             </label>
             <input
               className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-              id="Potvrdenie hesla"
+              id="Meno"
+              type="text"
               autoFocus
-             /*  type={passwordShown ? "text" : "password"}
-              placeholder="******************"
-              {...register("confirm", {
+              placeholder="Meno"
+              {...register('firstname', {
                 required: true,
-                validate: (val: string) => {
-                  if(watch("password") != val) {
-                    return "Heslá sa nezhodujú..."
-                  }
-                }
-              })} */
+                minLength: 5,
+                min: 5,
+              })}
             />
-          {/*   <p className="text-red-800">
-              {errors.confirm && errors.confirm.message}
-            </p> */}
-            {/* <button onClick={togglePassword}>Zobraziť heslo</button> */}
-          </div>
 
-          <div className="mb-6">
+            <p className="text-red-800">
+              {errors.firstname && errors.firstname.message}
+            </p>
+          </div>
+          <div className="mb-2">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
               htmlFor="password"
             >
-              Študentské Id
+              Priezvisko
             </label>
             <input
               className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
-              id="Potvrdenie hesla"
-              /* placeholder={data}
-              {...register("studentProfileId", {
+              id="Meno"
+              type="text"
+              autoFocus
+              placeholder="Priezvisko"
+              {...register('lastname', {
                 required: true,
-              })} */
+                minLength: 5,
+                min: 5,
+              })}
             />
-           {/*  <button onClick={togglePassword}>Zobraziť heslo</button> */}
+
+            <p className="text-red-800">
+              {errors.lastname && errors.lastname.message}
+            </p>
+          </div>
+          <div className="mb-2">
+            <label
+              className="block text-grey-darker text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Rola
+            </label>
+            <input
+              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+              id="Meno"
+              type="text"
+              autoFocus
+              placeholder="Žiak"
+              {...register('role', {
+                required: true,
+                minLength: 5,
+                min: 5,
+                value: 'Žiak',
+              })}
+            />
+
+            <p className="text-red-800">{errors.role && errors.role.message}</p>
+          </div>
+
+          <div className="mb-2">
+            <label
+              className="block text-grey-darker text-sm font-bold mb-2"
+              htmlFor="password"
+            >
+              Študentské id
+            </label>
+            <input
+              className="passwordInput shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3"
+              id="Meno"
+              type="text"
+              autoFocus
+              placeholder="Vaše id"
+              {...register('externalId', {
+                required: true,
+                minLength: 5,
+                min: 5,
+              })}
+            />
+
+            <p className="text-red-800">
+              {errors.externalId && errors.externalId.message}
+            </p>
           </div>
           <div>
             <button className="reg registerButton" type="submit">
@@ -146,7 +257,7 @@ function RegisterTeacherForm() {
         </div>
       </form>
     </>
-  )
+  );
 }
 
-export default RegisterTeacherForm
+export default RegisterTeacherForm;

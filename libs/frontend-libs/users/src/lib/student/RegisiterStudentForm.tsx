@@ -5,7 +5,10 @@ import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { IRegisterUser, ITokenUser } from 'libs/frontend-libs/api/src/lib/interfaces/IUser';
+import {
+  IRegisterUser,
+  ITokenUser,
+} from 'libs/frontend-libs/api/src/lib/interfaces/IUser';
 import { useMutation } from '@tanstack/react-query';
 import * as api from 'libs/frontend-libs/api/src/lib/mutations/userMutations';
 import { queryClient } from 'libs/frontend-libs/api/src/lib/queryClient';
@@ -19,7 +22,7 @@ const schema = yup
     firstname: yup.string().required(),
     lastname: yup.string().required(),
     role: yup.string().required(),
-    externalId: yup.number().required()
+    externalId: yup.number().required(),
   })
   .required();
 
@@ -40,9 +43,9 @@ function RegisiterStudentForm() {
 
   const mutation = useMutation(api.registerUser, {
     onSuccess: (data: ITokenUser) => {
-      queryClient.setQueryData(["userToken"], data.token);
-      localStorage.setItem("userUsername", data.user.username);
-      localStorage.setItem("userId", data.user.id! as unknown as string)
+      queryClient.setQueryData(['userToken'], data.token);
+      localStorage.setItem('userUsername', data.user.username);
+      localStorage.setItem('userId', data.user.id! as unknown as string);
       navigate('/student/login');
       notify();
     },
@@ -207,13 +210,11 @@ function RegisiterStudentForm() {
                 required: true,
                 minLength: 5,
                 min: 5,
-                value: "Žiak"
+                value: 'Žiak',
               })}
             />
 
-            <p className="text-red-800">
-              {errors.role && errors.role.message}
-            </p>
+            <p className="text-red-800">{errors.role && errors.role.message}</p>
           </div>
 
           <div className="mb-2">
@@ -228,7 +229,6 @@ function RegisiterStudentForm() {
               id="Meno"
               type="text"
               autoFocus
-              
               placeholder="Vaše id"
               {...register('externalId', {
                 required: true,
