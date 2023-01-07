@@ -62,7 +62,7 @@ export class CategoryService {
 
   async getOneCategory(id: number) {
     try {
-      const oneBook = await this.prismaService.category.findUnique({
+      const oneBook = await this.prismaService.category.findFirst({
         where: {
           id,
         },
