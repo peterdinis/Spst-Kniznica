@@ -2,6 +2,7 @@ import { Body, Controller, Get, Param, Patch, Post, Put, Query } from '@nestjs/c
 import { BookingService } from './booking.service';
 import {
   ApiCreatedResponse,
+  ApiExcludeEndpoint,
   ApiOkResponse,
   ApiOperation,
   ApiTags,
@@ -70,6 +71,7 @@ export class BookingController {
   @ApiOperation({
     summary: 'Extended book',
   })
+  @ApiExcludeEndpoint()
   @ApiOkResponse({
     type: ExtendedBookingDto,
   })
