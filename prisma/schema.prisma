@@ -50,7 +50,6 @@ model Avatar {
   id       Int    @id @default(autoincrement())
   filename String
   data     Bytes
-  User     User[]
 }
 
 model Admin {
@@ -77,8 +76,6 @@ model User {
   updateAt       DateTime       @updatedAt()
   borrowed       Booking[]
   myNotification Notification[]
-  avatarId       Int?           @default(12345)
-  avatar         Avatar?        @relation(fields: [avatarId], references: [id])
 }
 
 model Chat {
