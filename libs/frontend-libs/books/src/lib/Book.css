@@ -1,117 +1,115 @@
 .bookForm {
-    margin-top: 2rem !important;
-    width: 25% !important;
+  margin-top: 2rem !important;
+  width: 25% !important;
 }
 
 .updateForm {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
-
 
 .formCenter {
-    text-align: center;
+  text-align: center;
 }
 
-@media(max-width: 1000px) {
-    .bookForm {
-        width: 35% !important;
-    }
+@media (max-width: 1000px) {
+  .bookForm {
+    width: 35% !important;
+  }
 }
 
-@media(max-width: 650px) {
-    .bookForm {
-        width: 45% !important;
-    }
+@media (max-width: 650px) {
+  .bookForm {
+    width: 45% !important;
+  }
 }
 
-@media(max-width: 350px) {
-    .bookForm {
-        width: 55% !important;
-    }
+@media (max-width: 350px) {
+  .bookForm {
+    width: 55% !important;
+  }
 }
 
 .searchInputs {
-    margin-top: 105px;
-    display: flex;
-  }
-  
-  .search input {
-    background-color: white;
-    border: 0;
-    border-radius: 2px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    font-size: 18px;
-    padding: 15px;
-    height: 30px;
-    width: 300px;
-  }
-  
-  .searchIcon {
-    height: 60px;
-    width: 50px;
-    background-color: white;
-    display: grid;
-    place-items: center;
-  }
-  
-  input:focus {
-    outline: none;
-  }
-  .searchIcon svg {
-    font-size: 35px;
-  }
-  
-  .dataResult {
-    margin-top: 5px;
-    width: 300px;
-    height: 200px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow: hidden;
-    overflow-y: auto;
-  }
-  
-  .dataResult::-webkit-scrollbar {
-    display: none;
-  }
-  
-  .dataResult .dataItem {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    color: black;
-  }
-  
-  .dataItem p {
-    margin-left: 10px;
-  }
-  a {
-    text-decoration: none;
-  }
-  
-  a:hover {
-    background-color: lightgrey;
-  }
-  
-  #clearBtn {
-    cursor: pointer;
-  }
+  margin-top: 105px;
+  display: flex;
+}
 
+.search input {
+  background-color: white;
+  border: 0;
+  border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 15px;
+  height: 30px;
+  width: 300px;
+}
 
-  .borrowsInput {
-    margin-top: 2rem !important;
+.searchIcon {
+  height: 60px;
+  width: 50px;
+  background-color: white;
+  display: grid;
+  place-items: center;
+}
+
+input:focus {
+  outline: none;
+}
+.searchIcon svg {
+  font-size: 35px;
+}
+
+.dataResult {
+  margin-top: 5px;
+  width: 300px;
+  height: 200px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataResult .dataItem {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.dataItem p {
+  margin-left: 10px;
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: lightgrey;
+}
+
+#clearBtn {
+  cursor: pointer;
+}
+
+.borrowsInput {
+  margin-top: 2rem !important;
 }
 
 .borrowBtn {
-    margin-top: 2rem !important;
-    background-color: #006699;
-    color: #eee;
-    padding: 4px;
-    border-radius: 8px;
-    font-size: 1.2rem;
-    cursor: pointer;
+  margin-top: 2rem !important;
+  background-color: #006699;
+  color: #eee;
+  padding: 4px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .bookSwitch {
