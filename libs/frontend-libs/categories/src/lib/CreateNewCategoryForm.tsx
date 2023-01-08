@@ -87,9 +87,9 @@ function CreateNewCategoryForm() {
 
           <p className="text-red-800">{errors.description && errors.description.message}</p>
         </div>
-        <button className="reg registerButton" type="submit">
+        <Button className="reg registerButton" type="submit">
           Vytvor
-        </button>
+        </Button>
       </div>
     </div>
   );
