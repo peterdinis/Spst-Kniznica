@@ -1,4 +1,5 @@
 import FaqQuestions from './FaqQuestions';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Faq = () => {
   return (
@@ -13,13 +14,8 @@ const Faq = () => {
         <div className=" flex justify-between md:flex-row flex-col ">
           <div className=" md:mb-0 mb-8 md:text-left text-center">
             <h2 className=" font-medium text-xl leading-5 text-gray-800 lg:mb-2 mb-4">
-              Otázky
+              Časté otázky
             </h2>
-            <p className=" font-normal text-sm leading-5 text-gray-600 md:w-8/12 md:ml-0 w-11/12 mx-auto">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-              laudantium vitae dignissimos aliquid ab quas temporibus ratione
-              harum error rerum?
-            </p>
           </div>
 
           <div className=" flex justify-center items-center">
@@ -29,29 +25,7 @@ const Faq = () => {
                 type="text"
                 placeholder="Hľadaj otázku"
               />
-              <svg
-                className="cursor-pointer"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M10 17C13.866 17 17 13.866 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17Z"
-                  stroke="#4B5563"
-                  strokeWidth="1.66667"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M21 21L15 15"
-                  stroke="#4B5563"
-                  strokeWidth="1.66667"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <SearchIcon />
             </div>
           </div>
         </div>
