@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   FallbackRender,
   Header,
@@ -11,7 +10,6 @@ import Button from '@mui/material/Button';
 import { IBook } from 'libs/frontend-libs/api/src/lib/interfaces/IBook';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import ScrollToTop from 'libs/frontend-libs/hooks/src/lib/useScroll';
-import ReactSearchBox from "react-search-box";
 
 export function AllBooks() {
   const { reset } = useQueryErrorResetBoundary();
