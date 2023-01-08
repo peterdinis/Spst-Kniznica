@@ -42,10 +42,8 @@ export function App() {
           <Route path="/chat" element={<ChatPage />} />
           <Route path="/books" element={<DisplayAllBooks />} />
           <Route path="/book/:id" element={<GetOneBook />} />
-          <Route path="/book/create" element={<CreateNewBook />} />
           <Route path="/categories" element={<DisplayAllCategories />} />
           <Route path="/category/:id" element={<GetOneCategory />} />
-          <Route path="/category/create" element={<CreateNewCategory />} />
           <Route path="/student/register" element={<StudentRegisterPage />} />
           <Route path="/student/login" element={<StudentLoginPage />} />
           <Route element={<StudentPrivateRoute />}>
@@ -59,13 +57,18 @@ export function App() {
           <Route path="/teacher/register" element={<TeacherProfilePage />} />
           <Route path="/teacher/login" element={<TeacherLoginPage />} />
           <Route element={<TeacherPrivateRoute />}>
-          <Route path="/teacher/profile" element={<TeacherProfilePage />} />
-          <Route
-            path="/teacher/profile/update"
-            element={<UpdateTeacherProfile />}
-          />
+            <Route path="/book/create" element={<CreateNewBook />} />
+            <Route path="/category/create" element={<CreateNewCategory />} />
+            <Route path="/teacher/profile" element={<TeacherProfilePage />} />
+            <Route
+              path="/teacher/profile/update"
+              element={<UpdateTeacherProfile />}
+            />
+            <Route
+              path="/teacher/borrowed"
+              element={<TeacherBorrowedBooks />}
+            />
           </Route>
-          <Route path="/teacher/borrowed" element={<TeacherBorrowedBooks />} />
           <Route path="/notallowed" element={<NotAllowed />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
