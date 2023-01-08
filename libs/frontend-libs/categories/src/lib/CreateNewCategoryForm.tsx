@@ -34,14 +34,21 @@ function CreateNewCategoryForm() {
   const mutation = useMutation(api.addNewCategory, {
     onSuccess: (data: ICategory) => {
       console.log(data);
+      categorySuccess();
     },
 
     onError: (data: ICategory) => {
       console.log(data);
+      categoryError();
     },
   });
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+      <form
+        onSubmit={handleSubmit((params: ICategory) => {
+          mutation.mutate(params);
+        })}
+      >
       <div className="mb-4">
         <div className="mb-2">
           <label
@@ -91,6 +98,7 @@ function CreateNewCategoryForm() {
           Vytvor
         </Button>
       </div>
+      </form>
     </div>
   );
 }
