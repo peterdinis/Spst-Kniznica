@@ -13,8 +13,6 @@ import { AdminModule } from '@spst-kniznica-project/backend-libs/admin';
 import { UsersModule } from '@spst-kniznica-project/backend-libs/users';
 import { QuestionsModule } from '@spst-kniznica-project/backend-libs/questions';
 import { HttpModule } from '@nestjs/axios';
-import { AppService } from './app.service';
-import { AppController } from './app.controller';
 import { ScheduleModule } from '@nestjs/schedule';
 import { NotificationsModule } from '@spst-kniznica-project/backend-libs/notifications';
 import {AvatarModule } from '@spst-kniznica-project/backend-libs/avatar'
@@ -44,11 +42,7 @@ import {AvatarModule } from '@spst-kniznica-project/backend-libs/avatar'
     QuestionsModule,
     NotificationsModule,
     AvatarModule
-  ],
-
-  providers: [AppService],
-
-  controllers: [AppController],
+  ]
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
