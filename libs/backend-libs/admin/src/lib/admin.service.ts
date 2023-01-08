@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { PrismaService } from '@spst-kniznica-project/backend-libs/database';
 import { RegisterAdminDto } from './dto/register-admin.dto';
+import { LoginAdminDto } from './dto/login-admin.dto';
 
 @Injectable()
 export class AdminService {
@@ -26,6 +27,10 @@ export class AdminService {
   }
 
   async createNewAdmin(registerAdminDto: RegisterAdminDto) {
+    return;
+  }
+
+  async loginAdmin(loginAdminDto: LoginAdminDto) {
     return;
   }
 }
