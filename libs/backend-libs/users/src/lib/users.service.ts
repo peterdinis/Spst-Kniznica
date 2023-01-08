@@ -5,14 +5,12 @@ import * as bcrypt from "bcrypt";
 import {JwtService} from "@nestjs/jwt";
 import { LoginUserDto } from "./dto/login-users.dto";
 import { UpdateUserDto } from "./dto/update-users.dto";
-import { AvatarService } from "libs/backend-libs/avatar/src/lib/avatar.service";
 
 @Injectable()
 export class UsersService {
     constructor(
         private readonly prismaService: PrismaService,
-        private readonly jwtService: JwtService,
-        private readonly avatarService: AvatarService
+        private readonly jwtService: JwtService
     ) {}
 
     async findUserByEmail(email: string) {

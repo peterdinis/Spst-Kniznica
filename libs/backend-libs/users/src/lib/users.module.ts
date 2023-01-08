@@ -5,7 +5,6 @@ import { UsersService } from './users.service';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './strategies/jwt-strategy';
-import {AvatarModule} from "@spst-kniznica-project/backend-libs/avatar";
 
 @Module({
   imports: [
@@ -16,8 +15,7 @@ import {AvatarModule} from "@spst-kniznica-project/backend-libs/avatar";
       signOptions: {
         expiresIn: '1h',
       },
-    }),
-    AvatarModule,
+    })
   ],
   controllers: [UsersController],
   providers: [UsersService, JwtStrategy],

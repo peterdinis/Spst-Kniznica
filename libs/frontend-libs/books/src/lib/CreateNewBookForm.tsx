@@ -1,6 +1,4 @@
-import Checkbox from '@mui/material/Checkbox';
 import './Book.css';
-import Typography from '@mui/material/Typography';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import * as api from 'libs/frontend-libs/api/src/lib/mutations/bookMutations';
 import * as apiCat from 'libs/frontend-libs/api/src/lib/queries/categoryQueries';
@@ -11,19 +9,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { IBook } from 'libs/frontend-libs/api/src/lib/interfaces/IBook';
 import { useNavigate } from 'react-router-dom';
-
-type FormData = {
-  name: string;
-  description: string;
-  author: string;
-  year: number;
-  avaiable: boolean;
-  pages: number;
-  publisher: string;
-  image: string;
-  status: string;
-  categoryId: number;
-};
+import { Button } from '@mui/material';
 
 const schema = yup
   .object({
@@ -69,11 +55,15 @@ function CreateNewBookForm() {
 
   return (
     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-       <AvaiableCategories
-          modalHeader="Zoznam dostupných kategórií"
-          buttonName="Zoznam dostupných kategórií"
-        />
-      <form>
+      <AvaiableCategories
+        modalHeader="Zoznam dostupných kategórií"
+        buttonName="Zoznam dostupných kategórií"
+      />
+      <form
+        onSubmit={handleSubmit((params: IBook) => {
+          mutation.mutate(params);
+        })}
+      >
         <div className="mb-4">
           <div className="mb-2">
             <label
@@ -121,9 +111,9 @@ function CreateNewBookForm() {
               {errors.description && errors.description.message}
             </p>
           </div>
-          <button className="reg registerButton" type="submit">
+          <Button className="reg registerButton" type="submit">
             Vytvor
-          </button>
+          </Button>
         </div>
       </form>
     </div>
