@@ -5,13 +5,19 @@ import * as bcrypt from "bcrypt";
 import {JwtService} from "@nestjs/jwt";
 import { LoginUserDto } from "./dto/login-users.dto";
 import { UpdateUserDto } from "./dto/update-users.dto";
+import { HttpService } from "@nestjs/axios";
 
 @Injectable()
 export class UsersService {
     constructor(
         private readonly prismaService: PrismaService,
-        private readonly jwtService: JwtService
+        private readonly jwtService: JwtService,
+        private readonly httpService: HttpService
     ) {}
+
+    async generateRandomId() {
+        return;
+    }
 
     async findUserByEmail(email: string) {
         const user = await this.prismaService.user.findFirst({

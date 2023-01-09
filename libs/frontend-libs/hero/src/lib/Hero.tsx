@@ -17,15 +17,20 @@ function Hero() {
           </h1>
           <DateTimePicker />
           <div className="ml-8 text-gray-800 text-xl font-regular mb-8 mt-6">
-          Knihy sú jedinečne prenosné kúzlo - <span className="font-bold">Stephen King</span>
+            Knihy sú jedinečne prenosné kúzlo -{' '}
+            <span className="font-bold">Stephen King</span>
           </div>
 
           <div className="ml-8">
-            <button className="test bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              <a href="https://www.spsbj.sk/">Školská Stránka</a>
+            <button className="test bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded">
+              <a className="bg-transparent" href="https://www.spsbj.sk/">
+                Školská Stránka
+              </a>
             </button>
-            <button className="newTest ml-10 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-              <a href="/books">Všetky Knihy</a>
+            <button className="newTest ml-10 bg-red-500 hover:bg-red-700  font-bold py-2 px-4 rounded">
+              <a className="bg-transparent" href="/books">
+                Všetky Knihy
+              </a>
             </button>
           </div>
         </div>

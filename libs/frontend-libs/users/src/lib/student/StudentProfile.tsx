@@ -37,12 +37,6 @@ function StudentProfile() {
                 Moje požičané knihy
               </a>
             </span>
-            {/* For now we do not create logic for create new avatar */}
-            {/* <span className="text-sm p-2 bg-indigo-900 text-white text-center rounded font-bold">
-              <a href="/student/borrowed">
-                Nový avatar
-              </a>
-            </span> */}
           </div>
 
           <div className="col-span-12 md:border-solid md:border-l md:border-black md:border-opacity-25 h-full pb-12 md:col-span-10">
@@ -60,7 +54,7 @@ function StudentProfile() {
                   <input
                     type="text"
                     value={data.firstname}
-                    className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
+                    className="w-full appearance-none text-black rounded shadow py-1 px-2  mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                   />
                 </div>
 
@@ -70,7 +64,7 @@ function StudentProfile() {
                     <input
                       type="text"
                       value={data.lastname}
-                      className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
+                      className="w-full appearance-none text-black rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                     />
                   </div>
 
@@ -79,7 +73,7 @@ function StudentProfile() {
                     <input
                       type="text"
                       value={data.email}
-                      className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
+                      className="w-full appearance-none text-black rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                     />
                   </div>
 
@@ -88,7 +82,7 @@ function StudentProfile() {
                     <input
                       type="text"
                       value={data.role}
-                      className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
+                      className="w-full appearance-none text-black rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                     />
                   </div>
                 </div>
@@ -106,7 +100,7 @@ function StudentProfile() {
                     cols={30}
                     rows={10}
                     disabled
-                    className="w-full appearance-none text-black text-opacity-50 rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200 text-opacity-25 "
+                    className="w-full appearance-none text-black rounded shadow py-1 px-2 mr-2 focus:outline-none focus:shadow-outline focus:border-blue-200"
                   >
                     Pri probléme je dostupný chat kde Vám niekto odpovie...
                   </textarea>

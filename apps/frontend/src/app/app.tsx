@@ -77,8 +77,8 @@ export function App() {
           <Route path="/admin/register" element={<AdminRegisterPage />} />
           <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route element={<AdminPrivateRoute />}>
-          <Route path="/admin/profile" element={<AdminProfilePage />} />
-          <Route path="/admin/update" element={<AdminUpdatePage />} />
+            <Route path="/admin/profile" element={<AdminProfilePage />} />
+            <Route path="/admin/update" element={<AdminUpdatePage />} />
           </Route>
           <Route path="/notallowed" element={<NotAllowed />} />
           <Route path="*" element={<NotFoundPage />} />
