@@ -10,5 +10,5 @@ export class ReturnBookingDto {
     @ApiProperty()
     @IsNumber()
     @IsNotEmpty()
-    studentId: number;
+    userId: number;
 }
