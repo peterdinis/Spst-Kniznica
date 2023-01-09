@@ -18,6 +18,7 @@ export class UsersService {
     async generateRandomId() {
         const generateNewIdRequest = await this.httpService.axiosRef.get("https://www.uuidtools.com/api/generate/v4");
         console.log(generateNewIdRequest.data);
+        return generateNewIdRequest.data;
     }
 
     async findUserByEmail(email: string) {
@@ -73,7 +74,8 @@ export class UsersService {
         const user = await this.prismaService.user.create({
             data: {
                 ...registerDto,
-                password: hashedPassword
+                password: hashedPassword,
+                
             }
         });
 

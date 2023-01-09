@@ -23,6 +23,7 @@ import AuthUser from './decorators/user.decorator';
 import type { User } from '@prisma/client';
 import { ViewUsersDto } from './dto/view-users.dto';
 import { UpdateUserDto } from './dto/update-users.dto';
+import { ExternalIdDto } from './dto/external-id.dto';
 
 @ApiTags('Application Users')
 @Controller('users')
@@ -50,6 +51,9 @@ export class UsersController {
 
   @ApiOperation({
     summary: "Generate new externalId for user"
+  })
+  @ApiOkResponse({
+    type: [ExternalIdDto]
   })
   @Get("/id/generate")
   async generalExternalId() {

@@ -11,3 +11,7 @@ export const searchingForUser = (username: string) => {
 
   return api.get(`users/search?username=${username}`).then((res) => res.data);
 }
+
+export const generateExternalId = () => {
+  return api.get("/users/id/generate").then((res) => res.data);
+}
