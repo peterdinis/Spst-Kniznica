@@ -22,6 +22,9 @@ import UpdateTeacherProfile from './lib/users/teacher/UpdateTeacherProfile';
 import UpdateStudentProfile from './lib/users/student/UpdateStudentProfile';
 import StudentBorrowedBooks from './lib/users/student/StudentBorrowedBooks';
 import TeacherBorrowedBooks from './lib/users/teacher/TeacherBorrowedBooks';
+import AdminLoginPage from './lib/admin/AdminLoginPage';
+import AdminRegisterPage from './lib/admin/AdminRegisterPage';
+import AdminProfilePage from './lib/admin/AdminProfile';
 
 export {
     Aboutpage,
@@ -47,5 +50,8 @@ export {
     UpdateStudentProfile,
     UpdateTeacherProfile,
     StudentBorrowedBooks,
-    TeacherBorrowedBooks
+    TeacherBorrowedBooks,
+    AdminLoginPage,
+    AdminRegisterPage,
+    AdminProfilePage
 }

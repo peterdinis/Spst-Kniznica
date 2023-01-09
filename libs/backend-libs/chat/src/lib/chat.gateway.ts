@@ -15,8 +15,8 @@ import {
   
     private logger: Logger = new Logger('ChatGateway');
   
-    afterInit(server: any) {
-      this.logger.log('Initialized!');
+    afterInit(server: Server) {
+      this.logger.log(server, 'Initialized!');
     }
   
     @SubscribeMessage('joinRoom')
