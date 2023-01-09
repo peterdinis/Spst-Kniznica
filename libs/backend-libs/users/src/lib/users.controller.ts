@@ -49,6 +49,14 @@ export class UsersController {
   }
 
   @ApiOperation({
+    summary: "Generate new externalId for user"
+  })
+  @Get("/id/generate")
+  async generalExternalId() {
+    return await this.usersService.generateRandomId();
+  }
+
+  @ApiOperation({
     summary: 'Login new user',
   })
   @ApiCreatedResponse({

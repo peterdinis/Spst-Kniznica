@@ -16,7 +16,8 @@ export class UsersService {
     ) {}
 
     async generateRandomId() {
-        return;
+        const generateNewIdRequest = await this.httpService.axiosRef.get("https://www.uuidtools.com/api/generate/v4");
+        console.log(generateNewIdRequest.data);
     }
 
     async findUserByEmail(email: string) {
