@@ -25,6 +25,7 @@ import TeacherBorrowedBooks from './lib/users/teacher/TeacherBorrowedBooks';
 import AdminLoginPage from './lib/admin/AdminLoginPage';
 import AdminRegisterPage from './lib/admin/AdminRegisterPage';
 import AdminProfilePage from './lib/admin/AdminProfile';
+import AdminUpdatePage from './lib/admin/AdminUpdatePage';
 
 export {
     Aboutpage,
@@ -53,5 +54,6 @@ export {
     TeacherBorrowedBooks,
     AdminLoginPage,
     AdminRegisterPage,
-    AdminProfilePage
+    AdminProfilePage,
+    AdminUpdatePage
 }

@@ -18,6 +18,10 @@ import {
   NotAllowed,
   StudentBorrowedBooks,
   TeacherBorrowedBooks,
+  AdminLoginPage,
+  AdminProfilePage,
+  AdminRegisterPage,
+  AdminUpdatePage,
 } from '@spst-kniznica-project/frontend-libs/pages';
 import { Suspense } from 'react';
 import {
@@ -30,6 +34,7 @@ import {
 } from '@spst-kniznica-project/frontend-libs/users';
 import StudentPrivateRoute from 'libs/frontend-libs/routes/src/lib/StudentPrivateRoute';
 import TeacherPrivateRoute from 'libs/frontend-libs/routes/src/lib/TeacherPrivateRoute';
+import AdminPrivateRoute from 'libs/frontend-libs/routes/src/lib/AdminPrivateRoute';
 
 export function App() {
   return (
@@ -68,6 +73,12 @@ export function App() {
               path="/teacher/borrowed"
               element={<TeacherBorrowedBooks />}
             />
+          </Route>
+          <Route path="/admin/register" element={<AdminRegisterPage />} />
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route element={<AdminPrivateRoute />}>
+          <Route path="/admin/profile" element={<AdminProfilePage />} />
+          <Route path="/admin/update" element={<AdminUpdatePage />} />
           </Route>
           <Route path="/notallowed" element={<NotAllowed />} />
           <Route path="*" element={<NotFoundPage />} />
