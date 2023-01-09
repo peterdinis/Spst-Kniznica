@@ -1,3 +1,4 @@
+import CreateFaqModal from './CreateFaqModal';
 import FaqQuestions from './FaqQuestions';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -8,7 +9,13 @@ const Faq = () => {
         Časté otázky
       </h1>
       <div className="text-center mt-5">
-        <button>Nová otázka</button>
+        <CreateFaqModal header='Nová otázka'>
+           <h3 className="text-center font-bold text-xl">Nová otázka</h3>
+           <form className="text-center mt-6">
+           <input className="emailInput shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" placeholder="Otázka" />
+           <button className="mt-4 bg-blue-400 rounded-lg p-2 text-white font-bold">Spýtať sa</button>
+           </form>
+        </CreateFaqModal>
       </div>
       <div className=" lg:mt-12 bg-gray-100 md:mt-10 mt-8 lg:py-7 lg:px-6 md:p-6 py-6 px-4 lg:w-8/12 w-full mx-auto ">
         <div className=" flex justify-between md:flex-row flex-col ">
