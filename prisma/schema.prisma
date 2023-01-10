@@ -75,7 +75,6 @@ model User {
   createdAt      DateTime       @default(now())
   updateAt       DateTime       @updatedAt()
   borrowed       Booking[]
-  myNotification Notification[]
 }
 
 model Chat {
@@ -104,6 +103,4 @@ model Notification {
   description String
   count       Int
   isRead      Boolean
-  userId      Int
-  user        User    @relation(fields: [userId], references: [id])
 }
