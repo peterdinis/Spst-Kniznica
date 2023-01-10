@@ -1,6 +1,6 @@
 {
   "name": "spst-kniznica-project",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "backend": "nx serve",
@@ -13,8 +13,6 @@
   },
   "private": true,
   "dependencies": {
-    "@casl/ability": "^6.3.2",
-    "@casl/prisma": "^1.3.3",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.4",
